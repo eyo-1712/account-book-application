@@ -89,6 +89,10 @@ export default [
           namedComponents: ['arrow-function'],
         },
       ],
+
+      'import/prefer-default-export': 'off',
+      'react/react-in-jsx-scope': 'off',
+      'react/destructuring-assignment': 'off',
     },
   },
 ]
