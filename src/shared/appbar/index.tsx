@@ -1,8 +1,4 @@
-interface IProps {
-  title: React.ReactNode
-  leading?: React.ReactNode
-  actions?: React.ReactNode
-}
+import { IProps } from './type'
 
 export const AppBar = (props: IProps) => (
   <header className="sticky top-0 h-16 flex flex-row bg-white items-center">
