@@ -1,3 +1,3 @@
 export const Container = (props: React.PropsWithChildren) => (
-  <div className="container mx-auto max-w-screen-sm">{props.children}</div>
+  <div className="container max-w-screen-sm mx-auto">{props.children}</div>
 )
