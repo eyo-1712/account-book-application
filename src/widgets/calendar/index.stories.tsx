@@ -6,4 +6,4 @@ export default {
   tags: ['Widget', 'Calendar'],
 }
 
-export const Today = {}
+export const Default = {}
