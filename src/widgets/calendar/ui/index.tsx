@@ -11,7 +11,7 @@ export const Calendar = () => {
   const { value, handler } = useLogic()
 
   return (
-    <div className="flex flex-col items-center w-full p-4">
+    <div className="flex flex-col items-center w-full">
       <div className="flex flex-row items-center gap-4">
         <button type="button" onClick={handler.prev}>{`<`}</button>
         <p className="text-center">
