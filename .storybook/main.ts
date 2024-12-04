@@ -1,4 +1,5 @@
 import type { StorybookConfig } from '@storybook/react-vite'
+import path from 'path'
 
 const config: StorybookConfig = {
   stories: ['../src/**/*.mdx', '../src/**/*.stories.@(js|jsx|mjs|ts|tsx)'],
@@ -11,6 +12,24 @@ const config: StorybookConfig = {
   framework: {
     name: '@storybook/react-vite',
     options: {},
+  },
+  // eslint-disable-next-line no-shadow
+  viteFinal: async (config) => {
+    if (config.resolve) {
+      // eslint-disable-next-line no-param-reassign
+      config.resolve.alias = {
+        ...config.resolve?.alias,
+        // 👇 External module
+        // lodash: require.resolve('./lodash.mock'),
+        // 👇 Internal modules
+        shared: path.resolve(__dirname, '../src/shared'),
+        features: path.resolve(__dirname, '../src/features'),
+        widgets: path.resolve(__dirname, '../src/widgets'),
+        pages: path.resolve(__dirname, '../src/pages'),
+      }
+    }
+
+    return config
   },
 }
 export default config
