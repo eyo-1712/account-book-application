@@ -1,5 +1,5 @@
 export interface IProps {
-  title: React.ReactNode
+  title?: React.ReactNode
   leading?: React.ReactNode
   actions?: React.ReactNode
 }

@@ -9,6 +9,7 @@ export const AppBar = (props: IProps) => (
 )
 
 AppBar.defaultProps = {
+  title: undefined,
   leading: undefined,
   actions: undefined,
 }
