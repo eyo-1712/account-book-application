@@ -1,4 +1,4 @@
-import { Receipt } from '../../receipt/ui'
+import { Receipt } from '../card'
 
 export const ReceiptToday = () => (
   <div className="flex flex-col gap-8">
