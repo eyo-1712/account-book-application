@@ -2,7 +2,9 @@ import { DAY } from './constants'
 import { useLogic } from './logic'
 
 const CalendarBox = (props: React.PropsWithChildren) => (
-  <div className="flex flex-col items-center w-[14.28%]">{props.children!}</div>
+  <div className="flex flex-col items-center w-[14.28%] py-2">
+    {props.children!}
+  </div>
 )
 
 export const Calendar = () => {
