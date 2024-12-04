@@ -1,6 +1,5 @@
-import { AppBar } from '../../../../shared/ui/appbar'
-import { Container } from '../../../../shared/ui/container'
-import { Calendar } from '../../../../widgets/calendar/ui'
+import { AppBar, Container } from 'shared'
+import { Calendar } from 'widgets'
 
 export const AccountCalendarPage = () => (
   <Container>
