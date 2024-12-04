@@ -1,9 +1,10 @@
 import { Receipt } from '../card'
+import { IProps } from './type'
 
-export const ReceiptToday = () => (
+export const ReceiptToday = (props: IProps) => (
   <div className="flex flex-col gap-8">
     <div className="flex flex-col gap-4">
-      <p>30일</p>
+      <p>{props.date.getDate()}일</p>
       <Receipt price={20000} reason="월급" src="https://picsum.photos/200" />
       <Receipt price={20000} reason="월급" src="https://picsum.photos/200" />
       <Receipt price={20000} reason="월급" src="https://picsum.photos/200" />

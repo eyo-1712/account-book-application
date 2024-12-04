@@ -15,9 +15,9 @@ export const SummaryMonthPage = () => (
       </div>
       <br />
       <div className="flex flex-col gap-8">
-        <ReceiptToday />
-        <ReceiptToday />
-        <ReceiptToday />
+        <ReceiptToday date={new Date()} />
+        <ReceiptToday date={new Date()} />
+        <ReceiptToday date={new Date()} />
       </div>
     </Body>
   </Container>

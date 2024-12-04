@@ -6,7 +6,7 @@ export default {
   tags: ['Widget', 'Receipt'],
 }
 
-export const Test = {
+export const Today = {
   args: {
     date: new Date(),
   },
