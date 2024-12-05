@@ -1,8 +1,12 @@
-import { AccountCalendarPage } from 'pages'
-import { AccountFormPage } from 'pages/account-book/ui/form'
-import { SummaryDetailPage } from 'pages/account-book/ui/summary-detail'
-import { SummaryMonthPage } from 'pages/account-book/ui/summary-month'
-import { LoginPage } from 'pages/auth/ui/login'
+import {
+  AccountCalendarPage,
+  AccountFormPage,
+  LoginPage,
+  NotFoundPage,
+  SummaryDetailPage,
+  SummaryMonthPage,
+} from 'pages'
+
 import React from 'react'
 import { BrowserRouter, Route, Routes } from 'react-router'
 
@@ -16,6 +20,8 @@ const App: React.FC = () => (
       <Route path="/summary/:id" element={<SummaryDetailPage />} />
       <Route path="/account/form" element={<AccountFormPage />} />
       <Route path="/account/form/:id" element={<AccountFormPage />} />
+      {/*  */}
+      <Route path="*" element={<NotFoundPage />} />
       <Route />
     </Routes>
   </BrowserRouter>
