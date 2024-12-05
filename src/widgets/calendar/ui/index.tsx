@@ -1,4 +1,5 @@
 import { useRouter } from 'shared/lib'
+import { Icon } from 'shared/ui'
 import { DAY } from './constants'
 import { useLogic } from './logic'
 
@@ -26,12 +27,16 @@ export const Calendar = () => {
   return (
     <div className="flex flex-col items-center w-full">
       <div className="flex flex-row items-center gap-4">
-        <button type="button" onClick={handler.prev}>{`<`}</button>
+        <button type="button" onClick={handler.prev}>
+          <Icon type="left" />
+        </button>
         <p className="text-center">
           {value.date.getFullYear()}년{' '}
           {(value.date.getMonth() + 1).toString().padStart(2, '\u00A0')}월
         </p>
-        <button type="button" onClick={handler.next}>{`>`}</button>
+        <button type="button" onClick={handler.next}>
+          <Icon type="right" />
+        </button>
       </div>
       <br />
       <div className="flex flex-row items-center w-full justify-evenly">
