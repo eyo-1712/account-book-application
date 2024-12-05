@@ -1,10 +1,14 @@
-import { BackButton } from 'features/router'
+import { AddAccountDetail, BackButton } from 'features/router'
 import { AppBar, Body, Container } from 'shared/ui'
 import { ReceiptToday } from 'widgets'
 
 export const SummaryMonthPage = () => (
   <Container>
-    <AppBar title="2024.11" leading={<BackButton />} actions="추가" />
+    <AppBar
+      title="2024.11"
+      leading={<BackButton />}
+      actions={<AddAccountDetail />}
+    />
     <Body>
       <div className="flex flex-row w-full gap-4">
         <p className="">지출금액</p>
