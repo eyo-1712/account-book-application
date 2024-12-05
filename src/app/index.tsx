@@ -10,6 +10,7 @@ const App: React.FC = () => (
   <BrowserRouter>
     <Routes>
       <Route path="/login" element={<LoginPage />} />
+      {/*  */}
       <Route path="/" element={<AccountCalendarPage />} />
       <Route path="/summary" element={<SummaryMonthPage />} />
       <Route path="/summary/:id" element={<SummaryDetailPage />} />

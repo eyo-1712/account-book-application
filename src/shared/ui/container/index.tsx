@@ -1,5 +1,5 @@
 export const Container = (props: React.PropsWithChildren) => (
-  <div className="container mx-auto bg-white max-w-screen-sm">
+  <div className="container max-w-screen-sm mx-auto bg-white">
     {props.children}
   </div>
 )
