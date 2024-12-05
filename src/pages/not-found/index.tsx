@@ -6,7 +6,7 @@ export const NotFoundPage = () => {
 
   return (
     <Container>
-      <main className="flex flex-col items-center justify-center w-screen h-screen">
+      <main className="flex flex-col items-center justify-center w-full h-screen">
         <p>찾을 수 없는 페이지입니다.</p>
         <br />
         <button type="button" onClick={nav.back}>
