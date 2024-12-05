@@ -17,7 +17,7 @@ export const AccountCalendarPage = () => (
         </div>
         <div className="flex flex-row justify-between w-full">
           <p>남은 잔고</p>
-          <p className="text-blue-600 break-keep text-end">300,000,000 원</p>
+          <p className="text-blue-600 break-keep text-end">300 원</p>
         </div>
       </div>
     </Body>
