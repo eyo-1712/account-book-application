@@ -16,8 +16,7 @@ export const AccountFormPage = () => (
           className="w-full py-1 border border-t-0 focus:outline-none border-b-gray-300 border-x-0 focus:border-b-gray-600"
         />
         <input
-          type="text"
-          placeholder="지출일시"
+          type="datetime-local"
           className="w-full py-1 border border-t-0 focus:outline-none border-b-gray-300 border-x-0 focus:border-b-gray-600"
         />
       </form>
