@@ -1,9 +1,10 @@
+import { AddAccountDetail } from 'features/router'
 import { AppBar, Body, Container } from 'shared/ui'
 import { Calendar } from 'widgets'
 
 export const AccountCalendarPage = () => (
   <Container>
-    <AppBar title="가계부" />
+    <AppBar title="가계부" actions={<AddAccountDetail />} />
     <Body>
       <Calendar />
       <div className="flex flex-col items-end w-full px-8 py-2">
