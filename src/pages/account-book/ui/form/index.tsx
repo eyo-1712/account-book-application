@@ -2,7 +2,10 @@ import { AppBar, Body, Container } from 'shared/ui'
 
 export const AccountFormPage = () => (
   <Container>
-    <AppBar actions={<button type="submit">추가</button>} />
+    <AppBar
+      title="상세 내역 추가"
+      actions={<button type="submit">추가</button>}
+    />
     <Body>
       <form className="flex flex-col w-full gap-4">
         <input
