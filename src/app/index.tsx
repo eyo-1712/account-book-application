@@ -1,30 +1,11 @@
-import {
-  AccountCalendarPage,
-  AccountFormPage,
-  LoginPage,
-  NotFoundPage,
-  SummaryDetailPage,
-  SummaryMonthPage,
-} from 'pages'
+import { Provider } from 'react-redux'
+import { store } from './redux'
+import { Router } from './router'
 
-import React from 'react'
-import { BrowserRouter, Route, Routes } from 'react-router'
-
-const App: React.FC = () => (
-  <BrowserRouter>
-    <Routes>
-      <Route path="/login" element={<LoginPage />} />
-      {/*  */}
-      <Route path="/" element={<AccountCalendarPage />} />
-      <Route path="/summary" element={<SummaryMonthPage />} />
-      <Route path="/summary/:id" element={<SummaryDetailPage />} />
-      <Route path="/account/form" element={<AccountFormPage />} />
-      <Route path="/account/form/:id" element={<AccountFormPage />} />
-      {/*  */}
-      <Route path="*" element={<NotFoundPage />} />
-      <Route />
-    </Routes>
-  </BrowserRouter>
+const App = () => (
+  <Provider store={store}>
+    <Router />
+  </Provider>
 )
 
 export default App
