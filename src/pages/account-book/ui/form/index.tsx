@@ -1,9 +1,11 @@
+import { BackButton } from 'features/router'
 import { AppBar, Body, Container } from 'shared/ui'
 
 export const AccountFormPage = () => (
   <Container>
     <AppBar
       title="상세 내역 추가"
+      leading={<BackButton />}
       actions={<button type="submit">추가</button>}
     />
     <Body>
