@@ -1,3 +1,3 @@
-import userStore, { userSlice } from './model'
+import { userReducer, userSlice } from './model'
 
-export { userSlice, userStore }
+export { userReducer, userSlice }
