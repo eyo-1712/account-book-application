@@ -1,16 +1,18 @@
+import ReactDOM from 'react-dom'
 import { useDispatch } from 'react-redux'
 import { useRouter } from 'shared/lib'
 import { Icon } from 'shared/ui'
 import { logOut } from '../../../user'
+import { IProps } from './type'
 
-export const SideBar = (props: { open: boolean; onClose: () => void }) => {
+export const SideBar = (props: IProps) => {
   const router = useRouter()
   const dispatch = useDispatch()
 
-  return (
+  const Component = (
     <aside
       className={[
-        'w-40 h-screen bg-white p-4 z-10 fixed top-0',
+        'w-40 h-screen bg-white px-4 z-10 fixed top-0',
         `${!props.open && 'hidden'}`,
       ].join(' ')}
     >
@@ -19,7 +21,7 @@ export const SideBar = (props: { open: boolean; onClose: () => void }) => {
           <button
             type="button"
             onClick={props.onClose}
-            className="flex flex-row items-center gap-2"
+            className="flex flex-row items-center h-16 gap-2"
           >
             <Icon type="close" />
           </button>
@@ -64,4 +66,6 @@ export const SideBar = (props: { open: boolean; onClose: () => void }) => {
       </ul>
     </aside>
   )
+
+  return ReactDOM.createPortal(Component, document.getElementById('root')!)
 }
