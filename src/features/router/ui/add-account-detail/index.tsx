@@ -7,7 +7,7 @@ export const AddAccountDetail = () => {
     <button
       type="button"
       onClick={nav.accountFormAdd}
-      className="text-blue-600"
+      className="text-blue-600 font-bold"
     >
       추가
     </button>
