@@ -2,7 +2,7 @@ import { IAccountType } from 'shared/lib'
 
 export interface IForm {
   type: IAccountType
-  money: string
+  money: money
   category: string
   datetime: string
 }

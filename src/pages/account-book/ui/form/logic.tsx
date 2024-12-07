@@ -12,16 +12,27 @@ const init: IForm = {
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const reducer = (state: IForm, action: { type: string; value?: any }) => {
   switch (action.type) {
-    case 'type':
+    case 'type': {
       return { ...state, type: action.value }
-    case 'money':
-      return { ...state, money: action.value }
-    case 'category':
+    }
+    case 'money': {
+      try {
+        const money = parseInt(action.value, 10)
+
+        return { ...state, money }
+      } catch {
+        return state
+      }
+    }
+    case 'category': {
       return { ...state, category: action.value }
-    case 'datetime':
+    }
+    case 'datetime': {
       return { ...state, datetime: action.value }
-    default:
+    }
+    default: {
       return init
+    }
   }
 }
 
