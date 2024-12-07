@@ -1,4 +1,5 @@
 import { BackButton } from 'features/router'
+import { AccountTypeMapper, IAccountType } from 'shared/lib'
 import { AppBar, Body, Container } from 'shared/ui'
 import { useLogic } from './logic'
 
@@ -8,7 +9,7 @@ export const AccountFormPage = () => {
   return (
     <Container>
       <AppBar
-        title={`${value.type} 내역 추가`}
+        title={`${AccountTypeMapper[value.type as IAccountType]} 내역 추가`}
         leading={<BackButton />}
         actions={<button type="submit">추가</button>}
       />
@@ -20,15 +21,15 @@ export const AccountFormPage = () => {
                 <input
                   type="radio"
                   id="type"
-                  value="수입"
+                  value="expenditure"
                   name="type"
-                  checked={value.type === '지출'}
+                  checked={value.type === 'expenditure'}
                   className="hidden"
                 />
                 <button
                   type="button"
-                  className={`w-full font-bold ${value.type === '지출' ? 'text-blue-600' : 'text-gray-300'}`}
-                  onClick={handler.type('지출')}
+                  className={`w-full font-bold ${value.type === 'expenditure' ? 'text-blue-600' : 'text-gray-300'}`}
+                  onClick={handler.type('expenditure')}
                 >
                   지출
                 </button>
@@ -39,15 +40,15 @@ export const AccountFormPage = () => {
                 <input
                   type="radio"
                   id="type"
-                  value="수입"
+                  value="income"
                   name="type"
-                  checked={value.type === '수입'}
+                  checked={value.type === 'income'}
                   className="hidden"
                 />
                 <button
                   type="button"
-                  className={`w-full font-bold ${value.type === '수입' ? 'text-blue-600' : 'text-gray-300'}`}
-                  onClick={handler.type('수입')}
+                  className={`w-full font-bold ${value.type === 'income' ? 'text-blue-600' : 'text-gray-300'}`}
+                  onClick={handler.type('income')}
                 >
                   수입
                 </button>

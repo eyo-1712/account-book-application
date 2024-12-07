@@ -1,14 +1,15 @@
 import React from 'react'
+import { IForm } from './type'
 
-const init = {
-  type: '지출',
+const init: IForm = {
+  type: 'expenditure',
   money: '',
   category: '',
   datetime: '',
 }
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-const reducer = (state: typeof init, action: { type: string; value?: any }) => {
+const reducer = (state: IForm, action: { type: string; value?: any }) => {
   switch (action.type) {
     case 'type':
       return { ...state, type: action.value }
