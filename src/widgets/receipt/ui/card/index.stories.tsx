@@ -3,7 +3,7 @@ import { Receipt } from '.'
 export default {
   component: Receipt,
   title: 'Receipt',
-  tags: ['Widget', 'Receipt'],
+  tags: ['Widgets', 'Receipt'],
 }
 
 export const Test = {

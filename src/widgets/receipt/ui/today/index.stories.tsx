@@ -3,7 +3,7 @@ import { ReceiptToday } from '.'
 export default {
   component: ReceiptToday,
   title: 'ReceiptToday',
-  tags: ['Widget', 'Receipt'],
+  tags: ['Widgets', 'Receipt'],
 }
 
 export const Today = {
