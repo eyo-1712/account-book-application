@@ -25,6 +25,7 @@ export const AccountFormPage = () => {
                   name="type"
                   checked={value.type === 'expenditure'}
                   className="hidden"
+                  readOnly
                 />
                 <button
                   type="button"
@@ -44,6 +45,7 @@ export const AccountFormPage = () => {
                   name="type"
                   checked={value.type === 'income'}
                   className="hidden"
+                  readOnly
                 />
                 <button
                   type="button"
@@ -61,6 +63,7 @@ export const AccountFormPage = () => {
             placeholder="금액을 입력하세요."
             className="w-full py-1 border border-t-0 focus:outline-none border-b-gray-300 border-x-0 focus:border-b-gray-600"
             value={value.money}
+            onChange={handler.money}
           />
           <input
             type="text"
@@ -70,6 +73,8 @@ export const AccountFormPage = () => {
           <input
             type="datetime-local"
             className="w-full py-1 border border-t-0 focus:outline-none border-b-gray-300 border-x-0 focus:border-b-gray-600"
+            value={value.datetime}
+            onChange={handler.datetime}
           />
         </form>
       </Body>
