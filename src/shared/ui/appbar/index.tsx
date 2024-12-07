@@ -7,9 +7,3 @@ export const AppBar = (props: IProps) => (
     {props.actions && <nav className="absolute right-4">{props.actions}</nav>}
   </header>
 )
-
-AppBar.defaultProps = {
-  title: undefined,
-  leading: undefined,
-  actions: undefined,
-}

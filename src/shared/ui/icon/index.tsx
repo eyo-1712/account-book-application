@@ -10,7 +10,3 @@ export const Icon = (props: IProps) => {
 
   return <AntD color={props.color} />
 }
-
-Icon.defaultProps = {
-  color: 'black',
-}
