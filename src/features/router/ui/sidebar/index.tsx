@@ -12,8 +12,8 @@ export const SideBar = (props: IProps) => {
   const Component = (
     <aside
       className={[
-        'w-40 h-screen bg-white px-4 z-10 fixed top-0',
-        `${!props.open && 'hidden'}`,
+        'w-40 h-screen bg-white px-4 z-10 fixed top-0 transition-all duration-300',
+        `${!props.open ? 'left-0' : 'left-[-10rem]'}`,
       ].join(' ')}
     >
       <ul className="flex flex-col gap-4">
