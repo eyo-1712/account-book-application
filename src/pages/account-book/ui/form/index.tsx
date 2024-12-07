@@ -15,8 +15,8 @@ export const AccountFormPage = () => {
         actions={
           <button
             type="submit"
-            disabled={zForm.safeParse(value).success}
-            className={`font-bold ${zForm.safeParse(value).success ? 'text-blue-600' : 'text-gray-300'}`}
+            disabled={!zForm.safeParse(value).success}
+            className="font-bold text-blue-600 disabled:text-gray-300"
           >
             추가
           </button>
