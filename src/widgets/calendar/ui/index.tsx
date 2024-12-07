@@ -54,7 +54,7 @@ export const Calendar = () => {
       </div>
       <div
         className="flex flex-row flex-wrap w-full  justify-evenly"
-        style={{ height: '20rem' }}
+        style={{ height: '30rem' }}
       >
         {value.DATE.map((date, index) => {
           const isFuture =
