@@ -12,11 +12,11 @@ export const SummaryMonthPage = () => (
     <Body>
       <div className="flex flex-row w-full gap-4">
         <p className="">지출금액</p>
-        <p className="text-gray-600">{(10000).toLocaleString()} 원</p>
+        <p className="font-bold text-gray-600">{(10000).toLocaleString()} 원</p>
       </div>
       <div className="flex flex-row w-full gap-4">
         <p>남은잔고</p>
-        <p className="text-blue-600">{(10000).toLocaleString()} 원</p>
+        <p className="font-bold text-blue-600">{(10000).toLocaleString()} 원</p>
       </div>
       <br />
       <div className="flex flex-col w-full gap-8">

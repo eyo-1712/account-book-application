@@ -17,7 +17,7 @@ export const SummaryDetailPage = () => (
     <Body>
       <div className="flex flex-col items-start w-full">
         <p className="text-xs">카테고리 이름</p>
-        <p className="text-xl">{(20000).toLocaleString()} 원</p>
+        <p className="text-xl font-bold">{(20000).toLocaleString()} 원</p>
       </div>
       <br />
       <DetailButton title="카테고리" content="카테고리" />

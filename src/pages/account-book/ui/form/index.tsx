@@ -25,7 +25,7 @@ export const AccountFormPage = () => {
       <Body>
         <form className="flex flex-col w-full gap-4">
           <div className="flex flex-row justify-evenly">
-            <div className="flex flex-row gap-4 flex-1 justify-center">
+            <div className="flex flex-row justify-center flex-1 gap-4">
               <label htmlFor="type" className="w-full">
                 <input
                   type="radio"
@@ -45,7 +45,7 @@ export const AccountFormPage = () => {
                 </button>
               </label>
             </div>
-            <div className="flex flex-row gap-4 flex-1 justify-center">
+            <div className="flex flex-row justify-center flex-1 gap-4">
               <label htmlFor="type" className="w-full">
                 <input
                   type="radio"
