@@ -10,7 +10,7 @@ export const Receipt = (props: IProps) => {
       className="flex flex-row items-center gap-2"
       onClick={nav.summaryId('1')}
     >
-      <img
+      {/* <img
         src={props.src}
         alt={props.src}
         style={{
@@ -20,7 +20,7 @@ export const Receipt = (props: IProps) => {
           aspectRatio: 1,
           borderRadius: '100%',
         }}
-      />
+      /> */}
 
       <div className="flex flex-col items-start flex-1">
         {props.price > 0 ? (
