@@ -11,7 +11,11 @@ export const AccountCalendarPage = () => {
       <AppBar
         title="가계부"
         leading={
-          <button type="button" onClick={handler.logOut}>
+          <button
+            type="button"
+            onClick={handler.logOut}
+            className="text-gray-300"
+          >
             로그아웃
           </button>
         }
@@ -26,7 +30,7 @@ export const AccountCalendarPage = () => {
           </div>
           <div className="flex flex-row justify-between w-full">
             <p>지출 금액</p>
-            <p className="text-gray-600 break-keep">20,000 원</p>
+            <p className="text-gray-300 break-keep">20,000 원</p>
           </div>
           <div className="flex flex-row justify-between w-full">
             <p>남은 잔고</p>

@@ -54,7 +54,7 @@ export const Calendar = () => {
       </div>
       <div
         className="flex flex-row flex-wrap w-full  justify-evenly"
-        style={{ height: '30rem' }}
+        style={{ height: '20rem' }}
       >
         {value.DATE.map((date, index) => {
           const isFuture =
@@ -73,7 +73,7 @@ export const Calendar = () => {
             >
               <p className="text-center">{date}</p>
               {!isFuture && (
-                <div className="flex flex-col items-center justify-center h-8">
+                <div className="flex flex-col items-center justify-center">
                   <p className="text-xs text-blue-600">{1}</p>
                   <p className="text-xs text-gray-300">{1}</p>
                 </div>
