@@ -68,6 +68,12 @@ export const AccountFormPage = () => {
           </div>
           <br />
           <input
+            type="datetime-local"
+            className="w-full py-1 border border-t-0 focus:outline-none border-b-gray-300 border-x-0 focus:border-b-gray-600"
+            value={value.datetime}
+            onChange={handler.datetime}
+          />
+          <input
             type="number"
             placeholder="금액을 입력하세요."
             className="w-full py-1 border border-t-0 focus:outline-none border-b-gray-300 border-x-0 focus:border-b-gray-600"
@@ -80,12 +86,6 @@ export const AccountFormPage = () => {
             className="w-full py-1 border border-t-0 focus:outline-none border-b-gray-300 border-x-0 focus:border-b-gray-600"
             value={value.category}
             onChange={handler.category}
-          />
-          <input
-            type="datetime-local"
-            className="w-full py-1 border border-t-0 focus:outline-none border-b-gray-300 border-x-0 focus:border-b-gray-600"
-            value={value.datetime}
-            onChange={handler.datetime}
           />
         </form>
       </Body>
