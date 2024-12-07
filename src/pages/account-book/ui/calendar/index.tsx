@@ -1,45 +1,30 @@
 import { AddAccountDetail } from 'features/router'
 import { AppBar, Body, Container } from 'shared/ui'
-import { Calendar } from 'widgets'
-import { useLogic } from './logic'
+import { Calendar, Hamburger } from 'widgets'
 
-export const AccountCalendarPage = () => {
-  const { handler } = useLogic()
-
-  return (
-    <Container>
-      <AppBar
-        title="가계부"
-        leading={
-          <button
-            type="button"
-            onClick={handler.logOut}
-            className="text-gray-300"
-          >
-            로그아웃
-          </button>
-        }
-        actions={<AddAccountDetail />}
-      />
-      <Body>
-        <Calendar />
-        <div className="flex flex-col items-end w-full px-8 py-2">
-          <div className="flex flex-row justify-between w-full">
-            <p>시작 잔고</p>
-            <p className="font-bold text-blue-600 break-keep">10,000 원</p>
-          </div>
-          <div className="flex flex-row justify-between w-full">
-            <p>지출 금액</p>
-            <p className="font-bold text-gray-300 break-kee">20,000 원</p>
-          </div>
-          <div className="flex flex-row justify-between w-full">
-            <p>남은 잔고</p>
-            <p className="font-bold text-blue-600 break-keep text-end">
-              300 원
-            </p>
-          </div>
+export const AccountCalendarPage = () => (
+  <Container>
+    <AppBar
+      title="가계부"
+      leading={<Hamburger />}
+      actions={<AddAccountDetail />}
+    />
+    <Body>
+      <Calendar />
+      <div className="flex flex-col items-end w-full px-8 py-2">
+        <div className="flex flex-row justify-between w-full">
+          <p>시작 잔고</p>
+          <p className="font-bold text-blue-600 break-keep">10,000 원</p>
         </div>
-      </Body>
-    </Container>
-  )
-}
+        <div className="flex flex-row justify-between w-full">
+          <p>지출 금액</p>
+          <p className="font-bold text-gray-300 break-kee">20,000 원</p>
+        </div>
+        <div className="flex flex-row justify-between w-full">
+          <p>남은 잔고</p>
+          <p className="font-bold text-blue-600 break-keep text-end">300 원</p>
+        </div>
+      </div>
+    </Body>
+  </Container>
+)
