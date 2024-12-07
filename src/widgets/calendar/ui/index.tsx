@@ -31,10 +31,15 @@ export const Calendar = () => {
           <Icon type="left" />
         </button>
         <p className="text-center">
-          {value.date.getFullYear()}년{' '}
-          {(value.date.getMonth() + 1).toString().padStart(2, '\u00A0')}월
+          {value.date.year()}년{' '}
+          {(value.date.month() + 1).toString().padStart(2, '\u00A0')}월
         </p>
-        <button type="button" onClick={handler.next}>
+        <button
+          type="button"
+          onClick={handler.next}
+          disabled={value.hasNext}
+          className="disabled:text-gray-300"
+        >
           <Icon type="right" />
         </button>
       </div>
