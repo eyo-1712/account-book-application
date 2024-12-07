@@ -7,8 +7,8 @@ export default {
 }
 
 export const Default = {
-  args: { open: false },
+  args: { open: true },
 }
 export const Disabled = {
-  args: { open: true },
+  args: { open: false },
 }

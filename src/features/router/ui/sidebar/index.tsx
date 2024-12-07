@@ -10,8 +10,8 @@ export const SideBar = (props: { open: boolean; onClose: () => void }) => {
   return (
     <aside
       className={[
-        'w-40 h-screen bg-white p-4 z-10 absolute top-0',
-        `${props.open && 'hidden'}`,
+        'w-40 h-screen bg-white p-4 z-10 fixed top-0',
+        `${!props.open && 'hidden'}`,
       ].join(' ')}
     >
       <ul className="flex flex-col gap-4">
