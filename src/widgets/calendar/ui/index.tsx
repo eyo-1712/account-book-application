@@ -1,3 +1,4 @@
+import dayjs from 'dayjs'
 import { useRouter } from 'shared/lib'
 import { Icon } from 'shared/ui'
 import { DAY } from './constants'
@@ -12,7 +13,7 @@ const CalendarBox = (props: {
 }) => (
   <button
     type="button"
-    className="flex flex-col items-center w-[14.28%] py-2"
+    className="flex flex-col items-center w-[14.28%] py-2 disabled:text-gray-300"
     onClick={props.onClick}
     disabled={props.disabled}
   >
@@ -55,18 +56,31 @@ export const Calendar = () => {
         className="flex flex-row flex-wrap w-full  justify-evenly"
         style={{ height: '30rem' }}
       >
-        {value.DATE.map((date, index) => (
-          // eslint-disable-next-line react/no-array-index-key
-          <CalendarBox key={index} onClick={nav.summaryMonth()}>
-            <p className="text-center">{date}</p>
-            {date !== '' && (
-              <div className="flex flex-col items-center justify-center h-8">
-                <p className="text-xs text-blue-600">{1}</p>
-                <p className="text-xs text-gray-300">{1}</p>
-              </div>
-            )}
-          </CalendarBox>
-        ))}
+        {value.DATE.map((date, index) => {
+          const isFuture =
+            date === ''
+              ? true
+              : dayjs(value.date)
+                  .date(date as number)
+                  .isAfter(dayjs(value.today), 'day')
+
+          return (
+            <CalendarBox
+              // eslint-disable-next-line react/no-array-index-key
+              key={index}
+              onClick={nav.summaryMonth()}
+              disabled={isFuture}
+            >
+              <p className="text-center">{date}</p>
+              {!isFuture && (
+                <div className="flex flex-col items-center justify-center h-8">
+                  <p className="text-xs text-blue-600">{1}</p>
+                  <p className="text-xs text-gray-300">{1}</p>
+                </div>
+              )}
+            </CalendarBox>
+          )
+        })}
       </div>
     </div>
   )
