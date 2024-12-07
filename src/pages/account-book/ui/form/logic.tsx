@@ -43,6 +43,9 @@ export const useLogic = () => {
   const handleMoney: React.ChangeEventHandler<HTMLInputElement> = (e) => {
     dispatch({ type: 'money', value: e.target.value })
   }
+  const handleCategory: React.ChangeEventHandler<HTMLInputElement> = (e) => {
+    dispatch({ type: 'category', value: e.target.value })
+  }
 
   const handleDatetime: React.ChangeEventHandler<HTMLInputElement> = (e) => {
     dispatch({ type: 'datetime', value: e.target.value })
@@ -53,6 +56,7 @@ export const useLogic = () => {
     handler: {
       type: handleType,
       money: handleMoney,
+      category: handleCategory,
       datetime: handleDatetime,
     },
   }

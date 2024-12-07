@@ -2,6 +2,7 @@ import { BackButton } from 'features/router'
 import { AccountTypeMapper, IAccountType } from 'shared/lib'
 import { AppBar, Body, Container } from 'shared/ui'
 import { useLogic } from './logic'
+import { zForm } from './validation'
 
 export const AccountFormPage = () => {
   const { value, handler } = useLogic()
@@ -11,7 +12,15 @@ export const AccountFormPage = () => {
       <AppBar
         title={`${AccountTypeMapper[value.type as IAccountType]} 내역 추가`}
         leading={<BackButton />}
-        actions={<button type="submit">추가</button>}
+        actions={
+          <button
+            type="submit"
+            disabled={zForm.safeParse(value).success}
+            className={`font-bold ${zForm.safeParse(value).success ? 'text-blue-600' : 'text-gray-300'}`}
+          >
+            추가
+          </button>
+        }
       />
       <Body>
         <form className="flex flex-col w-full gap-4">
@@ -69,6 +78,8 @@ export const AccountFormPage = () => {
             type="text"
             placeholder="카테고리를 선택하세요."
             className="w-full py-1 border border-t-0 focus:outline-none border-b-gray-300 border-x-0 focus:border-b-gray-600"
+            value={value.category}
+            onChange={handler.category}
           />
           <input
             type="datetime-local"
