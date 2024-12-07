@@ -1,3 +1,4 @@
-import { userReducer, userSlice } from './model'
+import { withAuth, withNoAuth } from './lib/with-auth'
+import { logIn, logOut, userReducer } from './model'
 
-export { userReducer, userSlice }
+export { logIn, logOut, userReducer, withAuth, withNoAuth }
