@@ -12,7 +12,7 @@ export const useRouter = () => {
         router('/login')
       },
       calendar: () => {
-        router('/calendar')
+        router('/')
       },
       summaryMonth: () => () => {
         router('/summary')
