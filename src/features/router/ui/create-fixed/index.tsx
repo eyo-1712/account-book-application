@@ -5,7 +5,7 @@ export const CreateFixed = () => {
   const { nav } = useRouter()
 
   return (
-    <Button color="blue" type="button" onClick={nav.fixedId('123')}>
+    <Button color="blue" type="button" onClick={nav.createFixed}>
       추가
     </Button>
   )
