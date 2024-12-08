@@ -7,7 +7,7 @@ export const LoginPage = () => {
   return (
     <Container>
       <AppBar title="로그인" />
-      <Body>
+      <Body center>
         <p className="text-xl font-bold">나만의 가계부 만들기</p>
         <p className="text-gray-300">J들 기절</p>
         <br />
