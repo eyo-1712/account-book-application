@@ -11,20 +11,34 @@ export const useRouter = () => {
       login: () => {
         router('/login')
       },
+
       calendar: () => {
         router('/')
       },
+
       summaryMonth: () => () => {
         router('/summary')
       },
       summaryId: (id: string) => () => {
         router(`/summary/${id}`)
       },
-      accountFormAdd: () => {
+
+      createAccountForm: () => {
         router('/account/form')
       },
-      accountFormEdit: (id: string) => () => {
+      modifyAccountForm: (id: string) => () => {
         router(`/account/form/${id}`)
+      },
+
+      // category
+      category: () => {
+        router('/category')
+      },
+      createCategory: () => {
+        router('/category/form')
+      },
+      modifyCategory: () => {
+        router('/category/form')
       },
     },
   }
