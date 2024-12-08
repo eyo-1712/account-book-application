@@ -29,6 +29,8 @@ export const useRouter = () => {
       fixedId: (id: string) => () => router(`/fixed/${id}`),
       createFixed: () => router('/fixed/form'),
       modifyFixed: (id: string) => () => router(`/fixed/form/${id}`),
+
+      analysis: () => router('/analysis'),
     },
   }
 }

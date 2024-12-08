@@ -3,6 +3,7 @@ import { AccountCalendarPage as accountCalendarPage } from './account-book/ui/ca
 import { AccountFormPage as accountFormPage } from './account-book/ui/form'
 import { SummaryDetailPage as summaryDetailPage } from './account-book/ui/summary-detail'
 import { SummaryMonthPage as summaryMonthPage } from './account-book/ui/summary-month'
+import { AnalysisPage as analysisPage } from './analysis/ui'
 import { LoginPage as loginPage } from './auth/ui/login'
 import { CategoryDetailPage as categoryDetailPage } from './category/ui/detail'
 import { CategoryFormPage as categoryFormPage } from './category/ui/form'
@@ -28,3 +29,4 @@ export const CategoryDetailPage = withAuth(categoryDetailPage)
 export const FixedListPage = withAuth(fixedListPage)
 export const FixedDetailPage = withAuth(fixedDetailPage)
 export const FixedFormPage = withAuth(fixedFormPage)
+export const AnalysisPage = withAuth(analysisPage)
