@@ -15,6 +15,8 @@ export const SummaryDetailPage = () => (
   <Container>
     <AppBar title="상세 내역" leading={<Back />} />
     <Body>
+      <p className="font-bold text">2024. 12. 12</p>
+      <br />
       <div className="flex flex-col items-start w-full">
         <p className="text-xs">카테고리 이름</p>
         <p className="text-xl font-bold">{(20000).toLocaleString()} 원</p>
