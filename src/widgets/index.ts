@@ -1,4 +1,5 @@
 export { Calendar } from './calendar/ui'
 export { Category } from './category/ui'
 export { Hamburger } from './hamburger/ui'
+export { Summary } from './summary/ui/card'
 export { SummaryToday } from './summary/ui/today'

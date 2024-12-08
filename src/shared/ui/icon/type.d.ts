@@ -9,8 +9,8 @@ export type IconType =
   | 'category'
   | 'create-category'
   | 'menu'
+  | 'remove-form'
 
 export interface IProps {
   type: IconType
-  color?: string
 }

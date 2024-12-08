@@ -4,6 +4,7 @@ import { AccountFormPage as accountFormPage } from './account-book/ui/form'
 import { SummaryDetailPage as summaryDetailPage } from './account-book/ui/summary-detail'
 import { SummaryMonthPage as summaryMonthPage } from './account-book/ui/summary-month'
 import { LoginPage as loginPage } from './auth/ui/login'
+import { CategoryFormPage as categoryFormPage } from './category/ui/form'
 import { CategoryListPage as categoryListPage } from './category/ui/list'
 
 // common
@@ -18,3 +19,4 @@ export const AccountFormPage = withAuth(accountFormPage)
 export const SummaryDetailPage = withAuth(summaryDetailPage)
 export const SummaryMonthPage = withAuth(summaryMonthPage)
 export const CategoryListPage = withAuth(categoryListPage)
+export const CategoryFormPage = withAuth(categoryFormPage)

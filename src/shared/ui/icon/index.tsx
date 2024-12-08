@@ -7,6 +7,7 @@ import {
   LeftOutlined,
   LineChartOutlined,
   MenuOutlined,
+  MinusSquareOutlined,
   RightOutlined,
 } from '@ant-design/icons'
 import { IProps } from './type'
@@ -23,9 +24,10 @@ export const Icon = (props: IProps) => {
     category: FolderOpenOutlined,
     'create-category': FolderAddOutlined,
     menu: MenuOutlined,
+    'remove-form': MinusSquareOutlined,
   }[props.type]
 
-  return <AntD color={props.color} />
+  return <AntD />
 }
 
 /**
