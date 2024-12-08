@@ -21,7 +21,7 @@ export const Icon = (props: IProps) => {
     calendar: CalendarOutlined,
     card: CreditCardOutlined,
     category: FolderOpenOutlined,
-    'category-add': FolderAddOutlined,
+    'create-category': FolderAddOutlined,
     menu: MenuOutlined,
   }[props.type]
 

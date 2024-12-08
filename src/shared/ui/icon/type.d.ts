@@ -7,7 +7,7 @@ export type IconType =
   | 'calendar'
   | 'card'
   | 'category'
-  | 'category-add'
+  | 'create-category'
   | 'menu'
 
 export interface IProps {
