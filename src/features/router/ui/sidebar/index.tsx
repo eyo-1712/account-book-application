@@ -16,7 +16,7 @@ export const SideBar = (props: IProps) => {
         `${props.open ? 'left-0' : 'left-[-10rem]'}`,
       ].join(' ')}
     >
-      <ul className="flex flex-col gap-4">
+      <ul className="flex flex-col gap-4 text-sm">
         <li>
           <button
             type="button"
@@ -66,7 +66,7 @@ export const SideBar = (props: IProps) => {
             지출 분석
           </button>
         </li>
-        <li className="absolute bottom-4">
+        <li className="absolute bottom-4 font-bold">
           <button type="button" onClick={() => dispatch(logOut())}>
             로그아웃
           </button>
