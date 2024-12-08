@@ -23,16 +23,15 @@ export const Summary = (props: IProps) => {
       /> */}
 
       <div className="flex flex-col items-start flex-1">
-        {props.price > 0 ? (
-          <p className="font-bold text-blue-600">
-            {props.price.toLocaleString()} 원
-          </p>
-        ) : (
-          <p className="font-bold text-gray-600">
-            {props.price.toLocaleString()} 원
-          </p>
-        )}
-        <p className="text-gray-600">{props.reason}</p>
+        <p className="text-gray-600 text-sm">{props.reason}</p>
+        <p
+          className={[
+            'font-bold text-lg',
+            `${props.price > 0 ? 'text-blue-600' : 'text-gray-600'}`,
+          ].join(' ')}
+        >
+          {props.price.toLocaleString()} 원
+        </p>
       </div>
     </button>
   )
