@@ -1,15 +1,12 @@
 import { useRouter } from 'shared/lib'
+import { Button } from 'shared/ui'
 
 export const CreateCategory = () => {
   const { nav } = useRouter()
 
   return (
-    <button
-      type="button"
-      onClick={nav.createCategory}
-      className="font-bold text-blue-600"
-    >
+    <Button color="blue" type="button" onClick={nav.createCategory}>
       추가
-    </button>
+    </Button>
   )
 }

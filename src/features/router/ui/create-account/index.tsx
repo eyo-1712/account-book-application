@@ -1,15 +1,12 @@
 import { useRouter } from 'shared/lib'
+import { Button } from 'shared/ui'
 
 export const CreateAccount = () => {
   const { nav } = useRouter()
 
   return (
-    <button
-      type="button"
-      onClick={nav.createAccountForm}
-      className="font-bold text-blue-600"
-    >
+    <Button color="blue" type="button" onClick={nav.createAccountForm}>
       추가
-    </button>
+    </Button>
   )
 }

@@ -1,15 +1,12 @@
 import { useRouter } from 'shared/lib'
+import { Button } from 'shared/ui'
 
 export const CreateFixed = () => {
   const { nav } = useRouter()
 
   return (
-    <button
-      type="button"
-      onClick={nav.fixedId('123')}
-      className="font-bold text-blue-600"
-    >
+    <Button color="blue" type="button" onClick={nav.fixedId('123')}>
       추가
-    </button>
+    </Button>
   )
 }

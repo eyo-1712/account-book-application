@@ -1,5 +1,5 @@
 import { Back } from 'features/router'
-import { AppBar, Body, Container } from 'shared/ui'
+import { AppBar, Body, Button, Container } from 'shared/ui'
 import { SummaryToday } from 'widgets'
 
 export const CategoryDetailPage = () => (
@@ -7,11 +7,7 @@ export const CategoryDetailPage = () => (
     <AppBar
       title="카테고리 이름"
       leading={<Back />}
-      actions={
-        <button type="button" className="font-bold text-red-600">
-          삭제
-        </button>
-      }
+      actions={<Button color="red">삭제</Button>}
     />
     <Body>
       <p className="w-full text-gray-600">이번달 지출 내역</p>

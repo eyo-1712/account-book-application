@@ -1,5 +1,5 @@
 import { Back } from 'features/router'
-import { AppBar, Body, Container, Icon } from 'shared/ui'
+import { AppBar, Body, Button, Container, Icon } from 'shared/ui'
 
 export const CategoryFormPage = () => (
   <Container>
@@ -7,13 +7,13 @@ export const CategoryFormPage = () => (
       title="카테고리 추가"
       leading={<Back />}
       actions={
-        <button
+        <Button
+          color="blue"
           type="submit"
           // disabled={!zForm.safeParse(value).success}
-          className="font-bold text-blue-600 disabled:text-gray-300"
         >
           추가
-        </button>
+        </Button>
       }
     />
     <Body>

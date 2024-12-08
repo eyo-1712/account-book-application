@@ -1,6 +1,6 @@
 import { Back } from 'features/router'
 import { AccountTypeMapper, IAccountType } from 'shared/lib'
-import { AppBar, Body, Container } from 'shared/ui'
+import { AppBar, Body, Button, Container } from 'shared/ui'
 import { useLogic } from './logic'
 import { zForm } from './validation'
 
@@ -13,13 +13,13 @@ export const AccountFormPage = () => {
         title={`${AccountTypeMapper[value.type as IAccountType]} 내역 추가`}
         leading={<Back />}
         actions={
-          <button
+          <Button
+            color="blue"
             type="submit"
             disabled={!zForm.safeParse(value).success}
-            className="font-bold text-blue-600 disabled:text-gray-300"
           >
             추가
-          </button>
+          </Button>
         }
       />
       <Body>
