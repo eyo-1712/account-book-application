@@ -9,7 +9,7 @@ export const useRouter = () => {
         router(-1)
       },
       login: () => {
-        router('/login')
+        router('/login', { replace: true })
       },
 
       calendar: () => {
