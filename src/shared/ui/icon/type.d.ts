@@ -1,4 +1,4 @@
-export type IconType =
+export type TIcon =
   | 'back'
   | 'left'
   | 'right'
@@ -12,5 +12,5 @@ export type IconType =
   | 'remove-form'
 
 export interface IProps {
-  type: IconType
+  type: TIcon
 }
