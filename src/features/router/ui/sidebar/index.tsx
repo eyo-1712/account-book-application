@@ -49,7 +49,7 @@ export const SideBar = (props: IProps) => {
         <li>
           <button
             type="button"
-            onClick={router.nav.calendar}
+            onClick={router.nav.fixed}
             className="flex flex-row items-center gap-2"
           >
             <Icon type="card" />
