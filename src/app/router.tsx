@@ -1,6 +1,7 @@
 import {
   AccountCalendarPage,
   AccountFormPage,
+  CategoryDetailPage,
   CategoryFormPage,
   CategoryListPage,
   LoginPage,
@@ -25,6 +26,7 @@ export const Router = () => (
       <Route path="/account/form/:id" element={<AccountFormPage />} />
 
       <Route path="/category" element={<CategoryListPage />} />
+      <Route path="/category/:id" element={<CategoryDetailPage />} />
       <Route path="/category/form" element={<CategoryFormPage />} />
 
       {/* common */}

@@ -34,8 +34,8 @@ export const useRouter = () => {
       category: () => {
         router('/category', { replace: true })
       },
-      categoryId: () => {
-        router('/category/123', { replace: true })
+      categoryId: (id: string) => () => {
+        router(`/category/${id}`, { replace: true })
       },
       createCategory: () => {
         router('/category/form')

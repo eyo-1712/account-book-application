@@ -30,7 +30,7 @@ export const CategoryFormPage = () => (
         </div>
         <button
           type="button"
-          className="flex flex-row items-center justify-center gap-4 py-2 border rounded"
+          className="flex flex-row items-center justify-center py-2 border rounded gap-4"
         >
           <Icon type="create-category" />
           <p>카테고리 추가하기</p>
