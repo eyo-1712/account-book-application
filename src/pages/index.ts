@@ -7,6 +7,7 @@ import { LoginPage as loginPage } from './auth/ui/login'
 import { CategoryDetailPage as categoryDetailPage } from './category/ui/detail'
 import { CategoryFormPage as categoryFormPage } from './category/ui/form'
 import { CategoryListPage as categoryListPage } from './category/ui/list'
+import { FixedDetailPage as fixedDetailPage } from './fixed/detail'
 import { FixedListPage as fixedListPage } from './fixed/list'
 
 // common
@@ -24,3 +25,4 @@ export const CategoryListPage = withAuth(categoryListPage)
 export const CategoryFormPage = withAuth(categoryFormPage)
 export const CategoryDetailPage = withAuth(categoryDetailPage)
 export const FixedListPage = withAuth(fixedListPage)
+export const FixedDetailPage = withAuth(fixedDetailPage)

@@ -4,6 +4,7 @@ import {
   CategoryDetailPage,
   CategoryFormPage,
   CategoryListPage,
+  FixedDetailPage,
   FixedListPage,
   LoginPage,
   NotFoundPage,
@@ -31,6 +32,7 @@ export const Router = () => (
       <Route path="/category/form" element={<CategoryFormPage />} />
 
       <Route path="/fixed" element={<FixedListPage />} />
+      <Route path="/fixed/:id" element={<FixedDetailPage />} />
 
       {/* common */}
       <Route path="*" element={<NotFoundPage />} />
