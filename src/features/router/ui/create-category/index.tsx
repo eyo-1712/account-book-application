@@ -6,7 +6,7 @@ export const CreateCategory = () => {
   return (
     <button
       type="button"
-      onClick={nav.createAccountForm}
+      onClick={nav.createCategory}
       className="font-bold text-blue-600"
     >
       추가
