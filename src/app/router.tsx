@@ -5,6 +5,7 @@ import {
   CategoryFormPage,
   CategoryListPage,
   FixedDetailPage,
+  FixedFormPage,
   FixedListPage,
   LoginPage,
   NotFoundPage,
@@ -23,15 +24,15 @@ export const Router = () => (
       <Route path="/" element={<AccountCalendarPage />} />
       <Route path="/summary" element={<SummaryMonthPage />} />
       <Route path="/summary/:id" element={<SummaryDetailPage />} />
-
       <Route path="/account/form" element={<AccountFormPage />} />
       <Route path="/account/form/:id" element={<AccountFormPage />} />
 
       <Route path="/category" element={<CategoryListPage />} />
-      <Route path="/category/:id" element={<CategoryDetailPage />} />
       <Route path="/category/form" element={<CategoryFormPage />} />
+      <Route path="/category/:id" element={<CategoryDetailPage />} />
 
       <Route path="/fixed" element={<FixedListPage />} />
+      <Route path="/fixed/form" element={<FixedFormPage />} />
       <Route path="/fixed/:id" element={<FixedDetailPage />} />
 
       {/* common */}
