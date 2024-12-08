@@ -13,7 +13,7 @@ export const useRouter = () => {
       },
 
       calendar: () => {
-        router('/')
+        router('/', { replace: true })
       },
 
       summaryMonth: () => () => {
@@ -32,7 +32,7 @@ export const useRouter = () => {
 
       // category
       category: () => {
-        router('/category')
+        router('/category', { replace: true })
       },
       createCategory: () => {
         router('/category/form')
