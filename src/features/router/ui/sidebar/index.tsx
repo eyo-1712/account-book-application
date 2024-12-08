@@ -27,7 +27,11 @@ export const SideBar = (props: IProps) => {
           </button>
         </li>
         <li>
-          <button type="button" className="flex flex-row items-center gap-2">
+          <button
+            type="button"
+            className="flex flex-row items-center gap-2"
+            onClick={router.nav.calendar}
+          >
             <Icon type="calendar" />
             가계부
           </button>
@@ -35,7 +39,7 @@ export const SideBar = (props: IProps) => {
         <li>
           <button
             type="button"
-            onClick={router.nav.calendar}
+            onClick={router.nav.category}
             className="flex flex-row items-center gap-2"
           >
             <Icon type="category" />
@@ -53,7 +57,11 @@ export const SideBar = (props: IProps) => {
           </button>
         </li>
         <li>
-          <button type="button" className="flex flex-row items-center gap-2">
+          <button
+            type="button"
+            onClick={router.nav.calendar}
+            className="flex flex-row items-center gap-2"
+          >
             <Icon type="chart" />
             지출 분석
           </button>
