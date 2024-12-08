@@ -3,7 +3,7 @@ import { SummaryDetailPage } from '.'
 export default {
   component: SummaryDetailPage,
   title: 'SummaryDetailPage',
-  tags: ['Pages'],
+  tags: ['Pages', 'Summary', 'Account'],
 }
 
 export const Default = {}

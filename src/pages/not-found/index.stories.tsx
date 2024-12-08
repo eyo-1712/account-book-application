@@ -3,7 +3,7 @@ import { NotFoundPage } from '.'
 export default {
   component: NotFoundPage,
   title: 'NotFoundPage',
-  tags: ['Pages'],
+  tags: ['Pages', 'Router'],
 }
 
 export const Default = {}

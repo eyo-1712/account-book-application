@@ -3,7 +3,7 @@ import { CreateCategory } from '.'
 export default {
   component: CreateCategory,
   title: 'CreateCategory',
-  tags: ['Features'],
+  tags: ['Features', 'Router', 'Category'],
 }
 
 export const Default = {}

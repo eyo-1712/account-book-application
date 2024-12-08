@@ -3,7 +3,7 @@ import { CategoryListPage } from '.'
 export default {
   component: CategoryListPage,
   title: 'CategoryListPage',
-  tags: ['Pages'],
+  tags: ['Pages', 'Category'],
 }
 
 export const Default = {}
