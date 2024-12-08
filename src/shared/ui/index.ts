@@ -1,4 +1,5 @@
 export { AppBar } from './appbar'
 export { Body } from './body'
+export { Button } from './button'
 export { Container } from './container'
 export { Icon } from './icon'

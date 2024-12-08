@@ -1,7 +1,16 @@
-export const Button = ({
-  children,
-  ...props
-}: React.ButtonHTMLAttributes<HTMLButtonElement>) => (
-  // eslint-disable-next-line react/button-has-type, react/jsx-props-no-spreading
-  <button {...props}>{children}</button>
+import { BUTTON_COLOR } from './constant'
+import { IProps } from './type'
+
+export const Button = ({ children, ...props }: IProps) => (
+  // eslint-disable-next-line react/button-has-type
+  <button
+    className={[
+      'font-bold disabled:text-gray-300',
+      `${BUTTON_COLOR[props.color]}`,
+    ].join(' ')}
+    // eslint-disable-next-line react/jsx-props-no-spreading
+    {...props}
+  >
+    {children}
+  </button>
 )
