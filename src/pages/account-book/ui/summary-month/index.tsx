@@ -1,4 +1,4 @@
-import { BackButton, CreateAccountDetail } from 'features/router'
+import { BackButton, CreateAccount } from 'features/router'
 import { AppBar, Body, Container } from 'shared/ui'
 import { SummaryToday } from 'widgets'
 
@@ -7,7 +7,7 @@ export const SummaryMonthPage = () => (
     <AppBar
       title="2024.11"
       leading={<BackButton />}
-      actions={<CreateAccountDetail />}
+      actions={<CreateAccount />}
     />
     <Body>
       <div className="flex flex-row w-full gap-4">

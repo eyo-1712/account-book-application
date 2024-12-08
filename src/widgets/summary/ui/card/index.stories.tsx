@@ -8,7 +8,6 @@ export default {
 
 export const Plus = {
   args: {
-    src: 'https://picsum.photos/200',
     price: 20000,
     reason: 'snack24',
   },
@@ -16,7 +15,6 @@ export const Plus = {
 
 export const Minus = {
   args: {
-    src: 'https://picsum.photos/200',
     price: -20000,
     reason: 'snack24',
   },

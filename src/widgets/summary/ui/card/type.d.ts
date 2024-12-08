@@ -1,5 +1,5 @@
 export interface IProps {
-  src: string
+  // src: string
   price: number
   reason: string
 }

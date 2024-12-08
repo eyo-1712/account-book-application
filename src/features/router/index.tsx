@@ -1,4 +1,5 @@
 export { BackButton } from './ui/back'
-export { CreateAccountDetail } from './ui/create-account-detail'
+export { CreateAccount } from './ui/create-account'
 export { CreateCategory } from './ui/create-category'
+export { CreateFixed } from './ui/create-fixed'
 export { SideBar } from './ui/sidebar'
