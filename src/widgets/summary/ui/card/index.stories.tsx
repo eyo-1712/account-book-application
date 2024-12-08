@@ -1,9 +1,9 @@
-import { Receipt } from '.'
+import { Summary } from '.'
 
 export default {
-  component: Receipt,
-  title: 'Receipt',
-  tags: ['Widgets', 'Receipt', 'Account'],
+  component: Summary,
+  title: 'Summary',
+  tags: ['Widgets', 'Summary', 'Account'],
 }
 
 export const Test = {

@@ -1,7 +1,7 @@
 import { useRouter } from 'shared/lib'
 import { IProps } from './type'
 
-export const Receipt = (props: IProps) => {
+export const Summary = (props: IProps) => {
   const { nav } = useRouter()
 
   return (

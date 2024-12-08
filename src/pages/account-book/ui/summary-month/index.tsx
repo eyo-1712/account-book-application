@@ -1,6 +1,6 @@
 import { BackButton, CreateAccountDetail } from 'features/router'
 import { AppBar, Body, Container } from 'shared/ui'
-import { ReceiptToday } from 'widgets'
+import { SummaryToday } from 'widgets'
 
 export const SummaryMonthPage = () => (
   <Container>
@@ -20,9 +20,9 @@ export const SummaryMonthPage = () => (
       </div>
       <br />
       <div className="flex flex-col w-full gap-8">
-        <ReceiptToday date={new Date()} />
-        <ReceiptToday date={new Date()} />
-        <ReceiptToday date={new Date()} />
+        <SummaryToday date={new Date()} />
+        <SummaryToday date={new Date()} />
+        <SummaryToday date={new Date()} />
       </div>
     </Body>
   </Container>
