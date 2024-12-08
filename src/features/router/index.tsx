@@ -1,3 +1,3 @@
-export { AddAccountDetail } from './ui/add-account-detail'
 export { BackButton } from './ui/back'
+export { CreateAccountDetail } from './ui/create-account-detail'
 export { SideBar } from './ui/sidebar'
