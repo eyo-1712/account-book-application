@@ -9,11 +9,11 @@ export const useRouter = () => {
         router(-1)
       },
       login: () => {
-        router('/login', { replace: true })
+        router('/login')
       },
 
       calendar: () => {
-        router('/', { replace: true })
+        router('/')
       },
 
       summaryMonth: () => () => {
@@ -32,10 +32,10 @@ export const useRouter = () => {
 
       // category
       category: () => {
-        router('/category', { replace: true })
+        router('/category')
       },
       categoryId: (id: string) => () => {
-        router(`/category/${id}`, { replace: true })
+        router(`/category/${id}`)
       },
       createCategory: () => {
         router('/category/form')
