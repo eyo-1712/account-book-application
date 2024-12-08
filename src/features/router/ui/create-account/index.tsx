@@ -1,6 +1,6 @@
 import { useRouter } from 'shared/lib'
 
-export const CreateAccountDetail = () => {
+export const CreateAccount = () => {
   const { nav } = useRouter()
 
   return (
