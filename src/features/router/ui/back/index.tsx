@@ -1,7 +1,7 @@
 import { useRouter } from 'shared/lib'
 import { Icon } from 'shared/ui'
 
-export const BackButton = () => {
+export const Back = () => {
   const { nav } = useRouter()
   return (
     <button type="button" onClick={nav.back}>

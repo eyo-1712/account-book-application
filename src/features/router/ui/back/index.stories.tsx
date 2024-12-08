@@ -1,8 +1,8 @@
-import { BackButton } from '.'
+import { Back } from '.'
 
 export default {
-  component: BackButton,
-  title: 'BackButton',
+  component: Back,
+  title: 'Back',
   tags: ['Features', 'Router'],
 }
 

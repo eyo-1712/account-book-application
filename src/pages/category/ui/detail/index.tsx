@@ -1,4 +1,4 @@
-import { BackButton } from 'features/router'
+import { Back } from 'features/router'
 import { AppBar, Body, Container } from 'shared/ui'
 import { SummaryToday } from 'widgets'
 
@@ -6,7 +6,7 @@ export const CategoryDetailPage = () => (
   <Container>
     <AppBar
       title="카테고리 이름"
-      leading={<BackButton />}
+      leading={<Back />}
       actions={
         <button type="button" className="font-bold text-red-600">
           삭제

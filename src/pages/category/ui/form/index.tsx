@@ -1,11 +1,11 @@
-import { BackButton } from 'features/router'
+import { Back } from 'features/router'
 import { AppBar, Body, Container, Icon } from 'shared/ui'
 
 export const CategoryFormPage = () => (
   <Container>
     <AppBar
       title="카테고리 추가"
-      leading={<BackButton />}
+      leading={<Back />}
       actions={
         <button
           type="submit"

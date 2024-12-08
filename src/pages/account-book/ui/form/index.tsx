@@ -1,4 +1,4 @@
-import { BackButton } from 'features/router'
+import { Back } from 'features/router'
 import { AccountTypeMapper, IAccountType } from 'shared/lib'
 import { AppBar, Body, Container } from 'shared/ui'
 import { useLogic } from './logic'
@@ -11,7 +11,7 @@ export const AccountFormPage = () => {
     <Container>
       <AppBar
         title={`${AccountTypeMapper[value.type as IAccountType]} 내역 추가`}
-        leading={<BackButton />}
+        leading={<Back />}
         actions={
           <button
             type="submit"
