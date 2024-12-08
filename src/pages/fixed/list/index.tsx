@@ -5,7 +5,7 @@ import { FixedCard, Hamburger } from 'widgets'
 export const FixedListPage = () => (
   <Container>
     <AppBar
-      title="고정지출 내역"
+      title="고정지출 목록"
       leading={<Hamburger />}
       actions={<CreateFixed />}
     />
