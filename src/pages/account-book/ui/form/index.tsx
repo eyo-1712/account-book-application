@@ -38,7 +38,7 @@ export const AccountFormPage = () => {
                 />
                 <button
                   type="button"
-                  className={`w-full font-bold ${value.type === 'expenditure' ? 'text-blue-600' : 'text-gray-300'}`}
+                  className={`w-full font-bold ${value.type === 'expenditure' ? 'text-blue-600' : 'text-gray-400'}`}
                   onClick={handler.type('expenditure')}
                 >
                   지출
@@ -58,7 +58,7 @@ export const AccountFormPage = () => {
                 />
                 <button
                   type="button"
-                  className={`w-full font-bold ${value.type === 'income' ? 'text-blue-600' : 'text-gray-300'}`}
+                  className={`w-full font-bold ${value.type === 'income' ? 'text-blue-600' : 'text-gray-400'}`}
                   onClick={handler.type('income')}
                 >
                   수입

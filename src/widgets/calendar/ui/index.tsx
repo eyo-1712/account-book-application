@@ -13,7 +13,7 @@ const CalendarBox = (props: {
 }) => (
   <button
     type="button"
-    className="flex flex-col items-center w-[14.28%] py-2 disabled:text-gray-300"
+    className="flex flex-col items-center w-[14.28%] py-2 disabled:text-gray-400"
     onClick={props.onClick}
     disabled={props.disabled}
   >
@@ -39,7 +39,7 @@ export const Calendar = () => {
           type="button"
           onClick={handler.next}
           disabled={value.hasNext}
-          className="disabled:text-gray-300"
+          className="disabled:text-gray-400"
         >
           <Icon type="right" />
         </button>
@@ -48,7 +48,7 @@ export const Calendar = () => {
       <div className="flex flex-row items-center w-full justify-evenly">
         {DAY.map((day) => (
           <CalendarBox key={day}>
-            <p className="text-gray-300">{day}</p>
+            <p className="text-gray-400">{day}</p>
           </CalendarBox>
         ))}
       </div>
@@ -75,7 +75,7 @@ export const Calendar = () => {
               {!isFuture && (
                 <div className="flex flex-col items-center justify-center">
                   <p className="text-xs text-blue-600">{1}</p>
-                  <p className="text-xs text-gray-300">{1}</p>
+                  <p className="text-xs text-gray-400">{1}</p>
                 </div>
               )}
             </CalendarBox>

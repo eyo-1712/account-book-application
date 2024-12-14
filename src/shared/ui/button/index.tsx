@@ -5,7 +5,7 @@ export const Button = ({ children, color, ...props }: IProps) => (
   // eslint-disable-next-line react/button-has-type
   <button
     className={[
-      'font-bold disabled:text-gray-300',
+      'font-bold disabled:text-gray-400',
       `${BUTTON_COLOR[color]}`,
     ].join(' ')}
     // eslint-disable-next-line react/jsx-props-no-spreading

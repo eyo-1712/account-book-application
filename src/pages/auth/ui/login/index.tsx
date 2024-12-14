@@ -9,7 +9,7 @@ export const LoginPage = () => {
       <AppBar title="로그인" />
       <Body center>
         <p className="text-xl font-bold">나만의 가계부 만들기</p>
-        <p className="text-gray-300">J들 기절</p>
+        <p className="text-gray-400">J들 기절</p>
         <br />
         <img
           src="https://picsum.photos/200"
