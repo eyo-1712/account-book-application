@@ -8,8 +8,8 @@ export const LoginPage = () => {
     <Container>
       <AppBar title="로그인" />
       <Body center>
-        <p className="text-xl font-bold">나만의 가계부 만들기</p>
-        <p className="text-gray-400">J들 기절</p>
+        <p className="font-bold text">나만의 가계부 만들기</p>
+        <p className="text-sm text-gray-400">J들 기절</p>
         <br />
         <img
           src="https://picsum.photos/200"
@@ -18,6 +18,7 @@ export const LoginPage = () => {
         />
         <br />
         <p>SNS로 빠른 시작</p>
+        <br />
         <button type="button" onClick={handler.logIn}>
           {' '}
           구글 로그인
