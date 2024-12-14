@@ -23,7 +23,7 @@ export const Summary = (props: IProps) => {
       /> */}
 
       <div className="flex flex-col items-start flex-1">
-        <p className="text-gray-600 text-sm">{props.reason}</p>
+        <p className="text-sm text-gray-600">{props.reason}</p>
         <p
           className={[
             'font-bold text-lg',

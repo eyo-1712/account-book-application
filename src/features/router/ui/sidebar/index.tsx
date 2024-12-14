@@ -12,7 +12,7 @@ export const SideBar = (props: IProps) => {
   const Component = (
     <aside
       className={[
-        'w-40 h-screen bg-white px-4 z-10 fixed top-0 transition-all duration-300',
+        'w-40 h-screen bg-white px-4 fixed top-0 transition-all z-50 duration-300',
         `${props.open ? 'left-0' : 'left-[-10rem]'}`,
       ].join(' ')}
     >
@@ -66,7 +66,7 @@ export const SideBar = (props: IProps) => {
             지출 분석
           </button>
         </li>
-        <li className="absolute bottom-4 font-bold">
+        <li className="absolute font-bold bottom-4">
           <button type="button" onClick={() => dispatch(logOut())}>
             로그아웃
           </button>
