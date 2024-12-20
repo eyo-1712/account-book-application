@@ -1,5 +1,6 @@
 import { Back } from 'features/router'
-import { AppBar, Body, Button, Container } from 'shared/ui'
+import { ModifyFixed } from 'features/router/ui/modify-fixed'
+import { AppBar, Body, Button, ButtonGroup, Container } from 'shared/ui'
 import { SummaryToday } from 'widgets'
 
 export const FixedDetailPage = () => (
@@ -7,7 +8,12 @@ export const FixedDetailPage = () => (
     <AppBar
       title="고정지출명"
       leading={<Back />}
-      actions={<Button color="blue">편집</Button>}
+      actions={
+        <ButtonGroup>
+          <ModifyFixed id="123123" />
+          <Button color="red">삭제</Button>
+        </ButtonGroup>
+      }
     />
     <Body>
       <p className="font-bold">12일 마다 반복</p>

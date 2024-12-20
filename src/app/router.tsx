@@ -36,6 +36,7 @@ export const Router = () => (
       <Route path="/fixed" element={<FixedListPage />} />
       <Route path="/fixed/:id" element={<FixedDetailPage />} />
       <Route path="/fixed/form" element={<FixedFormPage />} />
+      <Route path="/fixed/form/:id" element={<FixedFormPage />} />
 
       <Route path="/analysis" element={<AnalysisPage />} />
 
