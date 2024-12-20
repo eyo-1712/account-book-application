@@ -1,5 +1,4 @@
 import { Back } from 'features/router'
-import { AccountTypeMapper, IAccountType } from 'shared/lib'
 import { AppBar, Body, Button, Container } from 'shared/ui'
 import { useLogic } from './logic'
 import { zForm } from './validation'
@@ -10,7 +9,7 @@ export const AccountFormPage = () => {
   return (
     <Container>
       <AppBar
-        title={`${AccountTypeMapper[value.type as IAccountType]} 내역 추가`}
+        title="거래 내역 추가"
         leading={<Back />}
         actions={
           <Button
@@ -23,8 +22,8 @@ export const AccountFormPage = () => {
         }
       />
       <Body>
-        <form className="flex flex-col w-full gap-4">
-          <div className="flex flex-row justify-evenly">
+        <form className="flex flex-col w-full gap-6 text-lg">
+          <div className="flex flex-row p-2 bg-gray-100 rounded-lg justify-evenly">
             <div className="flex flex-row justify-center flex-1 gap-4">
               <label htmlFor="type" className="w-full">
                 <input
@@ -39,8 +38,8 @@ export const AccountFormPage = () => {
                 <button
                   type="button"
                   className={[
-                    `w-full font-bold`,
-                    `${value.type !== 'expenditure' && 'text-gray-400'}`,
+                    `w-full font-bold py-2`,
+                    `${value.type === 'expenditure' ? 'bg-white rounded-lg' : 'text-gray-400'}`,
                   ].join(' ')}
                   onClick={handler.type('expenditure')}
                 >
@@ -62,8 +61,8 @@ export const AccountFormPage = () => {
                 <button
                   type="button"
                   className={[
-                    `w-full font-bold`,
-                    `${value.type !== 'income' && 'text-gray-400'}`,
+                    `w-full font-bold py-2`,
+                    `${value.type === 'income' ? 'bg-white rounded-lg' : 'text-gray-400'}`,
                   ].join(' ')}
                   onClick={handler.type('income')}
                 >
