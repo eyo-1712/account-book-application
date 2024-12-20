@@ -1,5 +1,6 @@
 import { Back } from 'features/router'
-import { AppBar, Body, Button, Container } from 'shared/ui'
+import { ModifyCategory } from 'features/router/ui/modify-category'
+import { AppBar, Body, Button, ButtonGroup, Container } from 'shared/ui'
 import { SummaryToday } from 'widgets'
 
 export const CategoryDetailPage = () => (
@@ -7,7 +8,12 @@ export const CategoryDetailPage = () => (
     <AppBar
       title="카테고리 이름"
       leading={<Back />}
-      actions={<Button color="red">삭제</Button>}
+      actions={
+        <ButtonGroup>
+          <ModifyCategory id="123113" />
+          <Button color="red">삭제</Button>
+        </ButtonGroup>
+      }
     />
     <Body>
       <p className="w-full text-gray-600">이번달 지출 내역</p>

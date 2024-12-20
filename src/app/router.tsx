@@ -29,12 +29,13 @@ export const Router = () => (
       <Route path="/account/form/:id" element={<AccountFormPage />} />
 
       <Route path="/category" element={<CategoryListPage />} />
-      <Route path="/category/form" element={<CategoryFormPage />} />
       <Route path="/category/:id" element={<CategoryDetailPage />} />
+      <Route path="/category/form" element={<CategoryFormPage />} />
+      <Route path="/category/form/:id" element={<CategoryFormPage />} />
 
       <Route path="/fixed" element={<FixedListPage />} />
-      <Route path="/fixed/form" element={<FixedFormPage />} />
       <Route path="/fixed/:id" element={<FixedDetailPage />} />
+      <Route path="/fixed/form" element={<FixedFormPage />} />
 
       <Route path="/analysis" element={<AnalysisPage />} />
 

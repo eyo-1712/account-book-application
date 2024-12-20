@@ -1,6 +1,6 @@
 import { Back } from 'features/router'
 import { ModifySummary } from 'features/router/ui/modify-summary'
-import { AppBar, Body, Button, Container } from 'shared/ui'
+import { AppBar, Body, Button, ButtonGroup, Container } from 'shared/ui'
 
 const DetailButton = (props: { title: string; content: string }) => (
   <button
@@ -18,12 +18,12 @@ export const SummaryDetailPage = () => (
       title="상세 내역"
       leading={<Back />}
       actions={
-        <div className="flex flex-row gap-4">
+        <ButtonGroup>
           <ModifySummary id="123123" />
           <Button color="red" type="button">
             삭제
           </Button>
-        </div>
+        </ButtonGroup>
       }
     />
     <Body>

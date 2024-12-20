@@ -22,7 +22,7 @@ export const useRouter = () => {
       category: () => router('/category'),
       categoryId: (id: string) => () => router(`/category/${id}`),
       createCategory: () => router('/category/form'),
-      modifyCategory: () => router('/category/form'),
+      modifyCategory: (id: string) => () => router(`/category/form/${id}`),
 
       // fixed
       fixed: () => router('/fixed'),
