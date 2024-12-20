@@ -1,5 +1,6 @@
 import { Back } from 'features/router'
-import { AppBar, Body, Container } from 'shared/ui'
+import { ModifySummary } from 'features/router/ui/modify-summary'
+import { AppBar, Body, Button, Container } from 'shared/ui'
 
 const DetailButton = (props: { title: string; content: string }) => (
   <button
@@ -13,7 +14,18 @@ const DetailButton = (props: { title: string; content: string }) => (
 
 export const SummaryDetailPage = () => (
   <Container>
-    <AppBar title="상세 내역" leading={<Back />} />
+    <AppBar
+      title="상세 내역"
+      leading={<Back />}
+      actions={
+        <div className="flex flex-row gap-4">
+          <ModifySummary id="123123" />
+          <Button color="red" type="button">
+            삭제
+          </Button>
+        </div>
+      }
+    />
     <Body>
       <p className="font-bold text">2024. 12. 12</p>
       <br />

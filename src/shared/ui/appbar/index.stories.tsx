@@ -1,4 +1,5 @@
 import { AppBar } from '.'
+import { Button } from '../button'
 
 export default {
   component: AppBar,
@@ -27,6 +28,6 @@ export const All = {
   args: {
     title: <p>APPBAR TITLE TEST</p>,
     leading: <p>Leading</p>,
-    actions: <p>Actions</p>,
+    actions: <Button color="red" title="삭제" />,
   },
 }
