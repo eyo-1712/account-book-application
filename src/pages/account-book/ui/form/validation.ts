@@ -3,7 +3,7 @@ import { z } from 'zod'
 export const zForm = z.object({
   type: z.string(),
   money: z.number(),
-  category: z.string().min(1),
+  category: z.string().trim().min(1),
   datetime: z
     .string()
     .regex(
