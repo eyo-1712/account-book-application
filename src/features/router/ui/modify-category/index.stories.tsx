@@ -6,4 +6,6 @@ export default {
   tags: ['Features', 'Router', 'Category'],
 }
 
-export const Default = {}
+export const Default = {
+  args: { id: '1' },
+}

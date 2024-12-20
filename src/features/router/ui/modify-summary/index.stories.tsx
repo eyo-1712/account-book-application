@@ -2,8 +2,10 @@ import { ModifySummary } from '.'
 
 export default {
   component: ModifySummary,
-  title: 'ModifyCategory',
+  title: 'ModifySummary',
   tags: ['Features', 'Router', 'Summary'],
 }
 
-export const Default = {}
+export const Default = {
+  args: { id: '1' },
+}
