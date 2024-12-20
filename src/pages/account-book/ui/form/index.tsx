@@ -40,8 +40,8 @@ export const AccountFormPage = () => {
                   type="button"
                   className={[
                     `w-full font-bold`,
-                    `${value.type === 'expenditure' ? 'text-blue-600' : 'text-gray-400'}`,
-                  ].join()}
+                    `${value.type !== 'expenditure' && 'text-gray-400'}`,
+                  ].join(' ')}
                   onClick={handler.type('expenditure')}
                 >
                   지출
@@ -63,8 +63,8 @@ export const AccountFormPage = () => {
                   type="button"
                   className={[
                     `w-full font-bold`,
-                    `${value.type === 'income' ? 'text-blue-600' : 'text-gray-400'}`,
-                  ].join()}
+                    `${value.type !== 'income' && 'text-gray-400'}`,
+                  ].join(' ')}
                   onClick={handler.type('income')}
                 >
                   수입
@@ -72,7 +72,6 @@ export const AccountFormPage = () => {
               </label>
             </div>
           </div>
-          <br />
           <input
             type="datetime-local"
             className="w-full py-1 border border-t-0 focus:outline-none border-b-gray-300 border-x-0 focus:border-b-gray-600"
