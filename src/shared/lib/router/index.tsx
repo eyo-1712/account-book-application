@@ -17,14 +17,14 @@ export const useRouter = () => {
       calendar: routing('/'),
       summaryMonth: routing('/summary'),
       summaryId: (id: string) => routing(`/summary/${id}`),
-      createSummaryForm: routing('/summary/form'),
-      modifySummaryForm: (id: string) => routing(`/summary/form/${id}`),
+      createSummary: routing('/summary/form'),
+      modifySummary: (id: string) => routing(`/summary/form/${id}`),
 
       // account
       account: routing('/account'),
       accountId: (id: string) => routing(`/account/${id}`),
-      createAccountForm: routing('/account/form'),
-      modifyAccountForm: (id: string) => routing(`/account/form/${id}`),
+      createAccount: routing('/account/form'),
+      modifyAccount: (id: string) => routing(`/account/form/${id}`),
 
       // category
       category: routing('/category'),
