@@ -1,5 +1,5 @@
 import { Back } from 'features/router'
-import { AppBar, Body, Button, Container, Icon } from 'shared/ui'
+import { AppBar, Body, Button, Container, Icon, Input } from 'shared/ui'
 import { useLogic } from './logic'
 import { zForm } from './validation'
 
@@ -35,9 +35,8 @@ export const CategoryFormPage = () => {
               >
                 <Icon type="remove-form" />
               </button>
-              <input
+              <Input
                 type="text"
-                className="w-full py-1 border border-t-0 focus:outline-none border-b-gray-300 border-x-0 focus:border-b-gray-600"
                 placeholder="카테고리 이름을 적어주세요."
                 value={f.category}
                 onChange={handler.category(f.id)}
