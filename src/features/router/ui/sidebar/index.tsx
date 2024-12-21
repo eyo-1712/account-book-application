@@ -52,7 +52,7 @@ export const SideBar = (props: IProps) => {
             카테고리 관리
           </button>
         </li>
-        <li>
+        {/* <li>
           <button
             type="button"
             onClick={router.nav.fixed}
@@ -61,7 +61,7 @@ export const SideBar = (props: IProps) => {
             <Icon type="wallet" />
             고정지출 관리
           </button>
-        </li>
+        </li> */}
         <li>
           <button
             type="button"

@@ -5,9 +5,6 @@ import {
   CategoryDetailPage,
   CategoryFormPage,
   CategoryListPage,
-  FixedDetailPage,
-  FixedFormPage,
-  FixedListPage,
   LoginPage,
   NotFoundPage,
   SummaryDetailPage,
@@ -33,10 +30,10 @@ export const Router = () => (
       <Route path="/category/form" element={<CategoryFormPage />} />
       <Route path="/category/form/:id" element={<CategoryFormPage />} />
 
-      <Route path="/fixed" element={<FixedListPage />} />
+      {/* <Route path="/fixed" element={<FixedListPage />} />
       <Route path="/fixed/:id" element={<FixedDetailPage />} />
       <Route path="/fixed/form" element={<FixedFormPage />} />
-      <Route path="/fixed/form/:id" element={<FixedFormPage />} />
+      <Route path="/fixed/form/:id" element={<FixedFormPage />} /> */}
 
       <Route path="/analysis" element={<AnalysisPage />} />
 

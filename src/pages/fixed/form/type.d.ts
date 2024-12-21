@@ -63,7 +63,7 @@ type T31 =
   | '30'
   | '31'
 
-type TMonth3 = IPeriodData<T31, T31>
+type TM31 = IPeriodData<T31, T31>
 type T30 = Partial<TMonthValue, '31'>
 type TMonth30 = IPeriodData<T30, T30>
 type T29 = Partial<T30, '29', '30'>
