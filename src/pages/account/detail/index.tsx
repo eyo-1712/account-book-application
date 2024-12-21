@@ -7,7 +7,7 @@ export const AccountDetailPage = () => (
   <Container>
     <AppBar title="자산 이름" leading={<Back />} actions={<ModifyAccount />} />
     <Body>
-      <p className="w-full text-gray-600">잔액</p>
+      <p className="w-full text-lg font-bold">잔액</p>
       <p className="w-full text-lg font-bold text-blue-600">300,000 원</p>
       <br />
       <div className="flex flex-col items-start w-full gap-8">
