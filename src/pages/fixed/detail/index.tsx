@@ -1,5 +1,4 @@
-import { Back } from 'features/router'
-import { ModifyFixed } from 'features/router/ui/modify-fixed'
+import { Back, ModifyFixed } from 'features/router'
 import { AppBar, Body, Button, ButtonGroup, Container } from 'shared/ui'
 import { SummaryToday } from 'widgets'
 

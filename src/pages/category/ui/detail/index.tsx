@@ -1,5 +1,4 @@
-import { Back } from 'features/router'
-import { ModifyCategory } from 'features/router/ui/modify-category'
+import { Back, ModifyCategory } from 'features/router'
 import { AppBar, Body, Button, ButtonGroup, Container } from 'shared/ui'
 import { SummaryToday } from 'widgets'
 

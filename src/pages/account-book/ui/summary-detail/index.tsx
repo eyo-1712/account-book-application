@@ -1,5 +1,4 @@
-import { Back } from 'features/router'
-import { ModifySummary } from 'features/router/ui/modify-summary'
+import { Back, ModifySummary } from 'features/router'
 import { AppBar, Body, Button, ButtonGroup, Container } from 'shared/ui'
 
 const DetailButton = (props: { title: string; content: string }) => (
