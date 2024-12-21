@@ -53,7 +53,7 @@ export const Calendar = () => {
         ))}
       </div>
       <div
-        className="flex flex-row flex-wrap w-full  justify-evenly"
+        className="flex flex-row flex-wrap w-full justify-evenly"
         style={{ height: '30rem' }}
       >
         {value.DATE.map((date, index) => {
@@ -68,7 +68,7 @@ export const Calendar = () => {
             <CalendarBox
               // eslint-disable-next-line react/no-array-index-key
               key={index}
-              onClick={nav.summaryMonth()}
+              onClick={nav.summaryMonth}
               disabled={isFuture}
             >
               <p className="text-center">{date}</p>
