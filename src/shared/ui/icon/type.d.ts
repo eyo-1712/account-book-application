@@ -10,6 +10,7 @@ export type TIcon =
   | 'create-category'
   | 'menu'
   | 'remove-form'
+  | 'wallet'
 
 export interface IProps {
   type: TIcon

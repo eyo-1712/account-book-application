@@ -9,6 +9,7 @@ import {
   MenuOutlined,
   MinusSquareOutlined,
   RightOutlined,
+  WalletOutlined,
 } from '@ant-design/icons'
 import { IProps } from './type'
 
@@ -25,6 +26,7 @@ export const Icon = (props: IProps) => {
     'create-category': FolderAddOutlined,
     menu: MenuOutlined,
     'remove-form': MinusSquareOutlined,
+    wallet: WalletOutlined,
   }[props.type]
 
   return <AntD />

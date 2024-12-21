@@ -16,7 +16,7 @@ export const SideBar = (props: IProps) => {
         `${props.open ? 'left-0' : 'left-[-10rem]'}`,
       ].join(' ')}
     >
-      <ul className="flex flex-col text-sm gap-4">
+      <ul className="flex flex-col gap-4 text-sm">
         <li>
           <button
             type="button"
@@ -37,6 +37,12 @@ export const SideBar = (props: IProps) => {
           </button>
         </li>
         <li>
+          <button type="button" className="flex flex-row items-center gap-2">
+            <Icon type="card" />
+            자산 관리
+          </button>
+        </li>
+        <li>
           <button
             type="button"
             onClick={router.nav.category}
@@ -52,7 +58,7 @@ export const SideBar = (props: IProps) => {
             onClick={router.nav.fixed}
             className="flex flex-row items-center gap-2"
           >
-            <Icon type="card" />
+            <Icon type="wallet" />
             고정지출 관리
           </button>
         </li>
