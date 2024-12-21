@@ -3,36 +3,42 @@ import { useNavigate } from 'react-router'
 export const useRouter = () => {
   const router = useNavigate()
 
+  const routing = (name: string) => () => router(name)
+
   return {
     nav: {
       // utils
       back: () => router(-1),
 
       // auth
-      login: () => router('/login'),
+      login: routing('/login'),
 
       // summary
-      calendar: () => router('/'),
-      summaryMonth: () => () => router('/summary'),
-      summaryId: (id: string) => () => router(`/summary/${id}`),
-      createSummaryForm: () => router('/summary/form'),
-      modifySummaryForm: (id: string) => () => router(`/summary/form/${id}`),
+      calendar: routing('/'),
+      summaryMonth: routing('/summary'),
+      summaryId: (id: string) => routing(`/summary/${id}`),
+      createSummaryForm: routing('/summary/form'),
+      modifySummaryForm: (id: string) => routing(`/summary/form/${id}`),
 
-      account: () => router('/account'),
+      // account
+      account: routing('/account'),
+      accountId: (id: string) => routing(`/account/${id}`),
+      createAccountForm: routing('/account/form'),
+      modifyAccountForm: (id: string) => routing(`/account/form/${id}`),
 
       // category
-      category: () => router('/category'),
-      categoryId: (id: string) => () => router(`/category/${id}`),
-      createCategory: () => router('/category/form'),
-      modifyCategory: (id: string) => () => router(`/category/form/${id}`),
+      category: routing('/category'),
+      categoryId: (id: string) => routing(`/category/${id}`),
+      createCategory: routing('/category/form'),
+      modifyCategory: (id: string) => routing(`/category/form/${id}`),
 
       // fixed
-      fixed: () => router('/fixed'),
-      fixedId: (id: string) => () => router(`/fixed/${id}`),
-      createFixed: () => router('/fixed/form'),
-      modifyFixed: (id: string) => () => router(`/fixed/form/${id}`),
+      fixed: routing('/fixed'),
+      fixedId: (id: string) => routing(`/fixed/${id}`),
+      createFixed: routing('/fixed/form'),
+      modifyFixed: (id: string) => routing(`/fixed/form/${id}`),
 
-      analysis: () => router('/analysis'),
+      analysis: routing('/analysis'),
     },
   }
 }
