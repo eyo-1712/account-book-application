@@ -1,4 +1,6 @@
 import {
+  AccountDetailPage,
+  AccountFormPage,
   AccountListPage,
   AnalysisPage,
   CategoryDetailPage,
@@ -27,6 +29,9 @@ export const Router = () => (
       <Route path="/summary/form/:id" element={<SummaryFormPage />} />
 
       <Route path="/account" element={<AccountListPage />} />
+      <Route path="/account/:id" element={<AccountDetailPage />} />
+      <Route path="/account/form" element={<AccountFormPage />} />
+      <Route path="/account/form/:id" element={<AccountFormPage />} />
 
       <Route path="/category" element={<CategoryListPage />} />
       <Route path="/category/:id" element={<CategoryDetailPage />} />

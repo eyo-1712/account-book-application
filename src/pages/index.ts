@@ -1,4 +1,6 @@
 import { withAuth, withNoAuth } from 'features/user'
+import { AccountDetailPage as accountDetailPage } from './account/detail'
+import { AccountFormPage as accountFormPage } from './account/form'
 import { AccountListPage as accountListPage } from './account/list'
 import { AnalysisPage as analysisPage } from './analysis/ui'
 import { LoginPage as loginPage } from './auth/ui/login'
@@ -32,3 +34,5 @@ export const FixedDetailPage = withAuth(fixedDetailPage)
 export const FixedFormPage = withAuth(fixedFormPage)
 export const AnalysisPage = withAuth(analysisPage)
 export const AccountListPage = withAuth(accountListPage)
+export const AccountFormPage = withAuth(accountFormPage)
+export const AccountDetailPage = withAuth(accountDetailPage)
