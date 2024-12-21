@@ -2,8 +2,9 @@ import { z } from 'zod'
 
 export const zForm = z.object({
   type: z.string(),
-  money: z.number(),
+  card: z.string().trim().min(1),
   category: z.string().trim().min(1),
+  money: z.number(),
   datetime: z
     .string()
     .regex(

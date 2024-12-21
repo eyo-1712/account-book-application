@@ -4,6 +4,7 @@ import { IForm } from './type'
 
 const init: IForm = {
   type: 'expenditure',
+  card: '',
   money: '',
   category: '',
   datetime: dayjs().format('YYYY-MM-DDTHH:mm'),
@@ -30,6 +31,9 @@ const reducer = (state: IForm, action: { type: string; value?: any }) => {
     case 'datetime': {
       return { ...state, datetime: action.value }
     }
+    case 'card': {
+      return { ...state, card: action.value }
+    }
     default: {
       return init
     }
@@ -40,6 +44,9 @@ export const useLogic = () => {
   const [state, dispatch] = React.useReducer(reducer, init)
 
   const handleType = (_: string) => () => dispatch({ type: 'type', value: _ })
+  const handleCard: React.ChangeEventHandler<HTMLInputElement> = (e) => {
+    dispatch({ type: 'card', value: e.target.value })
+  }
   const handleMoney: React.ChangeEventHandler<HTMLInputElement> = (e) => {
     dispatch({ type: 'money', value: e.target.value })
   }
@@ -55,6 +62,7 @@ export const useLogic = () => {
     value: { ...state },
     handler: {
       type: handleType,
+      card: handleCard,
       money: handleMoney,
       category: handleCategory,
       datetime: handleDatetime,
