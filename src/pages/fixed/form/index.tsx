@@ -1,5 +1,5 @@
 import { Back } from 'features/router'
-import { AppBar, Body, Button, Container } from 'shared/ui'
+import { AppBar, Body, Button, Container, Form } from 'shared/ui'
 import { PERIOD } from './constant'
 
 export const FixedFormPage = () => (
@@ -10,7 +10,7 @@ export const FixedFormPage = () => (
       actions={<Button color="blue">추가</Button>}
     />
     <Body>
-      <form className="flex flex-col w-full gap-4">
+      <Form>
         <select id="period" className="p-2 border border-gray-400 rounded-md">
           {PERIOD.map((p) => (
             <option
@@ -22,7 +22,7 @@ export const FixedFormPage = () => (
             </option>
           ))}
         </select>
-      </form>
+      </Form>
     </Body>
   </Container>
 )

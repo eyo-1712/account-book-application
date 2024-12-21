@@ -1,5 +1,5 @@
 import { Back } from 'features/router'
-import { AppBar, Body, Button, Container, Icon, Input } from 'shared/ui'
+import { AppBar, Body, Button, Container, Form, Icon, Input } from 'shared/ui'
 import { useLogic } from './logic'
 import { zForm } from './validation'
 
@@ -22,7 +22,7 @@ export const CategoryFormPage = () => {
         }
       />
       <Body>
-        <form className="flex flex-col w-full gap-4 text-lg">
+        <Form>
           {value.form.map((f) => (
             <div
               key={f.id}
@@ -51,7 +51,7 @@ export const CategoryFormPage = () => {
             <Icon type="create-category" />
             <p>카테고리 추가하기</p>
           </button>
-        </form>
+        </Form>
       </Body>
     </Container>
   )

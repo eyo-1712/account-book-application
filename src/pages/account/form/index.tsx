@@ -1,5 +1,5 @@
 import { CreateAccount } from 'features/router'
-import { AppBar, Body, Container, Input } from 'shared/ui'
+import { AppBar, Body, Container, Form, Input } from 'shared/ui'
 import { Hamburger } from 'widgets'
 
 export const AccountFormPage = () => (
@@ -10,10 +10,10 @@ export const AccountFormPage = () => (
       actions={<CreateAccount />}
     />
     <Body>
-      <form className="flex flex-col w-full gap-6 text-lg">
+      <Form>
         <Input type="text" placeholder="자산 이름을 적어주세요." />
         <Input type="number" placeholder="잔액을 입력하세요." />
-      </form>
+      </Form>
     </Body>
   </Container>
 )

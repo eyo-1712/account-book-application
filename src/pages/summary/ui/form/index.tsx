@@ -1,5 +1,5 @@
 import { Back } from 'features/router'
-import { AppBar, Body, Button, Container, Input } from 'shared/ui'
+import { AppBar, Body, Button, Container, Form, Input } from 'shared/ui'
 import { useLogic } from './logic'
 import { zForm } from './validation'
 
@@ -22,7 +22,7 @@ export const SummaryFormPage = () => {
         }
       />
       <Body>
-        <form className="flex flex-col w-full gap-6 text-lg">
+        <Form>
           <div className="flex flex-row p-2 bg-gray-100 rounded-lg justify-evenly">
             <div className="flex flex-row justify-center flex-1 gap-4">
               <label htmlFor="type" className="w-full">
@@ -94,7 +94,7 @@ export const SummaryFormPage = () => {
             value={value.money}
             onChange={handler.money}
           />
-        </form>
+        </Form>
       </Body>
     </Container>
   )
