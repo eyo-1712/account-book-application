@@ -1,7 +1,7 @@
-import { IAccountType } from 'shared/lib'
+import { ISummaryType } from 'shared/lib'
 
 export interface IForm {
-  type: IAccountType
+  type: ISummaryType
   card: string
   money: money
   category: string

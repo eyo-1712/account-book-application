@@ -6,7 +6,7 @@ export const ModifySummary = ({ id }: IId) => {
   const { nav } = useRouter()
 
   return (
-    <Button color="blue" type="button" onClick={nav.modifyAccountForm(id)}>
+    <Button color="blue" type="button" onClick={nav.modifySummaryForm(id)}>
       편집
     </Button>
   )

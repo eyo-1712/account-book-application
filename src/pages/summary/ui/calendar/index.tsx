@@ -1,13 +1,13 @@
-import { CreateAccount } from 'features/router'
+import { CreateSummary } from 'features/router'
 import { AppBar, Body, Container } from 'shared/ui'
 import { Calendar, Hamburger } from 'widgets'
 
-export const AccountCalendarPage = () => (
+export const SummaryCalendarPage = () => (
   <Container>
     <AppBar
       title="가계부"
       leading={<Hamburger />}
-      actions={<CreateAccount />}
+      actions={<CreateSummary />}
     />
     <Body>
       <Calendar />

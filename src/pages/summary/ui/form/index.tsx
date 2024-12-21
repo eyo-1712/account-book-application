@@ -3,7 +3,7 @@ import { AppBar, Body, Button, Container } from 'shared/ui'
 import { useLogic } from './logic'
 import { zForm } from './validation'
 
-export const AccountFormPage = () => {
+export const SummaryFormPage = () => {
   const { value, handler } = useLogic()
 
   return (

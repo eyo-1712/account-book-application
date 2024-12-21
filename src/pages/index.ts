@@ -1,8 +1,4 @@
 import { withAuth, withNoAuth } from 'features/user'
-import { AccountCalendarPage as accountCalendarPage } from './account-book/ui/calendar'
-import { AccountFormPage as accountFormPage } from './account-book/ui/form'
-import { SummaryDetailPage as summaryDetailPage } from './account-book/ui/summary-detail'
-import { SummaryMonthPage as summaryMonthPage } from './account-book/ui/summary-month'
 import { AnalysisPage as analysisPage } from './analysis/ui'
 import { LoginPage as loginPage } from './auth/ui/login'
 import { CategoryDetailPage as categoryDetailPage } from './category/ui/detail'
@@ -11,6 +7,10 @@ import { CategoryListPage as categoryListPage } from './category/ui/list'
 import { FixedDetailPage as fixedDetailPage } from './fixed/detail'
 import { FixedFormPage as fixedFormPage } from './fixed/form'
 import { FixedListPage as fixedListPage } from './fixed/list'
+import { SummaryCalendarPage as summaryCalendarPage } from './summary/ui/calendar'
+import { SummaryFormPage as summaryFormPage } from './summary/ui/form'
+import { SummaryDetailPage as summaryDetailPage } from './summary/ui/summary-detail'
+import { SummaryMonthPage as summaryMonthPage } from './summary/ui/summary-month'
 
 // common
 export { NotFoundPage } from './not-found'
@@ -19,8 +19,8 @@ export { NotFoundPage } from './not-found'
 export const LoginPage = withNoAuth(loginPage)
 
 // auth
-export const AccountCalendarPage = withAuth(accountCalendarPage)
-export const AccountFormPage = withAuth(accountFormPage)
+export const SummaryCalendarPage = withAuth(summaryCalendarPage)
+export const SummaryFormPage = withAuth(summaryFormPage)
 export const SummaryDetailPage = withAuth(summaryDetailPage)
 export const SummaryMonthPage = withAuth(summaryMonthPage)
 export const CategoryListPage = withAuth(categoryListPage)

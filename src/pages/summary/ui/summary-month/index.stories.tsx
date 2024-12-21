@@ -3,7 +3,7 @@ import { SummaryMonthPage } from '.'
 export default {
   component: SummaryMonthPage,
   title: 'SummaryMonthPage',
-  tags: ['Pages', 'Summary', 'Account'],
+  tags: ['Pages', 'Summary', 'Summary'],
 }
 
 export const Default = {}

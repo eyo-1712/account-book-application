@@ -3,7 +3,7 @@ import { SummaryToday } from '.'
 export default {
   component: SummaryToday,
   title: 'SummaryToday',
-  tags: ['Widgets', 'Summary', 'Account'],
+  tags: ['Widgets', 'Summary', 'Summary'],
 }
 
 export const Today = {

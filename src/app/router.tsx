@@ -1,13 +1,13 @@
 import {
-  AccountCalendarPage,
-  AccountFormPage,
   AnalysisPage,
   CategoryDetailPage,
   CategoryFormPage,
   CategoryListPage,
   LoginPage,
   NotFoundPage,
+  SummaryCalendarPage,
   SummaryDetailPage,
+  SummaryFormPage,
   SummaryMonthPage,
 } from 'pages'
 import { BrowserRouter, Route, Routes } from 'react-router'
@@ -19,11 +19,11 @@ export const Router = () => (
       <Route path="/login" element={<LoginPage />} />
 
       {/* with auth */}
-      <Route path="/" element={<AccountCalendarPage />} />
+      <Route path="/" element={<SummaryCalendarPage />} />
       <Route path="/summary" element={<SummaryMonthPage />} />
       <Route path="/summary/:id" element={<SummaryDetailPage />} />
-      <Route path="/account/form" element={<AccountFormPage />} />
-      <Route path="/account/form/:id" element={<AccountFormPage />} />
+      <Route path="/summary/form" element={<SummaryFormPage />} />
+      <Route path="/summary/form/:id" element={<SummaryFormPage />} />
 
       <Route path="/category" element={<CategoryListPage />} />
       <Route path="/category/:id" element={<CategoryDetailPage />} />

@@ -11,12 +11,12 @@ export const useRouter = () => {
       // auth
       login: () => router('/login'),
 
-      // account
+      // summary
       calendar: () => router('/'),
       summaryMonth: () => () => router('/summary'),
       summaryId: (id: string) => () => router(`/summary/${id}`),
-      createAccountForm: () => router('/account/form'),
-      modifyAccountForm: (id: string) => () => router(`/account/form/${id}`),
+      createSummaryForm: () => router('/summary/form'),
+      modifySummaryForm: (id: string) => () => router(`/summary/form/${id}`),
 
       // category
       category: () => router('/category'),

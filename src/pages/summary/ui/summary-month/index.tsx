@@ -1,10 +1,10 @@
-import { Back, CreateAccount } from 'features/router'
+import { Back, CreateSummary } from 'features/router'
 import { AppBar, Body, Container } from 'shared/ui'
 import { SummaryToday } from 'widgets'
 
 export const SummaryMonthPage = () => (
   <Container>
-    <AppBar title="2024.11" leading={<Back />} actions={<CreateAccount />} />
+    <AppBar title="2024.11" leading={<Back />} actions={<CreateSummary />} />
     <Body>
       <div className="flex flex-row w-full gap-4">
         <p className="">지출금액</p>

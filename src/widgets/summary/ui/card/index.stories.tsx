@@ -3,7 +3,7 @@ import { Summary } from '.'
 export default {
   component: Summary,
   title: 'Summary',
-  tags: ['Widgets', 'Summary', 'Account'],
+  tags: ['Widgets', 'Summary', 'Summary'],
 }
 
 export const Plus = {
