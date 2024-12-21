@@ -18,6 +18,8 @@ export const useRouter = () => {
       createSummaryForm: () => router('/summary/form'),
       modifySummaryForm: (id: string) => () => router(`/summary/form/${id}`),
 
+      account: () => router('/account'),
+
       // category
       category: () => router('/category'),
       categoryId: (id: string) => () => router(`/category/${id}`),

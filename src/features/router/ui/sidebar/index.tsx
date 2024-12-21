@@ -37,7 +37,11 @@ export const SideBar = (props: IProps) => {
           </button>
         </li>
         <li>
-          <button type="button" className="flex flex-row items-center gap-2">
+          <button
+            type="button"
+            className="flex flex-row items-center gap-2"
+            onClick={router.nav.account}
+          >
             <Icon type="card" />
             자산 관리
           </button>
