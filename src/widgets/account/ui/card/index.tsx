@@ -17,7 +17,12 @@ export const AccountCard = (props: IProps) => {
         <p className="text-sm text-gray-600">{props.name}</p>
         <p className="text-lg font-bold">{props.price.toLocaleString()} 원</p>
       </button>
-      <Button type="button" color="gray" rounded>
+      <Button
+        type="button"
+        color="gray"
+        rounded
+        onClick={nav.transfer(props.id)}
+      >
         이체
       </Button>
     </div>
