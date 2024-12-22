@@ -1,5 +1,5 @@
 import { useRouter } from 'shared/lib'
-import { IId } from 'shared/types/id'
+import { IId } from 'shared/types'
 import { Button } from 'shared/ui'
 
 export const ModifySummary = ({ id }: IId) => {
