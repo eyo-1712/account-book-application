@@ -16,7 +16,7 @@ export const SideBar = (props: IProps) => {
         `${props.open ? 'left-0' : 'left-[-10rem]'}`,
       ].join(' ')}
     >
-      <ul className="flex flex-col gap-4 text-sm">
+      <ul className="flex flex-col text-sm gap-4">
         <li>
           <button
             type="button"

@@ -45,7 +45,7 @@ export const CategoryFormPage = () => {
           ))}
           <button
             type="button"
-            className="flex flex-row items-center justify-center gap-4 py-2 border rounded"
+            className="flex flex-row items-center justify-center py-2 border rounded gap-4"
             onClick={handler.create}
           >
             <Icon type="create-category" />

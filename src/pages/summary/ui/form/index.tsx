@@ -1,5 +1,5 @@
 import { Back } from 'features/router'
-import { AppBar, Body, Button, Container, Form, Input } from 'shared/ui'
+import { AppBar, Body, Button, Container, Form, Input, Select } from 'shared/ui'
 import { useLogic } from './logic'
 import { zForm } from './validation'
 
@@ -76,17 +76,13 @@ export const SummaryFormPage = () => {
             value={value.datetime}
             onChange={handler.datetime}
           />
-          <Input
-            type="text"
-            placeholder="계좌를 선택하세요."
-            value={value.card}
-            onChange={handler.card}
+          <Select
+            placeholder="계좌를 선택하세요"
+            options={[{ label: '국민은행', value: 'kb-bank' }]}
           />
-          <Input
-            type="text"
-            placeholder="카테고리를 선택하세요."
-            value={value.category}
-            onChange={handler.category}
+          <Select
+            placeholder="카테고리를 선택하세요"
+            options={[{ label: '국민은행', value: 'kb-bank' }]}
           />
           <Input
             type="number"
