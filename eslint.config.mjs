@@ -1,19 +1,13 @@
-// eslint-disable-next-line import/no-extraneous-dependencies
+/* eslint-disable import/no-extraneous-dependencies */
 import { fixupConfigRules, fixupPluginRules } from '@eslint/compat'
-// eslint-disable-next-line import/no-extraneous-dependencies
+import { FlatCompat } from '@eslint/eslintrc'
+import js from '@eslint/js'
 import typescriptEslint from '@typescript-eslint/eslint-plugin'
-// eslint-disable-next-line import/no-extraneous-dependencies
-import prettier from 'eslint-plugin-prettier'
-// eslint-disable-next-line import/no-extraneous-dependencies
-import globals from 'globals'
-// eslint-disable-next-line import/no-extraneous-dependencies
 import tsParser from '@typescript-eslint/parser'
+import prettier from 'eslint-plugin-prettier'
+import globals from 'globals'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
-// eslint-disable-next-line import/no-extraneous-dependencies
-import js from '@eslint/js'
-// eslint-disable-next-line import/no-extraneous-dependencies
-import { FlatCompat } from '@eslint/eslintrc'
 
 // eslint-disable-next-line no-underscore-dangle
 const __filename = fileURLToPath(import.meta.url)
