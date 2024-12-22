@@ -3,5 +3,16 @@
   "references": [
     { "path": "./tsconfig.app.json" },
     { "path": "./tsconfig.node.json" }
-  ]
+  ],
+  /* Import */
+  "compilerOptions": {
+    "baseUrl": "./src",
+    "paths": {
+      "shadcn": ["shared/shadcn"],
+      "shared": ["shared"],
+      "features": ["features"],
+      "widgets": ["widgets"],
+      "pages": ["pages"]
+    }
+  }
 }

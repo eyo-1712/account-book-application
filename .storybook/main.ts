@@ -23,6 +23,7 @@ const config: StorybookConfig = {
         // 👇 External module
         // lodash: require.resolve('./lodash.mock'),
         // 👇 Internal modules
+        shadcn: path.resolve(__dirname, '../src/shared/shadcn'),
         shared: path.resolve(__dirname, '../src/shared'),
         features: path.resolve(__dirname, '../src/features'),
         widgets: path.resolve(__dirname, '../src/widgets'),

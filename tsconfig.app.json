@@ -25,6 +25,7 @@
     /* Import */
     "baseUrl": "./src",
     "paths": {
+      "shadcn": ["shared/shadcn"],
       "shared": ["shared"],
       "features": ["features"],
       "widgets": ["widgets"],
