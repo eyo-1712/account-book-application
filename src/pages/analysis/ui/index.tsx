@@ -19,10 +19,10 @@ export const AnalysisPage = () => (
       <p>이번달 지출 내역</p>
       <p className="text-xs text-gray-400">지난달보다 ___원 덜 쓰는 중</p>
       <br />
-      <ResponsiveContainer width="75%" height={200}>
+      <ResponsiveContainer width="100%" height={300}>
         <LineChart data={LINE_MOCK_DATA}>
-          <XAxis dataKey="name" />
-          <YAxis />
+          {/* <XAxis dataKey="name" /> */}
+          {/* <YAxis /> */}
           <Line type="monotone" dataKey="pv" stroke="#2563eb" dot={false} />
           <Line type="monotone" dataKey="amt" stroke="#9ca3af" dot={false} />
           <Legend />
@@ -33,7 +33,7 @@ export const AnalysisPage = () => (
       <p>카테고리 별 지출 내역</p>
       <p className="text-xs text-gray-400">어디에 제일 많이 쓰는 중</p>
       <br />
-      <ResponsiveContainer width="75%" height={200}>
+      <ResponsiveContainer width="100%" height={300}>
         <BarChart data={BAR_MOCK_DATA}>
           <XAxis dataKey="name" />
           <YAxis />

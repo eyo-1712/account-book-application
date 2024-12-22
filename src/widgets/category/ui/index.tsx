@@ -6,7 +6,7 @@ export const Category = () => {
   return (
     <button
       type="button"
-      className="flex flex-col items-start w-full px-4 py-2"
+      className="flex flex-col items-start w-full py-2"
       onClick={nav.categoryId('123')}
     >
       <p className="font-bold">카테고리 이름</p>
