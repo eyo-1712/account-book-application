@@ -89,6 +89,10 @@ export default [
       'import/prefer-default-export': 'off',
       'react/react-in-jsx-scope': 'off',
       'react/destructuring-assignment': 'off',
+      'react/prop-types': 'off',
+      'react/jsx-props-no-spreading': 'off',
+      'import/no-extraneous-dependencies': 'off',
+      'react/require-default-props': 'off',
     },
   },
 ]
