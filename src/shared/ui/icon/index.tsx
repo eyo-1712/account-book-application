@@ -31,7 +31,7 @@ export const Icon = (props: IProps) => {
     logout: LogOut,
   }[props.type]
 
-  return <Lucide />
+  return <Lucide className="size-4" />
 }
 
 /**
