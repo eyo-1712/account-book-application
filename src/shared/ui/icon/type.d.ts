@@ -11,6 +11,7 @@ export type TIcon =
   | 'menu'
   | 'remove-form'
   | 'wallet'
+  | 'logout'
 
 export interface IProps {
   type: TIcon

@@ -6,6 +6,7 @@ import {
   CreditCard,
   Folder,
   FolderPlus,
+  LogOut,
   Menu,
   Minus,
   Wallet,
@@ -27,6 +28,7 @@ export const Icon = (props: IProps) => {
     menu: Menu,
     'remove-form': Minus,
     wallet: Wallet,
+    logout: LogOut,
   }[props.type]
 
   return <Lucide />
