@@ -1,5 +1,4 @@
 import React from 'react'
-import { useSelector } from 'react-redux'
 import { useRouter } from 'shared/lib'
 
 export const withNoAuth =
@@ -7,7 +6,7 @@ export const withNoAuth =
   // eslint-disable-next-line react/function-component-definition
   <P extends object>(props: P) => {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    const user = useSelector((state: any) => state.user.id)
+    const user = true
     const router = useRouter()
 
     React.useEffect(() => {
@@ -23,7 +22,7 @@ export const withAuth =
   // eslint-disable-next-line react/function-component-definition
   <P extends object>(props: P) => {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    const user = useSelector((state: any) => state.user.id)
+    const user = true
     const router = useRouter()
 
     React.useEffect(() => {

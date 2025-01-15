@@ -1,5 +1,3 @@
-import { logOut } from 'features/user'
-import { useDispatch } from 'react-redux'
 import {
   Sidebar,
   SidebarContent,
@@ -14,7 +12,6 @@ import { Icon } from 'shared/ui'
 
 export const AppSideBar = () => {
   const router = useRouter()
-  const dispatch = useDispatch()
 
   return (
     <Sidebar collapsible="icon">
@@ -70,10 +67,7 @@ export const AppSideBar = () => {
       <SidebarFooter>
         <SidebarMenu className="flex flex-col group-data-[collapsible=icon]:items-center">
           <SidebarMenuItem>
-            <SidebarMenuButton
-              className="flex flex-row items-center gap-2"
-              onClick={() => dispatch(logOut())}
-            >
+            <SidebarMenuButton className="flex flex-row items-center gap-2">
               <Icon type="logout" />
               <span className="group-data-[collapsible=icon]:hidden">
                 로그아웃
