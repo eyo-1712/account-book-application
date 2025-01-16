@@ -1,12 +1,13 @@
 import React from 'react'
 import { useRouter } from 'shared/lib'
+import { userStore } from '../model'
 
 export const withNoAuth =
   (Component: React.ComponentType) =>
   // eslint-disable-next-line react/function-component-definition
   <P extends object>(props: P) => {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    const user = true
+    const user = userStore((state) => state.user)
     const router = useRouter()
 
     React.useEffect(() => {
@@ -22,7 +23,7 @@ export const withAuth =
   // eslint-disable-next-line react/function-component-definition
   <P extends object>(props: P) => {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    const user = true
+    const user = userStore((state) => state.user)
     const router = useRouter()
 
     React.useEffect(() => {

@@ -20,7 +20,6 @@ export const LoginPage = () => {
         <p>SNS로 빠른 시작</p>
         <br />
         <button type="button" onClick={handler.logIn}>
-          {' '}
           구글 로그인
         </button>
       </Body>
