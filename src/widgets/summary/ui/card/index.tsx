@@ -1,7 +1,7 @@
 import { useRouter } from 'shared/lib'
-import { IProps } from './type'
+import { SummaryProps } from './type'
 
-export const Summary = (props: IProps) => {
+export const Summary = (props: SummaryProps) => {
   const { nav } = useRouter()
 
   return (

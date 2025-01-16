@@ -13,6 +13,6 @@ export type TIcon =
   | 'wallet'
   | 'logout'
 
-export interface IProps {
+export interface IconProps {
   type: TIcon
 }

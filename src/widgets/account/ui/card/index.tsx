@@ -1,8 +1,7 @@
 import { useRouter } from 'shared/lib'
 import { Button } from 'shared/ui'
-import { IProps } from './type'
 
-export const AccountCard = (props: IProps) => {
+export const AccountCard = (props: AccountCardProps) => {
   const { nav } = useRouter()
   return (
     <div className="flex flex-row items-center justify-between py-2 gap-4">

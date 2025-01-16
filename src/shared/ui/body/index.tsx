@@ -1,6 +1,6 @@
-import { IProps } from './type'
+import { BodyProps } from './type'
 
-export const Body = (props: IProps) => (
+export const Body = (props: BodyProps) => (
   <div
     className={[
       'flex flex-col w-full px-4 py-2',

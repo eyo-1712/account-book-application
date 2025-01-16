@@ -1,4 +1,4 @@
-export interface IProps {
+export interface SummaryProps {
   // src: string
   price: number
   reason: string

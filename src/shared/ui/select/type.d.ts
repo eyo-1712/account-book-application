@@ -3,7 +3,7 @@ interface Option {
   value: string
 }
 
-export interface IProps {
+export interface SelectProps {
   placeholder: string
   options: Option[]
 }

@@ -12,9 +12,9 @@ import {
   Wallet,
   X,
 } from 'lucide-react'
-import { IProps } from './type'
+import { IconProps } from './type'
 
-export const Icon = (props: IProps) => {
+export const Icon = (props: IconProps) => {
   const Lucide = {
     back: ChevronLeft,
     left: ChevronLeft,

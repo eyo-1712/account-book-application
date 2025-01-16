@@ -1,7 +1,7 @@
 import { BUTTON_COLOR } from './constant'
-import { IProps } from './type'
+import { ButtonProps } from './type'
 
-export const Button = ({ children, color, rounded, ...props }: IProps) => (
+export const Button = ({ children, color, rounded, ...props }: ButtonProps) => (
   // eslint-disable-next-line react/button-has-type
   <button
     className={[

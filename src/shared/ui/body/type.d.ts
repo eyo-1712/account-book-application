@@ -1,3 +1,3 @@
-export interface IProps extends React.PropsWithChildren {
+export interface BodyProps extends React.PropsWithChildren {
   center?: boolean
 }
