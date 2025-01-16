@@ -1,7 +1,8 @@
-import { create } from 'zustand'
+import { createWithEqualityFn } from 'zustand/traditional'
+
 import { UserStoreType } from './type'
 
-export const userStore = create<UserStoreType>((set) => ({
+export const userStore = createWithEqualityFn<UserStoreType>((set) => ({
   user: null,
   action: {
     logIn: () => set({ user: 1 }),
