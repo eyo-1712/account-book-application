@@ -11,7 +11,7 @@
     "format:fix": "prettier --write --cache .",
     "preview": "vite preview",
     "prepare": "husky",
-    "husky": "eslint . && prettier --check --cache .",
+    "husky": "prettier --check --cache . && eslint .",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"
   },
@@ -24,6 +24,7 @@
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "dayjs": "^1.11.13",
+    "firebase": "^11.2.0",
     "lucide-react": "^0.469.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
