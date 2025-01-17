@@ -1,12 +1,12 @@
-import { apiAuthGoogle } from 'entities'
+import { useApiAuthGoogle } from 'entities'
 import { userStore } from 'features/user'
 
 export const useLogic = () => {
   const logIn = userStore((state) => state.action.logIn)
+  const apiAuthGoogle = useApiAuthGoogle()
 
-  const handleLogin = async () => {
-    await apiAuthGoogle()
-    logIn()
+  const handleLogin = () => {
+    apiAuthGoogle.mutate(undefined, { onSuccess: () => logIn() })
   }
 
   return {
