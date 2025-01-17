@@ -15,6 +15,10 @@ export default defineConfig({
       },
       { find: 'shared', replacement: path.resolve(__dirname, './src/shared') },
       {
+        find: 'entities',
+        replacement: path.resolve(__dirname, './src/entities'),
+      },
+      {
         find: 'features',
         replacement: path.resolve(__dirname, './src/features'),
       },
@@ -24,5 +28,13 @@ export default defineConfig({
       },
       { find: 'pages', replacement: path.resolve(__dirname, './src/pages') },
     ],
+  },
+  server: {
+    proxy: {
+      '/api': {
+        target: 'http://localhost:3000',
+        changeOrigin: true,
+      },
+    },
   },
 })
