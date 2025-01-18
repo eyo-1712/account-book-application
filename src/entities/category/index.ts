@@ -23,3 +23,11 @@ export const apiFetchCategories = async () => {
 
   return response
 }
+
+export const apiFetchCategory = async (id: string) => {
+  const response: SuccessResponse<Category> = await api
+    .get(`/api/category/${id}`)
+    .json()
+
+  return response
+}

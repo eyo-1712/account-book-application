@@ -5,9 +5,9 @@ import { AppBar, Body, Container } from 'shared/ui'
 import { CategoryCard } from 'widgets'
 
 export const CategoryListPage = () => {
-  const { isSuccess, data } = useApiFetchCategories()
+  const { data } = useApiFetchCategories()
 
-  const render = isSuccess ? data.data : []
+  const render = data ?? []
 
   return (
     <SidebarProvider>
