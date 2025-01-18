@@ -5,9 +5,10 @@ import { AccountListPage as accountListPage } from './account/ui/list'
 import { AccountTransferPage as accountTransferPage } from './account/ui/transfer'
 import { AnalysisPage as analysisPage } from './analysis/ui'
 import { LoginPage as loginPage } from './auth/ui/login'
+import { CreateCategoryFormPage as createCategoryFormPage } from './category/ui/create-form'
 import { CategoryDetailPage as categoryDetailPage } from './category/ui/detail'
-import { CategoryFormPage as categoryFormPage } from './category/ui/form'
 import { CategoryListPage as categoryListPage } from './category/ui/list'
+import { UpdateCategoryFormPage as updateCategoryFormPage } from './category/ui/update-form'
 import { FixedDetailPage as fixedDetailPage } from './fixed/ui/detail'
 import { FixedFormPage as fixedFormPage } from './fixed/ui/form'
 import { FixedListPage as fixedListPage } from './fixed/ui/list'
@@ -28,7 +29,8 @@ export const SummaryFormPage = withAuth(summaryFormPage)
 export const SummaryDetailPage = withAuth(summaryDetailPage)
 export const SummaryMonthPage = withAuth(summaryMonthPage)
 export const CategoryListPage = withAuth(categoryListPage)
-export const CategoryFormPage = withAuth(categoryFormPage)
+export const CreateCategoryFormPage = withAuth(createCategoryFormPage)
+export const UpdateCategoryFormPage = withAuth(updateCategoryFormPage)
 export const CategoryDetailPage = withAuth(categoryDetailPage)
 export const FixedListPage = withAuth(fixedListPage)
 export const FixedDetailPage = withAuth(fixedDetailPage)

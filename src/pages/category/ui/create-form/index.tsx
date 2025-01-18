@@ -2,7 +2,7 @@ import { Back } from 'features/router'
 import { AppBar, Body, Container } from 'shared/ui'
 import { CreateCategoryForm } from 'widgets'
 
-export const CategoryFormPage = () => (
+export const CreateCategoryFormPage = () => (
   <CreateCategoryForm.Provider>
     <Container>
       <AppBar

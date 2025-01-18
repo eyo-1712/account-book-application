@@ -12,7 +12,7 @@ export const apiCreateCategory = async (json: CreateCategoryBody) => {
 ///
 
 export interface Category {
-  id: string
+  id: number
   name: string
   sort: number
 }
@@ -30,4 +30,10 @@ export const apiFetchCategory = async (id: string) => {
     .json()
 
   return response
+}
+
+export type UpdateCategoryBody = Pick<Category, 'id' | 'name'>
+
+export const apiModifyCategory = async (json: UpdateCategoryBody) => {
+  await api.patch(`/api/category`, { json })
 }
