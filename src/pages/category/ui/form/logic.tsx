@@ -1,5 +1,4 @@
 import { zodResolver } from '@hookform/resolvers/zod'
-import React from 'react'
 import { useForm } from 'react-hook-form'
 import { FormSchema, schema } from './schema'
 
@@ -22,23 +21,11 @@ export const useLogic = () => {
     form.setValue('categories', filtered)
   }
 
-  const onChangeCategory =
-    (id: string): React.ChangeEventHandler<HTMLInputElement> =>
-    (e) => {
-      const updated = form.getValues().categories.map((category) => {
-        if (category.id !== id) return category
-
-        return { ...category, category: e.target.value }
-      })
-      form.setValue('categories', updated)
-    }
-
   return {
     value: { form },
     handler: {
       onCreateCategory,
       onRemoveCategory,
-      onChangeCategory,
     },
   }
 }
