@@ -22,21 +22,23 @@ export const CategoryFormPage = () => {
         title="카테고리 추가"
         leading={<Back />}
         actions={
-          <Button color="blue" type="submit" disabled={!form.formState.isValid}>
+          <Button
+            color="blue"
+            type="submit"
+            disabled={!form.formState.isValid}
+            onClick={handler.onSubmit}
+          >
             추가
           </Button>
         }
       />
       <Body>
         <Form {...form}>
-          <form
-            onSubmit={form.handleSubmit(() => {})}
-            className="flex flex-col gap-2"
-          >
+          <form className="flex flex-col gap-2">
             {categories.map((category, index) => (
               <FormField
                 control={form.control}
-                name={`categories.${index}.category`}
+                name={`categories.${index}.name`}
                 render={({ field }) => (
                   <FormItem>
                     <FormControl>
