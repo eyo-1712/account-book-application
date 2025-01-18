@@ -1,6 +1,6 @@
 export { AccountCard } from './account/ui/card'
 export { Calendar } from './calendar/ui'
-export { Category } from './category/ui'
+export { Category } from './category/ui/card'
 export { FixedCard } from './fixed/ui'
 export { Summary } from './summary/ui/card'
 export { SummaryToday } from './summary/ui/today'
