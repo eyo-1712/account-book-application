@@ -1,43 +1,44 @@
-import dayjs from 'dayjs'
+import { zodResolver } from '@hookform/resolvers/zod'
 import React from 'react'
-import { ICategoryForm } from './type'
+import { useForm } from 'react-hook-form'
+import { FormSchema, schema } from './schema'
 
 export const useLogic = () => {
-  const [form, setForm] = React.useState<ICategoryForm[]>([
-    { id: dayjs().toISOString(), category: '' },
-  ])
+  const form = useForm<FormSchema>({
+    resolver: zodResolver(schema),
+    defaultValues: {
+      categories: [{ id: new Date().toISOString(), category: '' }],
+    },
+    mode: 'onChange',
+  })
 
-  const createCategoryForm = () => {
-    const init = { id: dayjs().toISOString(), category: '' }
-
-    setForm((prev) => prev.concat(init))
+  const onCreateCategory = () => {
+    const init = { id: new Date().toISOString(), category: '' }
+    form.setValue('categories', [...form.getValues().categories, init])
   }
 
-  const removeCategoryForm = (id: string) => () => {
-    setForm((prev) => prev.filter((p) => p.id !== id))
+  const onRemoveCategory = (_: string) => () => {
+    const filtered = form.getValues().categories.filter(({ id }) => id !== _)
+    form.setValue('categories', filtered)
   }
 
   const onChangeCategory =
     (id: string): React.ChangeEventHandler<HTMLInputElement> =>
     (e) => {
-      setForm((prev) => {
-        const index = prev.findIndex((p) => p.id === id)
+      const updated = form.getValues().categories.map((category) => {
+        if (category.id !== id) return category
 
-        const updated = [...prev]
-        updated[index].category = e.target.value
-
-        return updated
+        return { ...category, category: e.target.value }
       })
+      form.setValue('categories', updated)
     }
 
   return {
-    value: {
-      form,
-    },
+    value: { form },
     handler: {
-      create: createCategoryForm,
-      remove: removeCategoryForm,
-      category: onChangeCategory,
+      onCreateCategory,
+      onRemoveCategory,
+      onChangeCategory,
     },
   }
 }

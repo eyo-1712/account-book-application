@@ -1,10 +1,20 @@
 import { Back } from 'features/router'
-import { AppBar, Body, Button, Container, Form, Icon, Input } from 'shared/ui'
+import {
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+} from 'shadcn/components/ui/form'
+import { AppBar, Body, Button, Container, Icon, Input } from 'shared/ui'
 import { useLogic } from './logic'
-import { zForm } from './validation'
 
 export const CategoryFormPage = () => {
-  const { value, handler } = useLogic()
+  const {
+    value: { form },
+    handler,
+  } = useLogic()
+
+  const categories = form.watch('categories')
 
   return (
     <Container>
@@ -12,45 +22,55 @@ export const CategoryFormPage = () => {
         title="카테고리 추가"
         leading={<Back />}
         actions={
-          <Button
-            color="blue"
-            type="submit"
-            disabled={!zForm.safeParse(value.form).success}
-          >
+          <Button color="blue" type="submit" disabled={!form.formState.isValid}>
             추가
           </Button>
         }
       />
       <Body>
-        <Form>
-          {value.form.map((f) => (
-            <div
-              key={f.id}
-              className="flex flex-row items-center justify-start w-full gap-2"
-            >
-              <button
-                type="button"
-                className="text-gray-600"
-                onClick={handler.remove(f.id)}
-              >
-                <Icon type="remove-form" />
-              </button>
-              <Input
-                type="text"
-                placeholder="카테고리 이름을 적어주세요."
-                value={f.category}
-                onChange={handler.category(f.id)}
-              />
-            </div>
-          ))}
-          <button
-            type="button"
-            className="flex flex-row items-center justify-center py-2 border rounded gap-4"
-            onClick={handler.create}
+        <Form {...form}>
+          <form
+            onSubmit={form.handleSubmit(() => {})}
+            className="flex flex-col gap-2"
           >
-            <Icon type="create-category" />
-            <p>카테고리 추가하기</p>
-          </button>
+            {categories.map((category, index) => (
+              <FormField
+                control={form.control}
+                name={`categories.${index}.category`}
+                render={({ field }) => (
+                  <FormItem>
+                    <FormControl>
+                      <div
+                        key={category.id}
+                        className="flex flex-row items-center justify-start w-full gap-2"
+                      >
+                        <button
+                          type="button"
+                          className="text-gray-600"
+                          onClick={handler.onRemoveCategory(category.id)}
+                        >
+                          <Icon type="remove-form" />
+                        </button>
+                        <Input
+                          type="text"
+                          placeholder="카테고리 이름을 적어주세요."
+                          {...field}
+                        />
+                      </div>
+                    </FormControl>
+                  </FormItem>
+                )}
+              />
+            ))}
+            <button
+              type="button"
+              className="flex flex-row items-center justify-center py-2 border rounded gap-4"
+              onClick={handler.onCreateCategory}
+            >
+              <Icon type="create-category" />
+              <p>카테고리 추가하기</p>
+            </button>
+          </form>
         </Form>
       </Body>
     </Container>
