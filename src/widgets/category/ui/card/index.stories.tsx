@@ -1,7 +1,7 @@
-import { Category } from '.'
+import { CategoryCard } from '.'
 
 export default {
-  component: Category,
+  component: CategoryCard,
   title: 'Category',
   tags: ['Widgets', 'Category'],
 }
