@@ -37,3 +37,7 @@ export type UpdateCategoryBody = Pick<Category, 'id' | 'name'>
 export const apiModifyCategory = async (json: UpdateCategoryBody) => {
   await api.patch(`/api/category`, { json })
 }
+
+export const apiRemoveCategory = async (id: number) => {
+  await api.delete(`/api/category/${id}`)
+}

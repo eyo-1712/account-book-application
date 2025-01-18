@@ -1,5 +1,5 @@
 import { useMutation, useQueryClient } from '@tanstack/react-query'
-import { apiCreateCategory, apiModifyCategory } from '.'
+import { apiCreateCategory, apiModifyCategory, apiRemoveCategory } from '.'
 
 export function useApiCreateCategory() {
   const queryClient = useQueryClient()
@@ -17,6 +17,17 @@ export function useApiModifyCategory() {
 
   return useMutation({
     mutationFn: apiModifyCategory,
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ['category'] })
+    },
+  })
+}
+
+export function useApiRemoveCategory() {
+  const queryClient = useQueryClient()
+
+  return useMutation({
+    mutationFn: apiRemoveCategory,
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ['category'] })
     },

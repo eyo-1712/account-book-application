@@ -1,6 +1,8 @@
 import { useApiFetchCategory } from 'entities'
+import { useApiRemoveCategory } from 'entities/category/mutation'
 import { Back, ModifyCategory } from 'features/router'
 import { useParams } from 'react-router'
+import { useRouter } from 'shared/lib'
 import { AppBar, Body, Button, ButtonGroup, Container } from 'shared/ui'
 import { SummaryToday } from 'widgets'
 
@@ -9,14 +11,26 @@ export const CategoryDetailPage = () => {
 
   const { data: category } = useApiFetchCategory(params?.id ?? '')
 
+  const removeCategory = useApiRemoveCategory()
+  const router = useRouter()
+
   return (
     <Container>
       <AppBar
         leading={<Back />}
         actions={
           <ButtonGroup>
-            <ModifyCategory id={category?.id ?? ''} />
-            <Button color="red">삭제</Button>
+            <ModifyCategory id={category?.id ?? 0} />
+            <Button
+              color="red"
+              onClick={() =>
+                removeCategory.mutate(category?.id ?? 0, {
+                  onSuccess: router.nav.back,
+                })
+              }
+            >
+              삭제
+            </Button>
           </ButtonGroup>
         }
       />

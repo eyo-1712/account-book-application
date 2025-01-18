@@ -29,9 +29,9 @@ export const useRouter = () => {
 
       // category
       category: routing('/category'),
-      categoryId: (id: string) => routing(`/category/${id}`),
+      categoryId: (id: number) => routing(`/category/${id}`),
       createCategory: routing('/category/form'),
-      modifyCategory: (id: string) => routing(`/category/form/${id}`),
+      modifyCategory: (id: number) => routing(`/category/form/${id}`),
 
       // fixed
       fixed: routing('/fixed'),

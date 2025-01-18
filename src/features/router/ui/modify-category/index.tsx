@@ -1,8 +1,7 @@
 import { useRouter } from 'shared/lib'
-import { IId } from 'shared/types'
 import { Button } from 'shared/ui'
 
-export const ModifyCategory = ({ id }: IId) => {
+export const ModifyCategory = ({ id }: { id: number }) => {
   const { nav } = useRouter()
 
   return (
