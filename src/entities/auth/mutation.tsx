@@ -1,8 +1,8 @@
 import { useMutation } from '@tanstack/react-query'
-import { apiAuthGoogle } from '.'
+import { apiGoogleAuth } from '.'
 
-export function useApiAuthGoogle() {
+export function useApiGoogleAuth() {
   return useMutation({
-    mutationFn: apiAuthGoogle,
+    mutationFn: apiGoogleAuth,
   })
 }

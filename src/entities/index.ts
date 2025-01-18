@@ -1,1 +1,1 @@
-export { useApiAuthGoogle } from './auth/mutation'
+export { useApiGoogleAuth } from './auth/mutation'

@@ -3,7 +3,7 @@ import { generateQuery } from 'entities/generate-query'
 import { getAuth, GoogleAuthProvider, signInWithPopup } from 'firebase/auth'
 import { app } from 'shared/lib'
 
-export const apiAuthGoogle = async () => {
+export const apiGoogleAuth = async () => {
   const provider = new GoogleAuthProvider()
   const auth = getAuth(app)
 
