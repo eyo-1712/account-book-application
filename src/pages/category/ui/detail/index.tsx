@@ -14,6 +14,12 @@ export const CategoryDetailPage = () => {
   const removeCategory = useApiRemoveCategory()
   const router = useRouter()
 
+  const onClickRemoveButton = () => {
+    removeCategory.mutate(category?.id ?? 0, {
+      onSuccess: router.nav.back,
+    })
+  }
+
   return (
     <Container>
       <AppBar
@@ -21,14 +27,7 @@ export const CategoryDetailPage = () => {
         actions={
           <ButtonGroup>
             <ModifyCategory id={category?.id ?? 0} />
-            <Button
-              color="red"
-              onClick={() =>
-                removeCategory.mutate(category?.id ?? 0, {
-                  onSuccess: router.nav.back,
-                })
-              }
-            >
+            <Button color="red" onClick={onClickRemoveButton}>
               삭제
             </Button>
           </ButtonGroup>
