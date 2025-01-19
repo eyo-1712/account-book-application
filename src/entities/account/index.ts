@@ -1,6 +1,7 @@
 import { api } from 'entities/api'
+import { SuccessResponse } from 'entities/type'
 
-export interface CreateAccountBody {
+interface CreateAccountBody {
   name: string
   money: number
   number: string
@@ -8,4 +9,18 @@ export interface CreateAccountBody {
 
 export const apiCreateAccount = async (json: CreateAccountBody) => {
   await api.post(`/api/account`, { json }).json()
+}
+
+export interface Account {
+  id: number
+  number: string
+  name: string
+  money: number
+}
+
+export const apiFetchAccounts = async () => {
+  const response: SuccessResponse<Account[]> = await api
+    .get(`/api/account`)
+    .json()
+  return response
 }

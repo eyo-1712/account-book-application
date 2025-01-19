@@ -1,7 +1,8 @@
 export { useApiCreateAccount } from './account/mutation'
+export { useApiFetchAccounts } from './account/query'
 export { useApiGoogleAuth } from './auth/mutation'
 export { useApiCreateCategory } from './category/mutation'
 export { useApiFetchCategories, useApiFetchCategory } from './category/query'
 
-export type { CreateAccountBody } from './account'
+export type { Account } from './account'
 export type { Category } from './category'

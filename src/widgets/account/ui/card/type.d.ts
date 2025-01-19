@@ -1,5 +1,5 @@
+import { Account } from 'entities'
+
 export interface AccountCardProps {
-  id: string
-  name: string
-  price: number
+  account: Account
 }

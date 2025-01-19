@@ -1,7 +1,8 @@
 import { useRouter } from 'shared/lib'
 import { Button } from 'shared/ui'
+import { AccountCardProps } from './type'
 
-export const AccountCard = (props: AccountCardProps) => {
+export const AccountCard = ({ account }: AccountCardProps) => {
   const { nav } = useRouter()
   return (
     <div className="flex flex-row items-center justify-between py-2 gap-4">
@@ -13,14 +14,14 @@ export const AccountCard = (props: AccountCardProps) => {
         className="flex flex-col items-start"
         onClick={nav.accountId('123')}
       >
-        <p className="text-sm text-gray-600">{props.name}</p>
-        <p className="text-lg font-bold">{props.price.toLocaleString()} 원</p>
+        <p className="text-sm text-gray-600">{account.name}</p>
+        <p className="text-lg font-bold">{account.money.toLocaleString()} 원</p>
       </button>
       <Button
         type="button"
         color="gray"
         rounded
-        onClick={nav.transfer(props.id)}
+        onClick={nav.transfer(account.id)}
       >
         이체
       </Button>
