@@ -2,7 +2,7 @@ import { AccountCreateFormPage } from '.'
 
 export default {
   component: AccountCreateFormPage,
-  title: 'AccountFormPage',
+  title: 'AccountCreateFormPage',
   tags: ['Pages', 'Account', 'Form'],
 }
 
