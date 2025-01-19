@@ -1,7 +1,7 @@
-import { AccountFormPage } from '.'
+import { AccountCreateFormPage } from '.'
 
 export default {
-  component: AccountFormPage,
+  component: AccountCreateFormPage,
   title: 'AccountFormPage',
   tags: ['Pages', 'Account', 'Form'],
 }

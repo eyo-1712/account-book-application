@@ -2,7 +2,7 @@ import { Back } from 'features/router'
 import { AppBar, Body, Container } from 'shared/ui'
 import { CreateAccountForm } from 'widgets'
 
-export const AccountFormPage = () => (
+export const AccountCreateFormPage = () => (
   <CreateAccountForm.Provider>
     <Container>
       <AppBar
