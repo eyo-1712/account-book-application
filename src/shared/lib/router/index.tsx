@@ -24,7 +24,7 @@ export const useRouter = () => {
       account: routing('/account'),
       accountId: (id: number) => routing(`/account/${id}`),
       createAccount: routing('/account/form'),
-      modifyAccount: (id: string) => routing(`/account/form/${id}`),
+      modifyAccount: (id: number) => routing(`/account/form/${id}`),
       transfer: (id: number) => routing(`/account/${id}/transfer`),
 
       // category

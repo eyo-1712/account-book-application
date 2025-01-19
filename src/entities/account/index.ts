@@ -31,3 +31,11 @@ export const apiFetchAccount = async (id: string) => {
     .json()
   return response
 }
+
+interface UpdateAccountBody extends CreateAccountBody {
+  id: number
+}
+
+export const apiModifyAccount = async (json: UpdateAccountBody) => {
+  await api.patch(`/api/account`, { json })
+}

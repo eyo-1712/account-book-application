@@ -3,6 +3,7 @@ import { AccountCreateFormPage as accountCreateFormPage } from './account/ui/cre
 import { AccountDetailPage as accountDetailPage } from './account/ui/detail'
 import { AccountListPage as accountListPage } from './account/ui/list'
 import { AccountTransferPage as accountTransferPage } from './account/ui/transfer'
+import { AccountUpdateFormPage as accountUpdateFormPage } from './account/ui/update-form'
 import { AnalysisPage as analysisPage } from './analysis/ui'
 import { LoginPage as loginPage } from './auth/ui/login'
 import { CreateCategoryFormPage as createCategoryFormPage } from './category/ui/create-form'
@@ -37,6 +38,7 @@ export const FixedDetailPage = withAuth(fixedDetailPage)
 export const FixedFormPage = withAuth(fixedFormPage)
 export const AnalysisPage = withAuth(analysisPage)
 export const AccountListPage = withAuth(accountListPage)
-export const AccountFormPage = withAuth(accountCreateFormPage)
+export const AccountCreateFormPage = withAuth(accountCreateFormPage)
+export const AccountUpdateFormPage = withAuth(accountUpdateFormPage)
 export const AccountDetailPage = withAuth(accountDetailPage)
 export const AccountTransferPage = withAuth(accountTransferPage)
