@@ -1,14 +1,18 @@
-import { Back, CreateAccount } from 'features/router'
-import { AppBar, Body, Container, Form, Input } from 'shared/ui'
+import { Back } from 'features/router'
+import { AppBar, Body, Container } from 'shared/ui'
+import { CreateAccountForm } from 'widgets'
 
 export const AccountFormPage = () => (
-  <Container>
-    <AppBar title="자산 추가" leading={<Back />} actions={<CreateAccount />} />
-    <Body>
-      <Form>
-        <Input type="text" placeholder="자산 이름을 적어주세요." />
-        <Input type="number" placeholder="잔액을 입력하세요." />
-      </Form>
-    </Body>
-  </Container>
+  <CreateAccountForm.Provider>
+    <Container>
+      <AppBar
+        title="자산 추가"
+        leading={<Back />}
+        actions={<CreateAccountForm.SubmitButton />}
+      />
+      <Body>
+        <CreateAccountForm.Form />
+      </Body>
+    </Container>
+  </CreateAccountForm.Provider>
 )
