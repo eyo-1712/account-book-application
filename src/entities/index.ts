@@ -1,5 +1,5 @@
 export { useApiCreateAccount } from './account/mutation'
-export { useApiFetchAccounts } from './account/query'
+export { useApiFetchAccount, useApiFetchAccounts } from './account/query'
 export { useApiGoogleAuth } from './auth/mutation'
 export { useApiCreateCategory } from './category/mutation'
 export { useApiFetchCategories, useApiFetchCategory } from './category/query'

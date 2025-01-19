@@ -24,3 +24,10 @@ export const apiFetchAccounts = async () => {
     .json()
   return response
 }
+
+export const apiFetchAccount = async (id: string) => {
+  const response: SuccessResponse<Account> = await api
+    .get(`/api/account/${id}`)
+    .json()
+  return response
+}

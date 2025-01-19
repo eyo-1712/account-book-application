@@ -22,7 +22,7 @@ export const useRouter = () => {
 
       // account
       account: routing('/account'),
-      accountId: (id: string) => routing(`/account/${id}`),
+      accountId: (id: number) => routing(`/account/${id}`),
       createAccount: routing('/account/form'),
       modifyAccount: (id: string) => routing(`/account/form/${id}`),
       transfer: (id: number) => routing(`/account/${id}/transfer`),
