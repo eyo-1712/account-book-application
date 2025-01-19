@@ -1,4 +1,8 @@
-export { useApiCreateAccount, useApiModifyAccount } from './account/mutation'
+export {
+  useApiCreateAccount,
+  useApiModifyAccount,
+  useApiRemoveAccount,
+} from './account/mutation'
 export { useApiFetchAccount, useApiFetchAccounts } from './account/query'
 export { useApiGoogleAuth } from './auth/mutation'
 export { useApiCreateCategory } from './category/mutation'

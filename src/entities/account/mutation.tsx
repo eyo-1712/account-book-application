@@ -1,5 +1,5 @@
 import { useMutation, useQueryClient } from '@tanstack/react-query'
-import { apiCreateAccount, apiModifyAccount } from '.'
+import { apiCreateAccount, apiModifyAccount, apiRemoveAccount } from '.'
 
 export const useApiCreateAccount = () => {
   const queryClient = useQueryClient()
@@ -17,6 +17,17 @@ export const useApiModifyAccount = () => {
 
   return useMutation({
     mutationFn: apiModifyAccount,
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ['account'] })
+    },
+  })
+}
+
+export const useApiRemoveAccount = () => {
+  const queryClient = useQueryClient()
+
+  return useMutation({
+    mutationFn: apiRemoveAccount,
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ['account'] })
     },

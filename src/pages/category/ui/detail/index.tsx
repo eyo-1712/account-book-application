@@ -14,7 +14,7 @@ export const CategoryDetailPage = () => {
   const removeCategory = useApiRemoveCategory()
   const router = useRouter()
 
-  const onClickRemoveButton = () => {
+  const onClickRemove = () => {
     removeCategory.mutate(category?.id ?? 0, {
       onSuccess: router.nav.back,
     })
@@ -27,7 +27,7 @@ export const CategoryDetailPage = () => {
         actions={
           <ButtonGroup>
             <ModifyCategory id={category?.id ?? 0} />
-            <Button color="red" onClick={onClickRemoveButton}>
+            <Button color="red" onClick={onClickRemove}>
               삭제
             </Button>
           </ButtonGroup>

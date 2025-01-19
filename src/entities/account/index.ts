@@ -39,3 +39,7 @@ interface UpdateAccountBody extends CreateAccountBody {
 export const apiModifyAccount = async (json: UpdateAccountBody) => {
   await api.patch(`/api/account`, { json })
 }
+
+export const apiRemoveAccount = async (id: number) => {
+  await api.delete(`/api/account/${id}`)
+}
