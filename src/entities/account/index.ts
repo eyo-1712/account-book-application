@@ -43,3 +43,13 @@ export const apiModifyAccount = async (json: UpdateAccountBody) => {
 export const apiRemoveAccount = async (id: number) => {
   await api.delete(`/api/account/${id}`)
 }
+
+interface TransferBody {
+  giveId: number
+  takeId: number
+  money: number
+}
+
+export const apiTransfer = async (json: TransferBody) => {
+  await api.patch(`/api/account/transfer`, { json })
+}
