@@ -1,3 +1,4 @@
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import React from 'react'
 import { BrowserRouter } from 'react-router'
 
@@ -8,9 +9,13 @@ export const BrowserRouterDecorator = (Story) => {
     document.body.appendChild(portalRoot)
   }
 
+  const queryClient = new QueryClient()
+
   return (
-    <BrowserRouter>
-      <Story />
-    </BrowserRouter>
+    <QueryClientProvider client={queryClient}>
+      <BrowserRouter>
+        <Story />
+      </BrowserRouter>
+    </QueryClientProvider>
   )
 }

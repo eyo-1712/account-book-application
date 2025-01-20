@@ -1,4 +1,4 @@
-import { ReactQueryProvider } from 'shared/lib/react-query'
+import { ReactQueryProvider } from 'shared/lib'
 import { Router } from './router'
 
 const App = () => (
