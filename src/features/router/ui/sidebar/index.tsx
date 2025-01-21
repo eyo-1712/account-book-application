@@ -1,4 +1,4 @@
-import { userStore } from 'features/user'
+import { useQueryClient } from '@tanstack/react-query'
 import {
   Sidebar,
   SidebarContent,
@@ -12,8 +12,12 @@ import { useRouter } from 'shared/lib'
 import { Icon } from 'shared/ui'
 
 export const AppSideBar = () => {
+  const queryClient = useQueryClient()
   const router = useRouter()
-  const logOut = userStore((state) => state.action.logOut)
+
+  const logOut = () => {
+    queryClient.clear()
+  }
 
   return (
     <Sidebar collapsible="icon">
@@ -71,7 +75,7 @@ export const AppSideBar = () => {
           <SidebarMenuItem>
             <SidebarMenuButton
               className="flex flex-row items-center gap-2"
-              onClick={() => logOut()}
+              onClick={logOut}
             >
               <Icon type="logout" />
               <span className="group-data-[collapsible=icon]:hidden">
