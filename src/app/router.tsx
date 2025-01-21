@@ -1,3 +1,4 @@
+import { useApiAuthInfo } from 'entities'
 import {
   AccountCreateFormPage,
   AccountDetailPage,
@@ -18,40 +19,44 @@ import {
 } from 'pages'
 import { BrowserRouter, Route, Routes } from 'react-router'
 
-export const Router = () => (
-  <BrowserRouter>
-    <Routes>
-      {/* with no auth */}
-      <Route path="/login" element={<LoginPage />} />
+export const Router = () => {
+  useApiAuthInfo()
 
-      {/* with auth */}
-      <Route path="/" element={<SummaryCalendarPage />} />
-      <Route path="/summary" element={<SummaryMonthPage />} />
-      <Route path="/summary/:id" element={<SummaryDetailPage />} />
-      <Route path="/summary/form" element={<SummaryFormPage />} />
-      <Route path="/summary/form/:id" element={<SummaryFormPage />} />
+  return (
+    <BrowserRouter>
+      <Routes>
+        {/* with no auth */}
+        <Route path="/login" element={<LoginPage />} />
 
-      <Route path="/account" element={<AccountListPage />} />
-      <Route path="/account/:id" element={<AccountDetailPage />} />
-      <Route path="/account/form" element={<AccountCreateFormPage />} />
-      <Route path="/account/form/:id" element={<AccountUpdateFormPage />} />
-      <Route path="/account/:id/transfer" element={<AccountTransferPage />} />
+        {/* with auth */}
+        <Route path="/" element={<SummaryCalendarPage />} />
+        <Route path="/summary" element={<SummaryMonthPage />} />
+        <Route path="/summary/:id" element={<SummaryDetailPage />} />
+        <Route path="/summary/form" element={<SummaryFormPage />} />
+        <Route path="/summary/form/:id" element={<SummaryFormPage />} />
 
-      <Route path="/category" element={<CategoryListPage />} />
-      <Route path="/category/:id" element={<CategoryDetailPage />} />
-      <Route path="/category/form" element={<CreateCategoryFormPage />} />
-      <Route path="/category/form/:id" element={<UpdateCategoryFormPage />} />
+        <Route path="/account" element={<AccountListPage />} />
+        <Route path="/account/:id" element={<AccountDetailPage />} />
+        <Route path="/account/form" element={<AccountCreateFormPage />} />
+        <Route path="/account/form/:id" element={<AccountUpdateFormPage />} />
+        <Route path="/account/:id/transfer" element={<AccountTransferPage />} />
 
-      {/* <Route path="/fixed" element={<FixedListPage />} />
-      <Route path="/fixed/:id" element={<FixedDetailPage />} />
-      <Route path="/fixed/form" element={<FixedFormPage />} />
-      <Route path="/fixed/form/:id" element={<FixedFormPage />} /> */}
+        <Route path="/category" element={<CategoryListPage />} />
+        <Route path="/category/:id" element={<CategoryDetailPage />} />
+        <Route path="/category/form" element={<CreateCategoryFormPage />} />
+        <Route path="/category/form/:id" element={<UpdateCategoryFormPage />} />
 
-      <Route path="/analysis" element={<AnalysisPage />} />
+        {/* <Route path="/fixed" element={<FixedListPage />} />
+            <Route path="/fixed/:id" element={<FixedDetailPage />} />
+            <Route path="/fixed/form" element={<FixedFormPage />} />
+            <Route path="/fixed/form/:id" element={<FixedFormPage />} /> */}
 
-      {/* common */}
-      <Route path="*" element={<NotFoundPage />} />
-      <Route />
-    </Routes>
-  </BrowserRouter>
-)
+        <Route path="/analysis" element={<AnalysisPage />} />
+
+        {/* common */}
+        <Route path="*" element={<NotFoundPage />} />
+        <Route />
+      </Routes>
+    </BrowserRouter>
+  )
+}
