@@ -1,3 +1,4 @@
+import { useApiFetchAccounts } from 'entities'
 import React from 'react'
 import {
   Form,
@@ -19,9 +20,16 @@ const Provider = ({ children }: { children: React.ReactNode }) => {
 }
 
 const FormUI = () => {
+  const { isSuccess, data } = useApiFetchAccounts()
   const {
     value: { form, options },
   } = useTransferFormContext()
+
+  const accounts = isSuccess ? data : []
+
+  const giveMax = accounts.find(
+    (account) => account.id === form.watch('giveId'),
+  )
 
   return (
     <Form {...form}>
@@ -36,6 +44,7 @@ const FormUI = () => {
                   placeholder="이체 할 계좌를 선택하세요"
                   options={options}
                   onValueChange={(v) => field.onChange(parseInt(v, 10))}
+                  disabledValue={`${form.watch('takeId')}`}
                 />
               </FormControl>
             </FormItem>
@@ -69,7 +78,14 @@ const FormUI = () => {
                   type="number"
                   placeholder="잔액을 입력해주세요."
                   disabled={!form.watch('giveId')}
-                  onChange={(e) => field.onChange(parseInt(e.target.value, 10))}
+                  onChange={(e) =>
+                    field.onChange(
+                      Math.min(
+                        parseInt(e.target.value, 10),
+                        giveMax?.money ?? 0,
+                      ),
+                    )
+                  }
                 />
               </FormControl>
             </FormItem>
