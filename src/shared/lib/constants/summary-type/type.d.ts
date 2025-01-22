@@ -1,1 +1,1 @@
-export type ISummaryType = 'income' | 'expenditure'
+export type SummaryType = 'income' | 'expenditure'

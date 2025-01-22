@@ -14,7 +14,7 @@ import { FixedDetailPage as fixedDetailPage } from './fixed/ui/detail'
 import { FixedFormPage as fixedFormPage } from './fixed/ui/form'
 import { FixedListPage as fixedListPage } from './fixed/ui/list'
 import { SummaryCalendarPage as summaryCalendarPage } from './summary/ui/calendar'
-import { SummaryFormPage as summaryFormPage } from './summary/ui/form'
+import { CreateSummaryFormPage as createSummaryFormPage } from './summary/ui/create-form'
 import { SummaryDetailPage as summaryDetailPage } from './summary/ui/summary-detail'
 import { SummaryMonthPage as summaryMonthPage } from './summary/ui/summary-month'
 
@@ -26,7 +26,7 @@ export const LoginPage = withNoAuth(loginPage)
 
 // auth
 export const SummaryCalendarPage = withAuth(summaryCalendarPage)
-export const SummaryFormPage = withAuth(summaryFormPage)
+export const CreateSummaryFormPage = withAuth(createSummaryFormPage)
 export const SummaryDetailPage = withAuth(summaryDetailPage)
 export const SummaryMonthPage = withAuth(summaryMonthPage)
 export const CategoryListPage = withAuth(categoryListPage)

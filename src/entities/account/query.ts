@@ -1,6 +1,6 @@
 import { useQuery } from '@tanstack/react-query'
-import { SuccessResponse } from 'entities/type'
 import { Account, apiFetchAccount, apiFetchAccounts } from '.'
+import { SuccessResponse } from '../type'
 
 export const useApiFetchAccounts = () =>
   useQuery<SuccessResponse<Account[]>, Error, Account[]>({

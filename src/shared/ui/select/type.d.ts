@@ -1,9 +1,5 @@
-import { SelectProps as RadixSelectProps } from '@radix-ui/react-select'
-
-interface Option {
-  label: string
-  value: string
-}
+import type { SelectProps as RadixSelectProps } from '@radix-ui/react-select'
+import type { Option } from '../../types/option'
 
 export interface SelectProps extends RadixSelectProps {
   placeholder: string

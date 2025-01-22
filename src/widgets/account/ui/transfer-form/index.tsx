@@ -41,7 +41,7 @@ const FormUI = () => {
             <FormItem>
               <FormControl>
                 <Select
-                  placeholder="이체 할 계좌를 선택하세요"
+                  placeholder="이체 할 계좌를 선택해주세요."
                   options={options}
                   onValueChange={(v) => field.onChange(parseInt(v, 10))}
                   disabledValue={`${form.watch('takeId')}`}
@@ -57,7 +57,7 @@ const FormUI = () => {
             <FormItem>
               <FormControl>
                 <Select
-                  placeholder="이체 받을 계좌를 선택하세요"
+                  placeholder="이체 받을 계좌를 선택해주세요."
                   options={options}
                   onValueChange={(v) => field.onChange(parseInt(v, 10))}
                   disabledValue={`${form.watch('giveId')}`}

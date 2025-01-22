@@ -9,11 +9,11 @@ import {
   CategoryDetailPage,
   CategoryListPage,
   CreateCategoryFormPage,
+  CreateSummaryFormPage,
   LoginPage,
   NotFoundPage,
   SummaryCalendarPage,
   SummaryDetailPage,
-  SummaryFormPage,
   SummaryMonthPage,
   UpdateCategoryFormPage,
 } from 'pages'
@@ -32,8 +32,8 @@ export const Router = () => {
         <Route path="/" element={<SummaryCalendarPage />} />
         <Route path="/summary" element={<SummaryMonthPage />} />
         <Route path="/summary/:id" element={<SummaryDetailPage />} />
-        <Route path="/summary/form" element={<SummaryFormPage />} />
-        <Route path="/summary/form/:id" element={<SummaryFormPage />} />
+        <Route path="/summary/form" element={<CreateSummaryFormPage />} />
+        <Route path="/summary/form/:id" element={<CreateSummaryFormPage />} />
 
         <Route path="/account" element={<AccountListPage />} />
         <Route path="/account/:id" element={<AccountDetailPage />} />

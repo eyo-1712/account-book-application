@@ -1,5 +1,5 @@
-import { api } from 'entities/api'
-import { SuccessResponse } from 'entities/type'
+import { api } from '../api'
+import { SuccessResponse } from '../type'
 
 interface CreateAccountBody {
   name: string
@@ -8,7 +8,8 @@ interface CreateAccountBody {
 }
 
 export const apiCreateAccount = async (json: CreateAccountBody) => {
-  await api.post(`/api/account`, { json }).json()
+  const response = await api.post(`/api/account`, { json }).json()
+  return response
 }
 
 export interface Account {
@@ -37,11 +38,13 @@ interface UpdateAccountBody extends CreateAccountBody {
 }
 
 export const apiModifyAccount = async (json: UpdateAccountBody) => {
-  await api.patch(`/api/account`, { json })
+  const response = await api.patch(`/api/account`, { json })
+  return response
 }
 
 export const apiRemoveAccount = async (id: number) => {
-  await api.delete(`/api/account/${id}`)
+  const response = await api.delete(`/api/account/${id}`)
+  return response
 }
 
 interface TransferBody {
@@ -51,5 +54,6 @@ interface TransferBody {
 }
 
 export const apiTransfer = async (json: TransferBody) => {
-  await api.patch(`/api/account/transfer`, { json })
+  const response = await api.patch(`/api/account/transfer`, { json })
+  return response
 }

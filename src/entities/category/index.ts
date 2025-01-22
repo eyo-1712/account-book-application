@@ -1,4 +1,4 @@
-import { api } from 'entities/api'
+import { api } from '../api'
 import { SuccessResponse } from '../type'
 
 interface CreateCategoryBody {
@@ -6,7 +6,8 @@ interface CreateCategoryBody {
 }
 
 export const apiCreateCategory = async (json: CreateCategoryBody) => {
-  await api.post(`/api/category`, { json }).json()
+  const response = await api.post(`/api/category`, { json }).json()
+  return response
 }
 
 ///
@@ -35,9 +36,11 @@ export const apiFetchCategory = async (id: string) => {
 export type UpdateCategoryBody = Pick<Category, 'id' | 'name'>
 
 export const apiModifyCategory = async (json: UpdateCategoryBody) => {
-  await api.patch(`/api/category`, { json })
+  const response = await api.patch(`/api/category`, { json })
+  return response
 }
 
 export const apiRemoveCategory = async (id: number) => {
-  await api.delete(`/api/category/${id}`)
+  const response = await api.delete(`/api/category/${id}`)
+  return response
 }

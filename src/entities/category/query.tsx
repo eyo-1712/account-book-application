@@ -1,6 +1,6 @@
 import { useQuery } from '@tanstack/react-query'
-import { SuccessResponse } from 'entities/type'
 import { apiFetchCategories, apiFetchCategory, Category } from '.'
+import { SuccessResponse } from '../type'
 
 export const useApiFetchCategories = () =>
   useQuery<SuccessResponse<Category[]>, Error, Category[]>({

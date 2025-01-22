@@ -1,8 +1,8 @@
-import { api } from 'entities/api'
-import { generateQuery } from 'entities/generate-query'
-import { SuccessResponse } from 'entities/type'
 import { getAuth, GoogleAuthProvider, signInWithPopup } from 'firebase/auth'
 import { app } from 'shared/lib'
+import { api } from '../api'
+import { generateQuery } from '../generate-query'
+import { SuccessResponse } from '../type'
 
 export const apiGoogleAuth = async () => {
   const provider = new GoogleAuthProvider()
@@ -12,7 +12,10 @@ export const apiGoogleAuth = async () => {
   GoogleAuthProvider.credentialFromResult(result)
   const idToken = await auth.currentUser?.getIdToken()
 
-  await api.get(`/api/auth/google${generateQuery({ idToken })}`)
+  const response = await api.get(
+    `/api/auth/google${generateQuery({ idToken })}`,
+  )
+  return response
 }
 
 export interface User {
