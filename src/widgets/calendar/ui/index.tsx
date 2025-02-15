@@ -1,4 +1,5 @@
 import { getMonth, getYear, isAfter, setDate } from 'date-fns'
+import { useApiFetchSummaryByDate } from 'entities/summary/query'
 import { useRouter } from 'shared/lib'
 import { Icon } from 'shared/ui'
 import { DAY } from './constants'
@@ -22,6 +23,13 @@ const CalendarBox = (props: {
 export const Calendar = () => {
   const { value, handler } = useLogic()
   const { nav } = useRouter()
+
+  const { data: summaries } = useApiFetchSummaryByDate({
+    year: getYear(value.date),
+    month: getMonth(value.date) + 1,
+  })
+
+  console.log(summaries)
 
   return (
     <div className="flex flex-col items-center w-full">

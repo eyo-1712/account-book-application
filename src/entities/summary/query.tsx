@@ -11,6 +11,6 @@ export const useApiFetchSummaryByDate = ({
 }) =>
   useQuery<SuccessResponse<Summary[]>, Error, Summary[]>({
     queryKey: ['summary', year.toString(), month.toString()],
-    queryFn: apiFetchSummariesByDate,
+    queryFn: () => apiFetchSummariesByDate({ year, month }),
     select: ({ data }) => data,
   })
