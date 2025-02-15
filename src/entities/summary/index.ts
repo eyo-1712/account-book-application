@@ -16,7 +16,7 @@ export const apiCreateSummary = async (json: CreateSummaryBody) => {
 }
 
 export interface Summary {
-  type: string
+  type: 'expenditure' | 'income'
   money: number
   datetime: string
 }

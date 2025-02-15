@@ -1,3 +1,4 @@
+import { generateQuery } from 'entities/generate-query'
 import { useNavigate } from 'react-router'
 
 export const useRouter = () => {
@@ -15,7 +16,10 @@ export const useRouter = () => {
 
       // summary
       calendar: routing('/'),
-      summaryMonth: routing('/summary'),
+      summaryMonth: (params: {
+        year: string | number
+        month: string | number
+      }) => routing(`/summary${generateQuery(params)}`),
       summaryId: (id: string) => routing(`/summary/${id}`),
       createSummary: routing('/summary/form'),
       modifySummary: (id: string) => routing(`/summary/form/${id}`),
