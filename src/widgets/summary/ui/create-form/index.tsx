@@ -1,6 +1,8 @@
+import { format } from 'date-fns'
 import { useApiFetchAccounts, useApiFetchCategories } from 'entities'
 import React from 'react'
-import { Form, FormField } from 'shadcn/components/ui/form'
+import { DatePicker } from 'shadcn/components/ui/date-picker'
+import { Form, FormControl, FormField } from 'shadcn/components/ui/form'
 import { Button, Input, Select } from 'shared/ui'
 import { generateOptions } from 'shared/utils'
 import { SUMMARY_TYPE_MAP } from './constants'
@@ -42,7 +44,7 @@ const FormUI = () => {
         />
         <FormField
           control={form.control}
-          name="account"
+          name="accountId"
           render={({ field }) => (
             <Select
               placeholder="계좌를 선택해주세요."
@@ -53,7 +55,7 @@ const FormUI = () => {
         />
         <FormField
           control={form.control}
-          name="category"
+          name="categoryId"
           render={({ field }) => (
             <Select
               placeholder="카테고리를 선택해주세요."
@@ -71,6 +73,19 @@ const FormUI = () => {
               placeholder="금액을 입력해주세요."
               onChange={(e) => field.onChange(parseInt(e.target.value, 10))}
             />
+          )}
+        />
+        <FormField
+          control={form.control}
+          name="datetime"
+          render={({ field }) => (
+            <FormControl>
+              <DatePicker
+                onOpenChange={(date) =>
+                  field.onChange(format(date, `yyyy-MM-dd'T'HH:mm:ss`))
+                }
+              />
+            </FormControl>
           )}
         />
       </form>

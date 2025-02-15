@@ -23,7 +23,7 @@ export const AccountDetailPage = () => {
       <Body>
         <div className="flex flex-col gap-2">
           <p className="w-full text-2xl font-bold">{value.account?.name}</p>
-          <p className="w-full text-gray-400 font-bold">
+          <p className="w-full font-bold text-gray-400">
             {value.account?.number}
           </p>
           <p className="w-full text-lg font-bold">잔액</p>

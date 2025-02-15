@@ -1,4 +1,5 @@
 import { zodResolver } from '@hookform/resolvers/zod'
+import { format } from 'date-fns'
 import { useApiCreateSummary } from 'entities'
 import { useForm } from 'react-hook-form'
 import { useRouter } from 'shared/lib'
@@ -8,6 +9,9 @@ export const useLogic = () => {
   const form = useForm<FormSchema>({
     resolver: zodResolver(schema),
     mode: 'onChange',
+    defaultValues: {
+      datetime: format(new Date(), `yyyy-MM-dd'T'HH:mm:ss`),
+    },
   })
 
   const router = useRouter()

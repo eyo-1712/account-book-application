@@ -37,7 +37,7 @@ export const AppSideBar = () => {
           </SidebarMenuItem>
           <SidebarMenuItem>
             <SidebarMenuButton
-              className="flex flex-row items-center gap-2 p-2"
+              className="flex flex-row items-center p-2 gap-2"
               onClick={router.nav.account}
             >
               <Icon type="card" />
@@ -48,7 +48,7 @@ export const AppSideBar = () => {
           </SidebarMenuItem>
           <SidebarMenuItem>
             <SidebarMenuButton
-              className="flex flex-row items-center gap-2 p-2"
+              className="flex flex-row items-center p-2 gap-2"
               onClick={router.nav.category}
             >
               <Icon type="category" />
@@ -59,7 +59,7 @@ export const AppSideBar = () => {
           </SidebarMenuItem>
           <SidebarMenuItem>
             <SidebarMenuButton
-              className="flex flex-row items-center gap-2 p-2"
+              className="flex flex-row items-center p-2 gap-2"
               onClick={router.nav.analysis}
             >
               <Icon type="chart" />
