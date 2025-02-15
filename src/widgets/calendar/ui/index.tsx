@@ -1,4 +1,4 @@
-import dayjs from 'dayjs'
+import { getMonth, getYear, isAfter, setDate } from 'date-fns'
 import { useRouter } from 'shared/lib'
 import { Icon } from 'shared/ui'
 import { DAY } from './constants'
@@ -6,9 +6,7 @@ import { useLogic } from './logic'
 
 const CalendarBox = (props: {
   children: React.ReactNode
-  // eslint-disable-next-line react/require-default-props
   onClick?: () => void
-  // eslint-disable-next-line react/require-default-props
   disabled?: boolean
 }) => (
   <button
@@ -32,8 +30,8 @@ export const Calendar = () => {
           <Icon type="left" />
         </button>
         <p className="text-center">
-          {value.date.year()}년{' '}
-          {(value.date.month() + 1).toString().padStart(2, '\u00A0')}월
+          {getYear(value.date)}년{' '}
+          {(getMonth(value.date) + 1).toString().padStart(2, '\u00A0')}월
         </p>
         <button
           type="button"
@@ -57,12 +55,8 @@ export const Calendar = () => {
         style={{ height: '30rem' }}
       >
         {value.DATE.map((date, index) => {
-          const isFuture =
-            date === ''
-              ? true
-              : dayjs(value.date)
-                  .date(date as number)
-                  .isAfter(dayjs(value.today), 'day')
+          const current = setDate(value.date, date as number)
+          const isFuture = date === '' ? true : isAfter(current, new Date())
 
           return (
             <CalendarBox
