@@ -15,9 +15,10 @@ export const Summary = ({ summary }: SummaryProps) => {
         <p
           className={[
             'font-bold text-lg',
-            `${summary.type === 'income' ? 'text-blue-600' : 'text-gray-600'}`,
+            `${summary.type === 'income' ? 'income' : 'expenditure'}`,
           ].join(' ')}
         >
+          {summary.type === 'income' ? '' : '-'}
           {summary.money.toLocaleString()} 원
         </p>
       </div>

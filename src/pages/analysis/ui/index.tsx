@@ -20,7 +20,7 @@ export const AnalysisPage = () => (
       <AppBar title="지출 분석" leading={<SidebarTrigger />} />
       <Body center>
         <p>이번달 지출 내역</p>
-        <p className="text-xs text-gray-400">지난달보다 ___원 덜 쓰는 중</p>
+        <p className="text-xs expenditure">지난달보다 ___원 덜 쓰는 중</p>
         <br />
         <ResponsiveContainer width="100%" height={300}>
           <LineChart data={LINE_MOCK_DATA}>
@@ -34,7 +34,7 @@ export const AnalysisPage = () => (
         <br />
         <br />
         <p>카테고리 별 지출 내역</p>
-        <p className="text-xs text-gray-400">어디에 제일 많이 쓰는 중</p>
+        <p className="text-xs expenditure">어디에 제일 많이 쓰는 중</p>
         <br />
         <ResponsiveContainer width="100%" height={300}>
           <BarChart data={BAR_MOCK_DATA}>

@@ -87,12 +87,10 @@ export const Calendar = () => {
               {!isFuture && (
                 <div className="flex flex-col items-center justify-center">
                   {income !== 0 && (
-                    <p className="text-xs text-blue-600">
-                      +{income.toLocaleString()}
-                    </p>
+                    <p className="text-xs income">+{income.toLocaleString()}</p>
                   )}
                   {expenditure !== 0 && (
-                    <p className="text-xs text-gray-400">
+                    <p className="text-xs expenditure">
                       -{expenditure.toLocaleString()}
                     </p>
                   )}

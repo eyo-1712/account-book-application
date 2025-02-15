@@ -1,7 +1,6 @@
 import { Back } from 'features/router'
 import { ModifyAccount } from 'features/router/ui/modify-account'
 import { AppBar, Body, Button, ButtonGroup, Container } from 'shared/ui'
-import { SummaryToday } from 'widgets'
 import { useLogic } from './logic'
 
 export const AccountDetailPage = () => {
@@ -27,16 +26,16 @@ export const AccountDetailPage = () => {
             {value.account?.number}
           </p>
           <p className="w-full text-lg font-bold">잔액</p>
-          <p className="w-full text-lg font-bold text-blue-600">
+          <p className="w-full text-lg font-bold income">
             {value.account?.money.toLocaleString()} 원
           </p>
         </div>
         <br />
-        <div className="flex flex-col items-start w-full gap-8">
+        {/* <div className="flex flex-col items-start w-full gap-8">
           <SummaryToday date={new Date()} />
           <SummaryToday date={new Date()} />
           <SummaryToday date={new Date()} />
-        </div>
+        </div> */}
       </Body>
     </Container>
   )
