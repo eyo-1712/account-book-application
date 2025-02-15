@@ -1,3 +1,5 @@
+import { generateQuery } from 'entities/generate-query'
+import { SuccessResponse } from 'entities/type'
 import { api } from '../api'
 
 interface CreateSummaryBody {
@@ -10,5 +12,21 @@ interface CreateSummaryBody {
 
 export const apiCreateSummary = async (json: CreateSummaryBody) => {
   const response = await api.post(`/api/summary`, { json }).json()
+  return response
+}
+
+export interface Summary {
+  type: string
+  money: number
+  datetime: string
+}
+
+export const apiFetchSummariesByDate = async (params: {
+  year: number
+  month: number
+}) => {
+  const response: SuccessResponse<Summary[]> = await api
+    .get(`/api/summary${generateQuery(params)}`)
+    .json()
   return response
 }
