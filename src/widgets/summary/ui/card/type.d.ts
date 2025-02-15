@@ -1,5 +1,5 @@
+import { Summary } from 'entities/summary'
+
 export interface SummaryProps {
-  // src: string
-  price: number
-  reason: string
+  summary: Summary
 }

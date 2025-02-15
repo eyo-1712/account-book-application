@@ -1,3 +1,4 @@
+import { Category } from 'entities/category'
 import { generateQuery } from 'entities/generate-query'
 import { SuccessResponse } from 'entities/type'
 import { api } from '../api'
@@ -16,9 +17,11 @@ export const apiCreateSummary = async (json: CreateSummaryBody) => {
 }
 
 export interface Summary {
+  id: number
   type: 'expenditure' | 'income'
   money: number
   datetime: string
+  category: Category
 }
 
 export const apiFetchSummariesByDate = async (params: {

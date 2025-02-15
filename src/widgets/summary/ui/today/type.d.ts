@@ -1,3 +1,6 @@
+import { Summary } from 'entities/summary'
+
 export interface SummaryTodayProps {
-  date: Date
+  date: string
+  summaries: Summary[]
 }
