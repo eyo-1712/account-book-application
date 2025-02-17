@@ -33,3 +33,10 @@ export const apiFetchSummariesByDate = async (params: {
     .json()
   return response
 }
+
+export const apiFetchSummary = async (id: string) => {
+  const response: SuccessResponse<Summary> = await api
+    .get(`/api/summary/${id}`)
+    .json()
+  return response
+}
