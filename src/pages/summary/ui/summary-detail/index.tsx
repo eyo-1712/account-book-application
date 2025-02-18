@@ -1,7 +1,9 @@
 import { format } from 'date-fns'
+import { useApiRemoveSummary } from 'entities/summary/mutation'
 import { useApiFetchSummary } from 'entities/summary/query'
 import { Back, ModifySummary } from 'features/router'
 import { useParams } from 'react-router'
+import { useRouter } from 'shared/lib'
 import { AppBar, Body, Button, ButtonGroup, Container } from 'shared/ui'
 import { match } from 'ts-pattern'
 
@@ -18,6 +20,15 @@ const DetailButton = (props: { title: string; content: string }) => (
 export const SummaryDetailPage = () => {
   const params = useParams()
   const { data: summary } = useApiFetchSummary(params.id!)
+  const router = useRouter()
+
+  const removeSummary = useApiRemoveSummary()
+
+  const onRemove = () => {
+    removeSummary.mutate(params.id!, {
+      onSuccess: router.nav.back,
+    })
+  }
 
   return (
     <Container>
@@ -27,7 +38,7 @@ export const SummaryDetailPage = () => {
         actions={
           <ButtonGroup>
             <ModifySummary id="123123" />
-            <Button color="red" type="button">
+            <Button color="red" type="button" onClick={onRemove}>
               삭제
             </Button>
           </ButtonGroup>

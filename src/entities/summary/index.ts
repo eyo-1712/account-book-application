@@ -40,3 +40,11 @@ export const apiFetchSummary = async (id: string) => {
     .json()
   return response
 }
+
+export const apiRemoveSummary = async (id: string) => {
+  const response: SuccessResponse<Summary> = await api
+    .delete(`/api/summary/${id}`)
+    .json()
+
+  return response
+}
