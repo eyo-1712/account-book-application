@@ -1,8 +1,8 @@
 import { getMonth, getYear, isAfter, setDate } from 'date-fns'
-import { useApiFetchSummaryByDate } from 'entities/summary/query'
+import { generateSummaryGroup, useApiFetchSummaryByDate } from 'entities'
 import { useRouter } from 'shared/lib'
 import { Icon } from 'shared/ui'
-import { generateSummaryGroup } from 'shared/utils/generate-summary-group'
+
 import { DAY } from './constants'
 import { useLogic } from './logic'
 

@@ -7,12 +7,12 @@ import { Button, Input, Select } from 'shared/ui'
 import { generateOptions } from 'shared/utils'
 import { SUMMARY_TYPE_MAP } from './constants'
 import { useLogic } from './logic'
-import { Context, useCreateFormContext } from './provider'
+import { Context, useModifyFormContext } from './provider'
 
 const FormUI = () => {
   const {
     value: { form },
-  } = useCreateFormContext()
+  } = useModifyFormContext()
 
   const account = useApiFetchAccounts()
   const categories = useApiFetchCategories()
@@ -97,7 +97,7 @@ const SubmitButton = () => {
   const {
     value: { form },
     handler,
-  } = useCreateFormContext()
+  } = useModifyFormContext()
 
   return (
     <Button

@@ -1,7 +1,7 @@
 import { getAuth, GoogleAuthProvider, signInWithPopup } from 'firebase/auth'
 import { app } from 'shared/lib'
+import { generateQuery } from 'shared/utils'
 import { api } from '../api'
-import { generateQuery } from '../generate-query'
 import { SuccessResponse } from '../type'
 
 export const apiGoogleAuth = async () => {

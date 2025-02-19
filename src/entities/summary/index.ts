@@ -1,6 +1,6 @@
 import { Category } from 'entities/category'
-import { generateQuery } from 'entities/generate-query'
 import { SuccessResponse } from 'entities/type'
+import { generateQuery } from 'shared/utils'
 import { api } from '../api'
 
 interface CreateSummaryBody {
@@ -37,6 +37,17 @@ export const apiFetchSummariesByDate = async (params: {
 export const apiFetchSummary = async (id: string) => {
   const response: SuccessResponse<Summary> = await api
     .get(`/api/summary/${id}`)
+    .json()
+  return response
+}
+
+interface ModifySummaryBody extends CreateSummaryBody {
+  id: number
+}
+
+export const apiModifySummary = async (json: ModifySummaryBody) => {
+  const response: SuccessResponse<Summary> = await api
+    .put(`/api/summary`, { json })
     .json()
   return response
 }

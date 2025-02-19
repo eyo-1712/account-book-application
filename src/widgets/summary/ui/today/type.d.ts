@@ -1,4 +1,4 @@
-import { Summary } from 'entities/summary'
+import { Summary } from 'entities'
 
 export interface SummaryTodayProps {
   date: string

@@ -1,5 +1,5 @@
-import { generateQuery } from 'entities/generate-query'
 import { useNavigate } from 'react-router'
+import { generateQuery } from 'shared/utils'
 
 export const useRouter = () => {
   const router = useNavigate()

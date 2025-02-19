@@ -1,5 +1,4 @@
-import { useApiFetchCategory } from 'entities'
-import { useApiRemoveCategory } from 'entities/category/mutation'
+import { useApiFetchCategory, useApiRemoveCategory } from 'entities'
 import { Back, ModifyCategory } from 'features/router'
 import { useParams } from 'react-router'
 import { useRouter } from 'shared/lib'

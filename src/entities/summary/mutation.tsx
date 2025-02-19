@@ -1,11 +1,22 @@
 import { useMutation, useQueryClient } from '@tanstack/react-query'
-import { apiCreateSummary, apiRemoveSummary } from '.'
+import { apiCreateSummary, apiModifySummary, apiRemoveSummary } from '.'
 
 export const useApiCreateSummary = () => {
   const queryClient = useQueryClient()
 
   return useMutation({
     mutationFn: apiCreateSummary,
+    onSuccess: () => {
+      queryClient.refetchQueries({ queryKey: ['summary'] })
+    },
+  })
+}
+
+export const useApiModifySummary = () => {
+  const queryClient = useQueryClient()
+
+  return useMutation({
+    mutationFn: apiModifySummary,
     onSuccess: () => {
       queryClient.refetchQueries({ queryKey: ['summary'] })
     },

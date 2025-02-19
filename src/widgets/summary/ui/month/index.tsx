@@ -1,7 +1,7 @@
 import { getMonth, getYear } from 'date-fns'
-import { useApiFetchSummaryByDate } from 'entities/summary/query'
+import { generateSummaryGroup, useApiFetchSummaryByDate } from 'entities'
 import { useSearchParams } from 'react-router'
-import { generateSummaryGroup } from 'shared/utils/generate-summary-group'
+
 import { SummaryToday } from '../today'
 
 export const SummaryMonth = () => {

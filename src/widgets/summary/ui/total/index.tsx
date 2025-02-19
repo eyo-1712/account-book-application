@@ -1,5 +1,5 @@
 import { getMonth, getYear } from 'date-fns'
-import { useApiFetchSummaryByDate } from 'entities/summary/query'
+import { useApiFetchSummaryByDate } from 'entities'
 import { useSearchParams } from 'react-router'
 
 export const SummaryTotal = () => {

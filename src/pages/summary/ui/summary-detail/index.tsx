@@ -1,6 +1,5 @@
 import { format } from 'date-fns'
-import { useApiRemoveSummary } from 'entities/summary/mutation'
-import { useApiFetchSummary } from 'entities/summary/query'
+import { useApiFetchSummary, useApiRemoveSummary } from 'entities'
 import { Back, ModifySummary } from 'features/router'
 import { useParams } from 'react-router'
 import { useRouter } from 'shared/lib'

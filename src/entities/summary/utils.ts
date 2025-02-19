@@ -1,4 +1,4 @@
-import { Summary } from 'entities/summary'
+import { Summary } from '.'
 
 export const generateSummaryGroup = (data: Summary[] | undefined) => {
   const groupedData = Array.from({ length: 31 }, () => [] as Summary[])

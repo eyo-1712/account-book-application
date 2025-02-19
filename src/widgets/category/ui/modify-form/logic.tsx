@@ -1,6 +1,5 @@
 import { zodResolver } from '@hookform/resolvers/zod'
-import { useApiFetchCategory } from 'entities'
-import { useApiModifyCategory } from 'entities/category/mutation'
+import { useApiFetchCategory, useApiModifyCategory } from 'entities'
 import React from 'react'
 import { useForm } from 'react-hook-form'
 import { useParams } from 'react-router'
