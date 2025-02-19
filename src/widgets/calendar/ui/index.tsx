@@ -13,7 +13,7 @@ const CalendarBox = (props: {
 }) => (
   <button
     type="button"
-    className="flex flex-col items-center w-[14.28%] py-2 disabled:text-gray-400"
+    className="flex flex-col items-center py-2 disabled:text-gray-400"
     onClick={props.onClick}
     disabled={props.disabled}
   >
@@ -52,7 +52,7 @@ export const Calendar = () => {
         </button>
       </div>
       <br />
-      <div className="flex flex-row items-center w-full justify-evenly">
+      <div className="grid w-full grid-cols-7 gap-4">
         {DAY.map((day) => (
           <CalendarBox key={day}>
             <p className="text-gray-400">{day}</p>
@@ -60,7 +60,7 @@ export const Calendar = () => {
         ))}
       </div>
       <div
-        className="flex flex-row flex-wrap w-full justify-evenly"
+        className="grid w-full grid-cols-7 gap-4"
         style={{ height: '30rem' }}
       >
         {value.DATE.map((date, index) => {
