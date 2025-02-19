@@ -20,11 +20,21 @@ const MINUTES = Array.from({ length: 60 }).map((_, i) => ({
 }))
 
 export const DatePicker = ({
+  initValue,
   onOpenChange,
 }: {
+  initValue?: string
   onOpenChange?: (date: Date) => void
 }) => {
-  const [date, setDate] = React.useState<Date>(new Date())
+  const [date, setDate] = React.useState<Date>(
+    initValue ? new Date(initValue) : new Date(),
+  )
+
+  React.useEffect(() => {
+    if (!initValue) return
+
+    setDate(new Date(initValue))
+  }, [initValue])
 
   return (
     <Popover

@@ -1,3 +1,4 @@
+import { Account } from 'entities/account'
 import { Category } from 'entities/category'
 import { SuccessResponse } from 'entities/type'
 import { generateQuery } from 'shared/utils'
@@ -22,6 +23,7 @@ export interface Summary {
   money: number
   datetime: string
   category: Category
+  account: Account
 }
 
 export const apiFetchSummariesByDate = async (params: {

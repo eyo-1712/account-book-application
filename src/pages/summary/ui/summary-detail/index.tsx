@@ -26,7 +26,7 @@ export const SummaryDetailPage = () => {
         leading={<Back />}
         actions={
           <ButtonGroup>
-            <ModifySummary id="123123" />
+            <ModifySummary id={parseInt(params.id!, 10)} />
             <Button color="red" type="button" onClick={onRemove}>
               삭제
             </Button>

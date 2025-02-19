@@ -22,7 +22,7 @@ export const useRouter = () => {
       }) => routing(`/summary${generateQuery(params)}`),
       summaryId: (id: string) => routing(`/summary/${id}`),
       createSummary: routing('/summary/form'),
-      modifySummary: (id: string) => routing(`/summary/form/${id}`),
+      modifySummary: (id: number) => routing(`/summary/form/${id}`),
 
       // account
       account: routing('/account'),

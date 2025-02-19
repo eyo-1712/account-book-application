@@ -37,6 +37,7 @@ const FormUI = () => {
           render={({ field }) => (
             <Select
               placeholder="지출 목록을 선택해주세요."
+              value={form.watch('type')}
               options={SUMMARY_TYPE_MAP}
               onValueChange={(e) => field.onChange(e)}
             />
@@ -47,6 +48,7 @@ const FormUI = () => {
           name="accountId"
           render={({ field }) => (
             <Select
+              value={form.watch('accountId')?.toString() ?? ''}
               placeholder="계좌를 선택해주세요."
               options={ACCOUNTS}
               onValueChange={(e) => field.onChange(parseInt(e, 10))}
@@ -58,6 +60,7 @@ const FormUI = () => {
           name="categoryId"
           render={({ field }) => (
             <Select
+              value={form.watch('categoryId')?.toString() ?? ''}
               placeholder="카테고리를 선택해주세요."
               options={CATEGORIES}
               onValueChange={(e) => field.onChange(parseInt(e, 10))}
@@ -69,6 +72,7 @@ const FormUI = () => {
           name="money"
           render={({ field }) => (
             <Input
+              value={form.watch('money') ?? ''}
               type="number"
               placeholder="금액을 입력해주세요."
               onChange={(e) => field.onChange(parseInt(e.target.value, 10))}
@@ -81,6 +85,7 @@ const FormUI = () => {
           render={({ field }) => (
             <FormControl>
               <DatePicker
+                initValue={form.watch('datetime')}
                 onOpenChange={(date) =>
                   field.onChange(format(date, `yyyy-MM-dd'T'HH:mm:ss`))
                 }
