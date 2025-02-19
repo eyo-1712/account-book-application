@@ -106,7 +106,7 @@ const SubmitButton = () => {
       disabled={!form.formState.isValid}
       onClick={handler.onSubmit}
     >
-      추가
+      수정
     </Button>
   )
 }

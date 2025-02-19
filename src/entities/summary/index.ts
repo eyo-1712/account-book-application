@@ -5,8 +5,8 @@ import { api } from '../api'
 
 interface CreateSummaryBody {
   type: string
-  account: number
-  category: number
+  accountId: number
+  categoryId: number
   money: number
   datetime: string
 }

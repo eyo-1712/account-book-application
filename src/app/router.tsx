@@ -12,6 +12,7 @@ import {
   CreateSummaryFormPage,
   LoginPage,
   ModifyCategoryFormPage,
+  ModifySummaryFormPage,
   NotFoundPage,
   SummaryCalendarPage,
   SummaryDetailPage,
@@ -33,7 +34,7 @@ export const Router = () => {
         <Route path="/summary" element={<SummaryMonthPage />} />
         <Route path="/summary/:id" element={<SummaryDetailPage />} />
         <Route path="/summary/form" element={<CreateSummaryFormPage />} />
-        <Route path="/summary/form/:id" element={<CreateSummaryFormPage />} />
+        <Route path="/summary/form/:id" element={<ModifySummaryFormPage />} />
 
         <Route path="/account" element={<AccountListPage />} />
         <Route path="/account/:id" element={<AccountDetailPage />} />
