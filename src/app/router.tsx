@@ -3,19 +3,19 @@ import {
   AccountCreateFormPage,
   AccountDetailPage,
   AccountListPage,
+  AccountModifyFormPage,
   AccountTransferPage,
-  AccountUpdateFormPage,
   AnalysisPage,
   CategoryDetailPage,
   CategoryListPage,
   CreateCategoryFormPage,
   CreateSummaryFormPage,
   LoginPage,
+  ModifyCategoryFormPage,
   NotFoundPage,
   SummaryCalendarPage,
   SummaryDetailPage,
   SummaryMonthPage,
-  UpdateCategoryFormPage,
 } from 'pages'
 import { BrowserRouter, Route, Routes } from 'react-router'
 
@@ -38,13 +38,13 @@ export const Router = () => {
         <Route path="/account" element={<AccountListPage />} />
         <Route path="/account/:id" element={<AccountDetailPage />} />
         <Route path="/account/form" element={<AccountCreateFormPage />} />
-        <Route path="/account/form/:id" element={<AccountUpdateFormPage />} />
+        <Route path="/account/form/:id" element={<AccountModifyFormPage />} />
         <Route path="/account/:id/transfer" element={<AccountTransferPage />} />
 
         <Route path="/category" element={<CategoryListPage />} />
         <Route path="/category/:id" element={<CategoryDetailPage />} />
         <Route path="/category/form" element={<CreateCategoryFormPage />} />
-        <Route path="/category/form/:id" element={<UpdateCategoryFormPage />} />
+        <Route path="/category/form/:id" element={<ModifyCategoryFormPage />} />
 
         {/* <Route path="/fixed" element={<FixedListPage />} />
             <Route path="/fixed/:id" element={<FixedDetailPage />} />

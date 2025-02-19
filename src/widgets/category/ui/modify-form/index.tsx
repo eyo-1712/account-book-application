@@ -7,12 +7,12 @@ import {
 } from 'shadcn/components/ui/form'
 import { Button, Input } from 'shared/ui'
 import { useLogic } from './logic'
-import { Context, useUpdateFormContext } from './provider'
+import { Context, useModifyFormContext } from './provider'
 
 const FormUI = () => {
   const {
     value: { form },
-  } = useUpdateFormContext()
+  } = useModifyFormContext()
 
   return (
     <Form {...form}>
@@ -43,7 +43,7 @@ const SubmitButton = () => {
   const {
     value: { form },
     handler,
-  } = useUpdateFormContext()
+  } = useModifyFormContext()
 
   return (
     <Button
@@ -66,7 +66,7 @@ const Provider = ({ children }: { children: React.ReactNode }) => {
   return <Context.Provider value={providerValue}>{children}</Context.Provider>
 }
 
-export const UpdateCategoryForm = {
+export const ModifyCategoryForm = {
   Form: FormUI,
   SubmitButton,
   Provider,

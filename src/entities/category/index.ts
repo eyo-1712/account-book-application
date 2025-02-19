@@ -33,9 +33,9 @@ export const apiFetchCategory = async (id: string) => {
   return response
 }
 
-export type UpdateCategoryBody = Pick<Category, 'id' | 'name'>
+export type ModifyCategoryBody = Pick<Category, 'id' | 'name'>
 
-export const apiModifyCategory = async (json: UpdateCategoryBody) => {
+export const apiModifyCategory = async (json: ModifyCategoryBody) => {
   const response = await api.patch(`/api/category`, { json })
   return response
 }

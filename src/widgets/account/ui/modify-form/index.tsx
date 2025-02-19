@@ -94,7 +94,7 @@ export const Provider = ({ children }: { children: React.ReactNode }) => {
   return <Context.Provider value={providerValue}>{children}</Context.Provider>
 }
 
-export const UpdateAccountForm = {
+export const ModifyAccountForm = {
   Form: FormUI,
   Provider,
   SubmitButton,

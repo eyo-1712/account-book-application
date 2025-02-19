@@ -7,16 +7,6 @@ import { useRouter } from 'shared/lib'
 import { AppBar, Body, Button, ButtonGroup, Container } from 'shared/ui'
 import { match } from 'ts-pattern'
 
-const DetailButton = (props: { title: string; content: string }) => (
-  <button
-    type="button"
-    className="flex flex-row items-center justify-between w-full py-2"
-  >
-    <p className="text-gray-400">{props.title}</p>
-    <p className="font-bold">{props.content}</p>
-  </button>
-)
-
 export const SummaryDetailPage = () => {
   const params = useParams()
   const { data: summary } = useApiFetchSummary(params.id!)
@@ -65,8 +55,6 @@ export const SummaryDetailPage = () => {
               ))
               .exhaustive()}
           </div>
-          <br />
-          <DetailButton title="카테고리" content={summary.category.name} />
         </Body>
       )}
     </Container>

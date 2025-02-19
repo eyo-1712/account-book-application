@@ -52,7 +52,7 @@ export const Calendar = () => {
         </button>
       </div>
       <br />
-      <div className="grid w-full grid-cols-7 gap-4">
+      <div className="w-full grid grid-cols-7 gap-4">
         {DAY.map((day) => (
           <CalendarBox key={day}>
             <p className="text-gray-400">{day}</p>
@@ -60,7 +60,7 @@ export const Calendar = () => {
         ))}
       </div>
       <div
-        className="grid w-full grid-cols-7 gap-4"
+        className="w-full grid grid-cols-7 gap-4"
         style={{ height: '30rem' }}
       >
         {value.DATE.map((date, index) => {
