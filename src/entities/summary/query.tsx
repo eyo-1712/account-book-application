@@ -29,11 +29,12 @@ export const useApiFetchSummaryByTopic = ({
   topic,
   topicId,
   lastId,
-}: Pick<DynamicQuery, 'topic' | 'topicId' | 'lastId'>) =>
+}: Pick<DynamicQuery, 'topic' | 'topicId'> & { lastId?: string }) =>
   useInfiniteQuery<SuccessResponse<Summary[]>, Error, Summary[]>({
-    queryKey: ['summary', topic, topicId],
-    queryFn: () => apiFetchSummariesByTopic({ topic, topicId, lastId }),
-    initialPageParam: { topic, topicId, lastId },
+    queryKey: ['summary', topic, topicId, lastId],
+    queryFn: ({ pageParam }) =>
+      apiFetchSummariesByTopic({ topic, topicId, lastId: pageParam }),
+    initialPageParam: lastId,
     getNextPageParam: ({ data }) => data.at(-1)?.id,
-    select: ({ pages }) => pages.at(0)!.data,
+    select: ({ pages }) => pages.flatMap((page) => page.data),
   })

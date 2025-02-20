@@ -23,7 +23,6 @@ export const CategoryDetailPage = () => {
   const infiniteSummariesByCategory = useApiFetchSummaryByTopic({
     topic: 'categoryId',
     topicId: params.id,
-    lastId: undefined,
   })
 
   const removeCategory = useApiRemoveCategory()
