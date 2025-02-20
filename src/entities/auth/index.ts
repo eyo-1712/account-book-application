@@ -14,8 +14,7 @@ export const apiGoogleAuth = async () => {
   const idToken = await auth.currentUser?.getIdToken()
 
   const response = await api.get(
-    // eslint-disable-next-line prefer-template
-    `/api/auth/google` + generateQuery({ idToken }),
+    `/api/auth/google${generateQuery({ idToken })}`,
   )
   return response
 }

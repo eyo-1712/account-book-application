@@ -1,7 +1,8 @@
+import { format } from 'date-fns'
 import { useRouter } from 'shared/lib'
 import { SummaryProps } from './type'
 
-export const Summary = ({ summary }: SummaryProps) => {
+export const Summary = ({ summary, withDate }: SummaryProps) => {
   const { nav } = useRouter()
 
   return (
@@ -11,6 +12,11 @@ export const Summary = ({ summary }: SummaryProps) => {
       onClick={nav.summaryId({ id: summary.id })}
     >
       <div className="flex flex-col items-start flex-1">
+        {withDate && (
+          <p className="text-sm">
+            {format(summary.datetime, 'yyyy. MM. dd HH:mm')}
+          </p>
+        )}
         <p className="text-sm text-gray-600">{summary.category.name}</p>
         <p
           className={[

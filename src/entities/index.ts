@@ -22,7 +22,11 @@ export {
   useApiModifySummary,
   useApiRemoveSummary,
 } from './summary/mutation'
-export { useApiFetchSummary, useApiFetchSummaryByDate } from './summary/query'
+export {
+  useApiFetchSummary,
+  useApiFetchSummaryByDate,
+  useApiFetchSummaryByTopic,
+} from './summary/query'
 
 export { generateQuery } from './generate-query'
 export { generateSummaryGroup } from './summary/utils'

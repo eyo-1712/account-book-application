@@ -32,8 +32,7 @@ export const apiFetchSummariesByDate = async (
   params: Pick<DynamicQuery, 'year' | 'month'>,
 ) => {
   const response: SuccessResponse<Summary[]> = await api
-    // eslint-disable-next-line prefer-template
-    .get(`/api/summary` + generateQuery(params))
+    .get(`/api/summary${generateQuery(params)}`)
     .json()
   return response
 }
@@ -59,6 +58,17 @@ export const apiModifySummary = async (json: ModifySummaryBody) => {
 export const apiRemoveSummary = async ({ id }: Pick<DynamicQuery, 'id'>) => {
   const response: SuccessResponse<Summary> = await api
     .delete(`/api/summary/${id}`)
+    .json()
+
+  return response
+}
+
+export const apiFetchSummariesByTopic = async ({
+  topic,
+  ...params
+}: Pick<DynamicQuery, 'topic' | 'topicId' | 'lastId'>) => {
+  const response: SuccessResponse<Summary[]> = await api
+    .get(`/api/summary/topic/${topic}${generateQuery(params)}`)
     .json()
 
   return response

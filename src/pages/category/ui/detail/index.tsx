@@ -1,13 +1,30 @@
-import { useApiFetchCategory, useApiRemoveCategory } from 'entities'
+import {
+  useApiFetchCategory,
+  useApiFetchSummaryByTopic,
+  useApiRemoveCategory,
+} from 'entities'
 import { Back, ModifyCategory } from 'features/router'
 import { useParams } from 'react-router'
 import { useRouter } from 'shared/lib'
-import { AppBar, Body, Button, ButtonGroup, Container } from 'shared/ui'
+import {
+  AppBar,
+  Body,
+  Button,
+  ButtonGroup,
+  Container,
+  InfiniteScroll,
+} from 'shared/ui'
+import { Summary } from 'widgets'
 
 export const CategoryDetailPage = () => {
   const params = useParams()
 
   const { data: category } = useApiFetchCategory({ id: params.id })
+  const infiniteSummariesByCategory = useApiFetchSummaryByTopic({
+    topic: 'categoryId',
+    topicId: params.id,
+    lastId: undefined,
+  })
 
   const removeCategory = useApiRemoveCategory()
   const router = useRouter()
@@ -30,14 +47,14 @@ export const CategoryDetailPage = () => {
         }
       />
       <Body>
-        <p className="w-full text-gray-600">{category?.name ?? ''}</p>
-        <p className="w-full text-lg font-bold">300,000 원</p>
+        <p className="w-full text-lg font-bold">{category?.name ?? ''}</p>
         <br />
-        {/* <div className="flex flex-col items-start w-full gap-8">
-          <SummaryToday date={new Date()} />
-          <SummaryToday date={new Date()} />
-          <SummaryToday date={new Date()} /> 
-        </div> */}
+        <InfiniteScroll
+          infiniteQuery={infiniteSummariesByCategory}
+          keyName="summary"
+          Component={Summary}
+          componentProps={{ withDate: true }}
+        />
       </Body>
     </Container>
   )
