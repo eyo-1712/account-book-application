@@ -33,7 +33,7 @@ export const SummaryTotal = () => {
       <div className="flex flex-row w-full gap-4">
         <p>지출</p>
         <p className="font-bold expenditure">
-          {expenditure.toLocaleString()} 원
+          -{expenditure.toLocaleString()} 원
         </p>
       </div>
     </>
