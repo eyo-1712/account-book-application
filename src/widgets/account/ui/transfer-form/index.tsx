@@ -43,7 +43,7 @@ const FormUI = () => {
                 <Select
                   placeholder="이체 할 계좌를 선택해주세요."
                   options={options}
-                  onValueChange={(v) => field.onChange(parseInt(v, 10))}
+                  onValueChange={(v) => field.onChange(v)}
                   disabledValue={`${form.watch('takeId')}`}
                 />
               </FormControl>
@@ -59,7 +59,7 @@ const FormUI = () => {
                 <Select
                   placeholder="이체 받을 계좌를 선택해주세요."
                   options={options}
-                  onValueChange={(v) => field.onChange(parseInt(v, 10))}
+                  onValueChange={(v) => field.onChange(v)}
                   disabledValue={`${form.watch('giveId')}`}
                   disabled={!form.watch('giveId')}
                 />

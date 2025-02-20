@@ -49,7 +49,7 @@ const FormUI = () => {
             <Select
               placeholder="계좌를 선택해주세요."
               options={ACCOUNTS}
-              onValueChange={(e) => field.onChange(parseInt(e, 10))}
+              onValueChange={(v) => field.onChange(v)}
             />
           )}
         />
@@ -60,7 +60,7 @@ const FormUI = () => {
             <Select
               placeholder="카테고리를 선택해주세요."
               options={CATEGORIES}
-              onValueChange={(e) => field.onChange(parseInt(e, 10))}
+              onValueChange={(v) => field.onChange(v)}
             />
           )}
         />

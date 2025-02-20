@@ -51,7 +51,7 @@ const FormUI = () => {
               value={form.watch('accountId')?.toString() ?? ''}
               placeholder="계좌를 선택해주세요."
               options={ACCOUNTS}
-              onValueChange={(e) => field.onChange(parseInt(e, 10))}
+              onValueChange={(v) => field.onChange(v)}
             />
           )}
         />
@@ -63,7 +63,7 @@ const FormUI = () => {
               value={form.watch('categoryId')?.toString() ?? ''}
               placeholder="카테고리를 선택해주세요."
               options={CATEGORIES}
-              onValueChange={(e) => field.onChange(parseInt(e, 10))}
+              onValueChange={(v) => field.onChange(v)}
             />
           )}
         />

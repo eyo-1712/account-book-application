@@ -11,7 +11,6 @@ export const CategoryCard = ({ category }: { category: Category }) => {
       onClick={nav.categoryId({ id: category.id })}
     >
       <p className="font-bold">{category.name}</p>
-      <p className="text-sm text-gray-600">연관개수: 30개</p>
     </button>
   )
 }
