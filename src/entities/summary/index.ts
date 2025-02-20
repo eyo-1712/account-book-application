@@ -8,8 +8,8 @@ import { api } from '../api'
 
 interface CreateSummaryBody {
   type: string
-  accountId: number
-  categoryId: number
+  accountId: string
+  categoryId: string
   money: number
   datetime: string
 }
@@ -20,7 +20,7 @@ export const apiCreateSummary = async (json: CreateSummaryBody) => {
 }
 
 export interface Summary {
-  id: number
+  id: string
   type: 'expenditure' | 'income'
   money: number
   datetime: string
@@ -45,7 +45,7 @@ export const apiFetchSummary = async ({ id }: Pick<DynamicQuery, 'id'>) => {
 }
 
 interface ModifySummaryBody extends CreateSummaryBody {
-  id: number
+  id: string
 }
 
 export const apiModifySummary = async (json: ModifySummaryBody) => {

@@ -12,7 +12,7 @@ export const apiCreateCategory = async (json: CreateCategoryBody) => {
 }
 
 export interface Category {
-  id: number
+  id: string
   name: string
   sort: number
 }

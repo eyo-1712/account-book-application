@@ -1,7 +1,7 @@
 import { UseInfiniteQueryResult } from '@tanstack/react-query'
 import React from 'react'
 
-export const InfiniteScroll = <T extends { id: number }, K extends string>({
+export const InfiniteScroll = <T extends { id: string }, K extends string>({
   infiniteQuery,
   keyName,
   Component,

@@ -1,7 +1,7 @@
 import { useRouter } from 'shared/lib'
 import { Button } from 'shared/ui'
 
-export const ModifySummary = ({ id }: { id: number }) => {
+export const ModifySummary = ({ id }: { id: string }) => {
   const { nav } = useRouter()
 
   return (

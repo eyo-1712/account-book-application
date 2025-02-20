@@ -14,7 +14,7 @@ export const apiCreateAccount = async (json: CreateAccountBody) => {
 }
 
 export interface Account {
-  id: number
+  id: string
   number: string
   name: string
   money: number
@@ -35,7 +35,7 @@ export const apiFetchAccount = async ({ id }: Pick<DynamicQuery, 'id'>) => {
 }
 
 interface ModifyAccountBody extends CreateAccountBody {
-  id: number
+  id: string
 }
 
 export const apiModifyAccount = async (json: ModifyAccountBody) => {
@@ -49,8 +49,8 @@ export const apiRemoveAccount = async ({ id }: Pick<DynamicQuery, 'id'>) => {
 }
 
 interface TransferBody {
-  giveId: number
-  takeId: number
+  giveId: string
+  takeId: string
   money: number
 }
 

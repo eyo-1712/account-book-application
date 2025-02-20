@@ -1,7 +1,7 @@
 import { useRouter } from 'shared/lib'
 import { Button } from 'shared/ui'
 
-export const ModifyAccount = ({ id }: { id: number }) => {
+export const ModifyAccount = ({ id }: { id: string }) => {
   const { nav } = useRouter()
 
   return (
