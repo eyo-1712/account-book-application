@@ -7,7 +7,7 @@ export const useApiCreateSummary = () => {
   return useMutation({
     mutationFn: apiCreateSummary,
     onSuccess: () => {
-      queryClient.refetchQueries({ queryKey: ['summary'] })
+      queryClient.refetchQueries({ queryKey: ['summary'], exact: false })
     },
   })
 }
@@ -18,7 +18,7 @@ export const useApiModifySummary = () => {
   return useMutation({
     mutationFn: apiModifySummary,
     onSuccess: () => {
-      queryClient.refetchQueries({ queryKey: ['summary'] })
+      queryClient.refetchQueries({ queryKey: ['summary'], exact: false })
     },
   })
 }
@@ -29,7 +29,7 @@ export const useApiRemoveSummary = () => {
   return useMutation({
     mutationFn: apiRemoveSummary,
     onSuccess: () => {
-      queryClient.refetchQueries({ queryKey: ['summary'] })
+      queryClient.refetchQueries({ queryKey: ['summary'], exact: false })
     },
   })
 }
