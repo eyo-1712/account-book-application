@@ -1,5 +1,6 @@
+import { generateQuery } from 'entities/generate-query'
 import { useNavigate } from 'react-router'
-import { generateQuery } from 'shared/utils'
+import { DynamicQuery } from 'shared/types'
 
 export const useRouter = () => {
   const router = useNavigate()
@@ -16,32 +17,38 @@ export const useRouter = () => {
 
       // summary
       calendar: routing('/'),
-      summaryMonth: (params: {
-        year: string | number
-        month: string | number
-      }) => routing(`/summary${generateQuery(params)}`),
-      summaryId: (id: string) => routing(`/summary/${id}`),
+      summaryMonth: (params: Pick<DynamicQuery, 'year' | 'month'>) =>
+        routing(`/summary${generateQuery(params)}`),
+      summaryId: ({ id }: Pick<DynamicQuery, 'id'>) =>
+        routing(`/summary/${id}`),
       createSummary: routing('/summary/form'),
-      modifySummary: (id: number) => routing(`/summary/form/${id}`),
+      modifySummary: ({ id }: Pick<DynamicQuery, 'id'>) =>
+        routing(`/summary/form/${id}`),
 
       // account
       account: routing('/account'),
-      accountId: (id: number) => routing(`/account/${id}`),
+      accountId: ({ id }: Pick<DynamicQuery, 'id'>) =>
+        routing(`/account/${id}`),
       createAccount: routing('/account/form'),
-      modifyAccount: (id: number) => routing(`/account/form/${id}`),
-      transfer: (id: number) => routing(`/account/${id}/transfer`),
+      modifyAccount: ({ id }: Pick<DynamicQuery, 'id'>) =>
+        routing(`/account/form/${id}`),
+      transfer: ({ id }: Pick<DynamicQuery, 'id'>) =>
+        routing(`/account/${id}/transfer`),
 
       // category
       category: routing('/category'),
-      categoryId: (id: number) => routing(`/category/${id}`),
+      categoryId: ({ id }: Pick<DynamicQuery, 'id'>) =>
+        routing(`/category/${id}`),
       createCategory: routing('/category/form'),
-      modifyCategory: (id: number) => routing(`/category/form/${id}`),
+      modifyCategory: ({ id }: Pick<DynamicQuery, 'id'>) =>
+        routing(`/category/form/${id}`),
 
       // fixed
       fixed: routing('/fixed'),
-      fixedId: (id: string) => routing(`/fixed/${id}`),
+      fixedId: ({ id }: Pick<DynamicQuery, 'id'>) => routing(`/fixed/${id}`),
       createFixed: routing('/fixed/form'),
-      modifyFixed: (id: string) => routing(`/fixed/form/${id}`),
+      modifyFixed: ({ id }: Pick<DynamicQuery, 'id'>) =>
+        routing(`/fixed/form/${id}`),
 
       analysis: routing('/analysis'),
     },

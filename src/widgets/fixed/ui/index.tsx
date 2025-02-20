@@ -7,7 +7,7 @@ export const FixedCard = () => {
     <button
       type="button"
       className="flex flex-row items-center px-4 py-2 gap-4"
-      onClick={nav.fixedId('123')}
+      onClick={nav.fixedId({ id: '123' })}
     >
       <p className="text-xl font-bold text-blue-600">D-25</p>
       <div className="flex flex-col items-start">

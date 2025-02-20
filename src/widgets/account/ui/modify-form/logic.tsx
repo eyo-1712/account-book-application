@@ -8,7 +8,7 @@ import { FormSchema, schema } from './schema'
 
 export const useLogic = () => {
   const params = useParams()
-  const { data: account } = useApiFetchAccount(params?.id ?? '')
+  const { data: account } = useApiFetchAccount({ id: params.id })
 
   const form = useForm<FormSchema>({
     resolver: zodResolver(schema),
@@ -24,9 +24,7 @@ export const useLogic = () => {
 
   const modifyAccount = useApiModifyAccount()
   const onSubmit = () => {
-    modifyAccount.mutate(form.getValues(), {
-      onSuccess: router.nav.back,
-    })
+    modifyAccount.mutate(form.getValues(), { onSuccess: router.nav.back })
   }
 
   return { value: { form }, handler: { onSubmit } }

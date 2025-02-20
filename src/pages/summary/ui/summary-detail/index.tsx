@@ -8,15 +8,13 @@ import { match } from 'ts-pattern'
 
 export const SummaryDetailPage = () => {
   const params = useParams()
-  const { data: summary } = useApiFetchSummary(params.id!)
+  const { data: summary } = useApiFetchSummary({ id: params.id })
   const router = useRouter()
 
   const removeSummary = useApiRemoveSummary()
 
   const onRemove = () => {
-    removeSummary.mutate(params.id!, {
-      onSuccess: router.nav.back,
-    })
+    removeSummary.mutate({ id: params.id }, { onSuccess: router.nav.back })
   }
 
   return (

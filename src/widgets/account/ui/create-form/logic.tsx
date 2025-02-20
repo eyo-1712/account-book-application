@@ -15,9 +15,7 @@ export const useLogic = () => {
 
   const createAccount = useApiCreateAccount()
   const onSubmit = () => {
-    createAccount.mutate(form.getValues(), {
-      onSuccess: router.nav.back,
-    })
+    createAccount.mutate(form.getValues(), { onSuccess: router.nav.back })
   }
 
   return { value: { form }, handler: { onSubmit } }

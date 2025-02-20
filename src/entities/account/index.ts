@@ -1,3 +1,4 @@
+import { DynamicQuery } from 'shared/types'
 import { api } from '../api'
 import { SuccessResponse } from '../type'
 
@@ -26,7 +27,7 @@ export const apiFetchAccounts = async () => {
   return response
 }
 
-export const apiFetchAccount = async (id: string) => {
+export const apiFetchAccount = async ({ id }: Pick<DynamicQuery, 'id'>) => {
   const response: SuccessResponse<Account> = await api
     .get(`/api/account/${id}`)
     .json()
@@ -42,7 +43,7 @@ export const apiModifyAccount = async (json: ModifyAccountBody) => {
   return response
 }
 
-export const apiRemoveAccount = async (id: number) => {
+export const apiRemoveAccount = async ({ id }: Pick<DynamicQuery, 'id'>) => {
   const response = await api.delete(`/api/account/${id}`)
   return response
 }

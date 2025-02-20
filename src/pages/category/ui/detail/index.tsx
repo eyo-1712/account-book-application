@@ -7,15 +7,13 @@ import { AppBar, Body, Button, ButtonGroup, Container } from 'shared/ui'
 export const CategoryDetailPage = () => {
   const params = useParams()
 
-  const { data: category } = useApiFetchCategory(params?.id ?? '')
+  const { data: category } = useApiFetchCategory({ id: params.id })
 
   const removeCategory = useApiRemoveCategory()
   const router = useRouter()
 
   const onClickRemove = () => {
-    removeCategory.mutate(category?.id ?? 0, {
-      onSuccess: router.nav.back,
-    })
+    removeCategory.mutate({ id: params.id }, { onSuccess: router.nav.back })
   }
 
   return (

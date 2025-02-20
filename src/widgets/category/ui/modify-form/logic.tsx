@@ -8,7 +8,7 @@ import { FormSchema, schema } from './schema'
 
 export const useLogic = () => {
   const params = useParams()
-  const { data } = useApiFetchCategory(params?.id ?? '')
+  const { data } = useApiFetchCategory({ id: params.id })
 
   const form = useForm<FormSchema>({
     resolver: zodResolver(schema),
@@ -29,9 +29,7 @@ export const useLogic = () => {
   const modifyCategory = useApiModifyCategory()
 
   const onSubmit = () =>
-    modifyCategory.mutate(form.getValues(), {
-      onSuccess: router.nav.back,
-    })
+    modifyCategory.mutate(form.getValues(), { onSuccess: router.nav.back })
 
   return {
     value: { form },

@@ -16,7 +16,7 @@ export const useLogic = () => {
       datetime: format(new Date(), `yyyy-MM-dd'T'HH:mm:ss`),
     },
   })
-  const { data: summary } = useApiFetchSummary(id)
+  const { data: summary } = useApiFetchSummary({ id })
   const router = useRouter()
 
   const modifySummary = useApiModifySummary()

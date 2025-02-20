@@ -5,14 +5,12 @@ import { useRouter } from 'shared/lib'
 export const useLogic = () => {
   const router = useRouter()
   const params = useParams()
-  const { data: account } = useApiFetchAccount(params?.id ?? '')
+  const { data: account } = useApiFetchAccount({ id: params.id })
 
   const removeAccount = useApiRemoveAccount()
 
   const onClickRemove = () => {
-    removeAccount.mutate(account?.id ?? 0, {
-      onSuccess: router.nav.back,
-    })
+    removeAccount.mutate({ id: account?.id }, { onSuccess: router.nav.back })
   }
 
   return {

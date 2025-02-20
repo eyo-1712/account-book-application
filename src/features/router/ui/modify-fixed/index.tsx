@@ -6,7 +6,7 @@ export const ModifyFixed = ({ id }: IId) => {
   const { nav } = useRouter()
 
   return (
-    <Button color="blue" type="button" onClick={nav.modifyFixed(id)}>
+    <Button color="blue" type="button" onClick={nav.modifyFixed({ id })}>
       편집
     </Button>
   )

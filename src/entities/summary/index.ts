@@ -1,7 +1,9 @@
 import { Account } from 'entities/account'
 import { Category } from 'entities/category'
 import { SuccessResponse } from 'entities/type'
-import { generateQuery } from 'shared/utils'
+
+import { generateQuery } from 'entities/generate-query'
+import { DynamicQuery } from 'shared/types'
 import { api } from '../api'
 
 interface CreateSummaryBody {
@@ -26,17 +28,17 @@ export interface Summary {
   account: Account
 }
 
-export const apiFetchSummariesByDate = async (params: {
-  year: number
-  month: number
-}) => {
+export const apiFetchSummariesByDate = async (
+  params: Pick<DynamicQuery, 'year' | 'month'>,
+) => {
   const response: SuccessResponse<Summary[]> = await api
-    .get(`/api/summary${generateQuery(params)}`)
+    // eslint-disable-next-line prefer-template
+    .get(`/api/summary` + generateQuery(params))
     .json()
   return response
 }
 
-export const apiFetchSummary = async (id: string) => {
+export const apiFetchSummary = async ({ id }: Pick<DynamicQuery, 'id'>) => {
   const response: SuccessResponse<Summary> = await api
     .get(`/api/summary/${id}`)
     .json()
@@ -54,7 +56,7 @@ export const apiModifySummary = async (json: ModifySummaryBody) => {
   return response
 }
 
-export const apiRemoveSummary = async (id: string) => {
+export const apiRemoveSummary = async ({ id }: Pick<DynamicQuery, 'id'>) => {
   const response: SuccessResponse<Summary> = await api
     .delete(`/api/summary/${id}`)
     .json()

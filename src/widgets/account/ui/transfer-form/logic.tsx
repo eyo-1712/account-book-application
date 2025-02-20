@@ -20,9 +20,7 @@ export const useLogic = () => {
 
   const transfer = useApiTransfer()
   const onSubmit = () => {
-    transfer.mutate(form.getValues(), {
-      onSuccess: router.nav.back,
-    })
+    transfer.mutate(form.getValues(), { onSuccess: router.nav.back })
   }
 
   return { value: { form, options }, handler: { onSubmit } }

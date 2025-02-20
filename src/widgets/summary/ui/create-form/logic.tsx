@@ -18,9 +18,7 @@ export const useLogic = () => {
 
   const createSummary = useApiCreateSummary()
   const onSubmit = () => {
-    createSummary.mutate(form.getValues(), {
-      onSuccess: router.nav.back,
-    })
+    createSummary.mutate(form.getValues(), { onSuccess: router.nav.back })
   }
 
   return { value: { form }, handler: { onSubmit } }

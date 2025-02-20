@@ -1,3 +1,4 @@
+import { DynamicQuery } from 'shared/types'
 import { api } from '../api'
 import { SuccessResponse } from '../type'
 
@@ -9,8 +10,6 @@ export const apiCreateCategory = async (json: CreateCategoryBody) => {
   const response = await api.post(`/api/category`, { json }).json()
   return response
 }
-
-///
 
 export interface Category {
   id: number
@@ -25,7 +24,7 @@ export const apiFetchCategories = async () => {
   return response
 }
 
-export const apiFetchCategory = async (id: string) => {
+export const apiFetchCategory = async ({ id }: Pick<DynamicQuery, 'id'>) => {
   const response: SuccessResponse<Category> = await api
     .get(`/api/category/${id}`)
     .json()
@@ -40,7 +39,7 @@ export const apiModifyCategory = async (json: ModifyCategoryBody) => {
   return response
 }
 
-export const apiRemoveCategory = async (id: number) => {
+export const apiRemoveCategory = async ({ id }: Pick<DynamicQuery, 'id'>) => {
   const response = await api.delete(`/api/category/${id}`)
   return response
 }

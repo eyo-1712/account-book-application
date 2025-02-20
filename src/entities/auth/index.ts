@@ -1,6 +1,7 @@
 import { getAuth, GoogleAuthProvider, signInWithPopup } from 'firebase/auth'
 import { app } from 'shared/lib'
-import { generateQuery } from 'shared/utils'
+
+import { generateQuery } from 'entities/generate-query'
 import { api } from '../api'
 import { SuccessResponse } from '../type'
 
@@ -13,7 +14,8 @@ export const apiGoogleAuth = async () => {
   const idToken = await auth.currentUser?.getIdToken()
 
   const response = await api.get(
-    `/api/auth/google${generateQuery({ idToken })}`,
+    // eslint-disable-next-line prefer-template
+    `/api/auth/google` + generateQuery({ idToken }),
   )
   return response
 }

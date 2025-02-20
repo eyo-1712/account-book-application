@@ -12,7 +12,7 @@ export const AccountCard = ({ account }: AccountCardProps) => {
       <button
         type="button"
         className="flex flex-col items-start"
-        onClick={nav.accountId(account.id)}
+        onClick={nav.accountId({ id: account.id })}
       >
         <p className="text-sm text-gray-600">{account.name}</p>
         <p className="text-lg font-bold">{account.money.toLocaleString()} 원</p>
@@ -21,7 +21,7 @@ export const AccountCard = ({ account }: AccountCardProps) => {
         type="button"
         color="gray"
         rounded
-        onClick={nav.transfer(account.id)}
+        onClick={nav.transfer({ id: account.id })}
       >
         이체
       </Button>

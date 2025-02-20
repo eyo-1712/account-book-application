@@ -28,9 +28,7 @@ export const useLogic = () => {
   const createCategory = useApiCreateCategory()
 
   const onSubmit = () =>
-    createCategory.mutate(form.getValues(), {
-      onSuccess: router.nav.back,
-    })
+    createCategory.mutate(form.getValues(), { onSuccess: router.nav.back })
 
   return {
     value: { form },
