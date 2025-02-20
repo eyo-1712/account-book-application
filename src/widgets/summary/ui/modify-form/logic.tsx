@@ -22,7 +22,7 @@ export const useLogic = () => {
   const modifySummary = useApiModifySummary()
   const onSubmit = () => {
     modifySummary.mutate(
-      { ...form.getValues(), id: parseInt(id, 10) },
+      { ...form.getValues(), id },
       { onSuccess: router.nav.back },
     )
   }

@@ -1,8 +1,8 @@
 import { z } from 'zod'
 
 export const schema = z.object({
-  giveId: z.number(),
-  takeId: z.number(),
+  giveId: z.string(),
+  takeId: z.string(),
   money: z.number(),
 })
 

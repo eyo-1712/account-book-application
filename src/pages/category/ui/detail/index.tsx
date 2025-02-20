@@ -38,7 +38,7 @@ export const CategoryDetailPage = () => {
         leading={<Back />}
         actions={
           <ButtonGroup>
-            <ModifyCategory id={category?.id ?? 0} />
+            <ModifyCategory id={category?.id ?? ''} />
             <Button color="red" onClick={onClickRemove}>
               삭제
             </Button>

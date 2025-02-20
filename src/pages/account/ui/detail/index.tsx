@@ -20,7 +20,7 @@ export const AccountDetailPage = () => {
         leading={<Back />}
         actions={
           <ButtonGroup>
-            <ModifyAccount id={value.account?.id ?? 0} />
+            <ModifyAccount id={value.account?.id ?? ''} />
             <Button color="red" onClick={handler.onClickRemove}>
               삭제
             </Button>
