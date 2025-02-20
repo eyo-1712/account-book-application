@@ -1,4 +1,8 @@
-import { useApiFetchAccount, useApiRemoveAccount } from 'entities'
+import {
+  useApiFetchAccount,
+  useApiFetchSummaryByTopic,
+  useApiRemoveAccount,
+} from 'entities'
 import { useParams } from 'react-router'
 import { useRouter } from 'shared/lib'
 
@@ -6,6 +10,10 @@ export const useLogic = () => {
   const router = useRouter()
   const params = useParams()
   const { data: account } = useApiFetchAccount({ id: params.id })
+  const infiniteSummariesByCategory = useApiFetchSummaryByTopic({
+    topic: 'accountId',
+    topicId: params.id,
+  })
 
   const removeAccount = useApiRemoveAccount()
 
@@ -14,7 +22,7 @@ export const useLogic = () => {
   }
 
   return {
-    value: { account },
+    value: { account, infiniteSummariesByCategory },
     handler: { onClickRemove },
   }
 }

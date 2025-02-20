@@ -1,6 +1,14 @@
 import { Back } from 'features/router'
 import { ModifyAccount } from 'features/router/ui/modify-account'
-import { AppBar, Body, Button, ButtonGroup, Container } from 'shared/ui'
+import {
+  AppBar,
+  Body,
+  Button,
+  ButtonGroup,
+  Container,
+  InfiniteScroll,
+} from 'shared/ui'
+import { Summary } from 'widgets'
 import { useLogic } from './logic'
 
 export const AccountDetailPage = () => {
@@ -31,11 +39,12 @@ export const AccountDetailPage = () => {
           </p>
         </div>
         <br />
-        {/* <div className="flex flex-col items-start w-full gap-8">
-          <SummaryToday date={new Date()} />
-          <SummaryToday date={new Date()} />
-          <SummaryToday date={new Date()} />
-        </div> */}
+        <InfiniteScroll
+          infiniteQuery={value.infiniteSummariesByCategory}
+          keyName="summary"
+          Component={Summary}
+          componentProps={{ withDate: true }}
+        />
       </Body>
     </Container>
   )
